@@ -1,0 +1,7 @@
+{
+  "promptDelete": false,
+  "attachmentFolderPath": "./assets",
+  "trashOption": "local",
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": true
+}

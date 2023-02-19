@@ -11,8 +11,12 @@
             "id": "ec51d6c9c64dc727",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,14 +124,17 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "README.md"
+              }
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -139,10 +148,10 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "ec51d6c9c64dc727",
+  "active": "d77f5ea69ae42369",
   "lastOpenFiles": [
     "2023-02-19.md",
-    "README.md.md",
+    "README.md",
     "leetcode/labuladong/数组算法/二维数组的遍历.md",
     "leetcode/labuladong/题目/54. 螺旋矩阵.md",
     "leetcode/labuladong/题目/48. 旋转图像.md",

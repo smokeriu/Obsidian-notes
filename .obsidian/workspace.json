@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "leetcode/labuladong/数组算法/滑动窗口.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "leetcode/labuladong/数组算法/滑动窗口.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "leetcode/labuladong/数组算法/滑动窗口.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "leetcode/labuladong/数组算法/滑动窗口.md"
               }
             }
           }
@@ -143,13 +143,15 @@
       "canvas:Create new canvas": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "remotely-save:Remotely Save": false
     }
   },
-  "active": "d77f5ea69ae42369",
+  "active": "ec51d6c9c64dc727",
   "lastOpenFiles": [
-    "2023-02-19.md",
     "README.md",
+    "2023-02-19.md",
     "leetcode/labuladong/数组算法/二维数组的遍历.md",
     "leetcode/labuladong/题目/54. 螺旋矩阵.md",
     "leetcode/labuladong/题目/48. 旋转图像.md",

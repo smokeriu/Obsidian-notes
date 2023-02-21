@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/题目/187. 重复的DNA序列.md",
+                "file": "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/题目/187. 重复的DNA序列.md",
+                "file": "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/题目/187. 重复的DNA序列.md",
+                "file": "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,11 +138,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/题目/187. 重复的DNA序列.md"
+                "file": "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -160,10 +161,10 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "fd8f668fdf82f00c",
+  "active": "a3a6d707e5b168dc",
   "lastOpenFiles": [
-    "leetcode/labuladong/数组算法/滑动窗口.md",
     "leetcode/labuladong/题目/187. 重复的DNA序列.md",
+    "leetcode/labuladong/数组算法/滑动窗口.md",
     "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md",
     "leetcode/labuladong/题目/3. 无重复字符的最长子串.md",
     "leetcode/labuladong/题目/76. 最小覆盖子串.md",

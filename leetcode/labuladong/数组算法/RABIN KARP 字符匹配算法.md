@@ -139,9 +139,9 @@ int rabinKarp(String txt, String pat) {
 ```
 
 > 注意缩小窗口时，由于Java中的`%`运算实际是取余运算，即当被除数是负数时，结果也是负数，所以我们需要加上一个模数，再取模，保证得到的是正数，从而不影响后续的计算。
-> 因为一旦
+> 因为一旦windowHash变为负数，则会一直与path无法匹配。
 
 # 相关题目
 
 1. [187. 重复的DNA序列](187.%20重复的DNA序列.md)
-2. [28. 找出字符串中第一个匹配项的下标 - 力扣（LeetCode）](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+2. [28. 找出字符串中第一个匹配项的下标](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)

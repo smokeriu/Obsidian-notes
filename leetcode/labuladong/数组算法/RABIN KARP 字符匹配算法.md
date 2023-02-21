@@ -58,12 +58,12 @@ int newI = i - x * Math.pow(10, 4);
 
 不同的Hash值通过取模后可能产生同样的模值，而我们无法简单的反推。Java的HashMap是通过Hash桶+链表的方式解决Hash冲突的，详见[理解HashMap](理解HashMap.md)。一般而言，不需要如此复杂，可以在评估冲突不多的情况下，进行暴力匹配，来找到实际的Hash值。
 
-## 模运算
+## 取余运算
 
 算法会涉及到一些模运算的数学知识：
 1. 
 $$
-X\bmod Q == (X + Q) \bmod Q 
+X\rem Q == (X + Q) \bmod Q 
 $$
 
 2. 

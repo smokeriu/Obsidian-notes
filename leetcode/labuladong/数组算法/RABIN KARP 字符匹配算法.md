@@ -63,7 +63,7 @@ int newI = i - x * Math.pow(10, 4);
 算法会涉及到一些模运算的数学知识：
 1. 
 $$
-X\rem Q == (X + Q) \bmod Q 
+X\textrm(rem)Q == (X + Q) \bmod Q 
 $$
 
 2. 

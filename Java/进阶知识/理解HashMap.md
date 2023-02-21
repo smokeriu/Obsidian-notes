@@ -25,12 +25,10 @@ static class Node<K,V> implements Map.Entry<K,V> {
 
 在插入数据时，Java会通过计算得到的Hash值，决定将数据插入哪个Node中，如果Node已经存在，则会插入该Node的链表尾部。故HashMap的检索速度取决于：
 
--   桶大小。
-    -   桶数组越大，碰撞越小
--   hashcode算法。
-    -   hashcode算法越平均，碰撞分配越均匀。
+-   桶大小：桶数组越大，碰撞越小
+-   hashcode算法：hashcode算法越平均，碰撞分配越均匀。
 
-==Hash值的计算为：先利用类的Hashcode方法得到HashCode值，再通过Hash算法得到Hash值。==
+>Hash值的计算为：先利用类的Hashcode方法得到HashCode值，再通过Hash算法得到Hash值。
 
 ```java
 static final int hash(Object key) {   //jdk1.8 & jdk1.7
@@ -156,7 +154,7 @@ if (root == null || (movable && (root.right == null || (rl = root.left) == null|
 - 扩容时。
 扩容时，因为会把红黑树拆分成高低位两棵树，如果某棵树的数据量过小（小于`UNTREEIFY_THRESHOLD`，6），则会将其退化回链表。
 
-==remove节点时，退化回链表的判断依据不依赖于`UNTREEIFY_THRESHOLD`。==
+> remove节点时，退化回链表的判断依据不依赖于`UNTREEIFY_THRESHOLD`。
 
 
 # 总结

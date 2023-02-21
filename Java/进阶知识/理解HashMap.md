@@ -145,15 +145,19 @@ Java8中最主要的更新就是引入了红黑树。
 ### 退化回链表
 
 退化回链表可能出现在两个地方：
+- remove节点时。
+在红黑树的root节点为空 或者root的右节点、root的左节点、root左节点的左节点为空时。
+```java
+if (root == null || (movable && (root.right == null || (rl = root.left) == null|| rl.left == null))) { 
+	tab[index] = first.untreeify(map); // too small 
+	return; 
+}
+```
+- 扩容时。
+扩容时，因为会把红黑树拆分成高低位两棵树，如果某棵树的数据量过小（小于`UNTREEIFY_THRESHOLD`，6），则会将其退化回链表。
 
-1.  remove节点时。
-    1.  在红黑树的root节点为空 或者root的右节点、root的左节点、root左节点的左节点为空时。
-2.  扩容时。
-    1.  扩容时，因为会把红黑树拆分成高低位两棵树，如果某棵树的数据量过小（小于`UNTREEIFY_THRESHOLD`，6），则会将其退化回链表。
+==remove节点时，退化回链表的判断依据不依赖于`UNTREEIFY_THRESHOLD`。==
 
-<aside> 💡 remove节点时，退化回链表的判断依据不依赖于`UNTREEIFY_THRESHOLD`。
-
-</aside>
 
 # 总结
 

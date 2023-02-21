@@ -1,4 +1,6 @@
 {
   "accentColor": "",
-  "theme": "system"
+  "theme": "moonstone",
+  "cssTheme": "Minimal",
+  "translucency": true
 }

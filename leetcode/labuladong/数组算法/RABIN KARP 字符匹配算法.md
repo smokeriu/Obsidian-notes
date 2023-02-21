@@ -141,3 +141,4 @@ int rabinKarp(String txt, String pat) {
 # 相关题目
 
 1. [187. 重复的DNA序列](187.%20重复的DNA序列.md)
+2. [28. 找出字符串中第一个匹配项的下标 - 力扣（LeetCode）](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)

@@ -122,9 +122,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "31d35d643718dd74",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/labuladong/相关算法/数组算法/前缀和数组.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 9
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -190,7 +202,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
+                "file": "leetcode/labuladong/相关算法/数组算法/前缀和数组.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -207,7 +219,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
+                "file": "leetcode/labuladong/相关算法/数组算法/前缀和数组.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -230,7 +242,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md"
+                "file": "leetcode/labuladong/相关算法/数组算法/前缀和数组.md"
               }
             }
           }
@@ -253,12 +265,12 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "647a1c46b2b763ba",
+  "active": "31d35d643718dd74",
   "lastOpenFiles": [
+    "leetcode/labuladong/题目/528. 按权重随机选择.md",
     "leetcode/labuladong/题目/assets/Pasted image 20230225155044.png",
     "leetcode/labuladong/题目/assets/Pasted image 20230225154912.png",
     "leetcode/labuladong/题目/assets/Pasted image 20230219150234.png",
-    "leetcode/labuladong/题目/528. 按权重随机选择.md",
     "leetcode/labuladong/相关算法/数组算法/前缀和数组.md",
     "leetcode/labuladong/相关算法/数组算法/随机算法.md",
     "leetcode/labuladong/题目/34. 在排序数组中查找元素的第一个和最后一个位置.md",

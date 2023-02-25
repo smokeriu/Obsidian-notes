@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md",
+                "file": "leetcode/labuladong/相关算法/数组算法/RABIN KARP 字符匹配算法.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md",
+                "file": "leetcode/labuladong/相关算法/数组算法/RABIN KARP 字符匹配算法.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md",
+                "file": "leetcode/labuladong/相关算法/数组算法/RABIN KARP 字符匹配算法.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md",
+                "file": "leetcode/labuladong/相关算法/数组算法/RABIN KARP 字符匹配算法.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/数组算法/二分查找.md",
+                "file": "leetcode/labuladong/相关算法/数组算法/二分查找.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/数组算法/二分查找.md",
+                "file": "leetcode/labuladong/相关算法/数组算法/二分查找.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,16 +95,24 @@
             "id": "e43c89f4e50b0167",
             "type": "leaf",
             "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "093163c9bc5ba41e",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/数组算法/二分查找.md",
+                "file": "leetcode/labuladong/题目/34. 在排序数组中查找元素的第一个和最后一个位置.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -170,7 +178,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/数组算法/二分查找.md",
+                "file": "leetcode/labuladong/题目/34. 在排序数组中查找元素的第一个和最后一个位置.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +195,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/数组算法/二分查找.md",
+                "file": "leetcode/labuladong/题目/34. 在排序数组中查找元素的第一个和最后一个位置.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -210,7 +218,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/数组算法/二分查找.md"
+                "file": "leetcode/labuladong/题目/34. 在排序数组中查找元素的第一个和最后一个位置.md"
               }
             }
           }
@@ -233,17 +241,17 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "e43c89f4e50b0167",
+  "active": "093163c9bc5ba41e",
   "lastOpenFiles": [
+    "leetcode/labuladong/相关算法/算法导览.md",
     "leetcode/labuladong/题目/34. 在排序数组中查找元素的第一个和最后一个位置.md",
-    "leetcode/labuladong/数组算法/二分查找.md",
+    "leetcode/labuladong/相关算法/数组算法/二分查找.md",
     "leetcode/日常题目/1247. 交换字符使得字符串相同.md",
-    "leetcode/labuladong/动态规划/贪心算法.md",
+    "leetcode/labuladong/相关算法/动态规划/贪心算法.md",
     "README.md",
-    "leetcode/labuladong/数组算法/滑动窗口.md",
+    "leetcode/labuladong/相关算法/数组算法/滑动窗口.md",
     "leetcode/labuladong/题目/28. 找出字符串中第一个匹配项的下标.md",
     "leetcode/labuladong/题目/187. 重复的DNA序列.md",
-    "leetcode/labuladong/数组算法/KMP算法.md",
-    "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md"
+    "leetcode/labuladong/相关算法/数组算法/KMP算法.md"
   ]
 }

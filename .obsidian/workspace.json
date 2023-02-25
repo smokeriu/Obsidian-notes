@@ -66,9 +66,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "0e9a789c0ad619bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/日常题目/1247. 交换字符使得字符串相同.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/数组算法/二分查找.md",
+                "file": "leetcode/日常题目/1247. 交换字符使得字符串相同.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/数组算法/二分查找.md",
+                "file": "leetcode/日常题目/1247. 交换字符使得字符串相同.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/数组算法/二分查找.md"
+                "file": "leetcode/日常题目/1247. 交换字符使得字符串相同.md"
               }
             }
           }
@@ -197,8 +209,9 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "299a6c98ef797edf",
+  "active": "0e9a789c0ad619bd",
   "lastOpenFiles": [
+    "leetcode/labuladong/数组算法/二分查找.md",
     "README.md",
     "leetcode/labuladong/数组算法/滑动窗口.md",
     "leetcode/labuladong/题目/28. 找出字符串中第一个匹配项的下标.md",
@@ -207,7 +220,6 @@
     "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md",
     "Java/进阶知识/理解HashMap.md",
     "leetcode/labuladong/题目/3. 无重复字符的最长子串.md",
-    "leetcode/labuladong/题目/76. 最小覆盖子串.md",
-    "leetcode/labuladong/数组算法/二维数组的对称.md"
+    "leetcode/labuladong/题目/76. 最小覆盖子串.md"
   ]
 }

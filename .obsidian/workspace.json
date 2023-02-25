@@ -8,122 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ec51d6c9c64dc727",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/RABIN KARP 字符匹配算法.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fd8f668fdf82f00c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/RABIN KARP 字符匹配算法.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6e17b23378a76993",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/RABIN KARP 字符匹配算法.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ead0dbbafce07ac3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/RABIN KARP 字符匹配算法.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "299a6c98ef797edf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/二分查找.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0e9a789c0ad619bd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/日常题目/1247. 交换字符使得字符串相同.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c7ca1605f39415d5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/二分查找.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e43c89f4e50b0167",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          },
-          {
-            "id": "9b5d5e9d915f9120",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "647a1c46b2b763ba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "31d35d643718dd74",
             "type": "leaf",
             "state": {
@@ -135,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 10
+        ]
       }
     ],
     "direction": "vertical"

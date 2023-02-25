@@ -3,5 +3,7 @@
   "attachmentFolderPath": "./assets",
   "trashOption": "local",
   "newLinkFormat": "shortest",
-  "useMarkdownLinks": true
+  "useMarkdownLinks": true,
+  "showIndentGuide": false,
+  "strictLineBreaks": true
 }

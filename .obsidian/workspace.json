@@ -105,7 +105,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/随机算法.md",
+                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
                 "mode": "source",
                 "source": false
               }
@@ -178,7 +178,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/随机算法.md",
+                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -195,7 +195,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/随机算法.md",
+                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -218,7 +218,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/随机算法.md"
+                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md"
               }
             }
           }
@@ -243,6 +243,7 @@
   },
   "active": "9b5d5e9d915f9120",
   "lastOpenFiles": [
+    "leetcode/labuladong/相关算法/数组算法/随机算法.md",
     "leetcode/labuladong/题目/34. 在排序数组中查找元素的第一个和最后一个位置.md",
     "leetcode/labuladong/相关算法/数组算法/二分查找.md",
     "leetcode/labuladong/相关算法/算法导览.md",
@@ -251,7 +252,6 @@
     "README.md",
     "leetcode/labuladong/相关算法/数组算法/滑动窗口.md",
     "leetcode/labuladong/题目/28. 找出字符串中第一个匹配项的下标.md",
-    "leetcode/labuladong/题目/187. 重复的DNA序列.md",
-    "leetcode/labuladong/相关算法/数组算法/KMP算法.md"
+    "leetcode/labuladong/题目/187. 重复的DNA序列.md"
   ]
 }

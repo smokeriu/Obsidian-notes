@@ -66,9 +66,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ba459d645da6b933",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/日常题目/1255. 得分最高的单词集合.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
+                "file": "leetcode/日常题目/1255. 得分最高的单词集合.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
+                "file": "leetcode/日常题目/1255. 得分最高的单词集合.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md"
+                "file": "leetcode/日常题目/1255. 得分最高的单词集合.md"
               }
             }
           }
@@ -196,11 +208,11 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "faa4131b17477fd7",
+  "active": "ba459d645da6b933",
   "lastOpenFiles": [
+    "leetcode/labuladong/题目/528. 按权重随机选择.md",
     "leetcode/labuladong/相关算法/数组算法/二分查找.md",
     "leetcode/labuladong/题目/875. 爱吃香蕉的珂珂.md",
-    "leetcode/labuladong/题目/528. 按权重随机选择.md",
     "leetcode/labuladong/题目/410. 分割数组的最大值.md",
     "leetcode/labuladong/题目/1011. 在 D 天内送达包裹的能力.md",
     "Java/进阶知识/理解HashMap.md",

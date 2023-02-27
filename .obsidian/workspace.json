@@ -4,67 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "236c4b388b2b8eb8",
+        "id": "42c69e3f6fc18ce2",
         "type": "tabs",
         "children": [
           {
-            "id": "ec51d6c9c64dc727",
+            "id": "8e97ea4e70880597",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {}
-            }
-          },
-          {
-            "id": "8d3b1036d631e797",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/3. 无重复字符的最长子串.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e5c4fc1f2f8ab9cb",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "ebf7c3163c935a78",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "7763f05587a0837c",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "bb0678244c8b01db",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/日常题目/1255. 得分最高的单词集合.md",
-                "mode": "source",
-                "source": false
-              }
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -130,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/日常题目/1255. 得分最高的单词集合.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/日常题目/1255. 得分最高的单词集合.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -169,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "leetcode/日常题目/1255. 得分最高的单词集合.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -193,17 +140,17 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "bb0678244c8b01db",
+  "active": "8e97ea4e70880597",
   "lastOpenFiles": [
+    "leetcode/日常题目/1255. 得分最高的单词集合.md",
+    "leetcode/labuladong/题目/3. 无重复字符的最长子串.md",
     "conflict-files-obsidian-git.md",
     "leetcode/labuladong/数组算法/二分查找.md",
     "leetcode/labuladong/数组算法/RABIN KARP 字符匹配算法.md",
     "leetcode/labuladong/数组算法/KMP算法.md",
     "leetcode/labuladong/题目/28. 找出字符串中第一个匹配项的下标.md",
-    "leetcode/labuladong/题目/3. 无重复字符的最长子串.md",
     "leetcode/labuladong/题目/187. 重复的DNA序列.md",
     "leetcode/labuladong/数组算法/滑动窗口.md",
-    "leetcode/labuladong/题目/76. 最小覆盖子串.md",
-    "leetcode/labuladong/题目/48. 旋转图像.md"
+    "leetcode/labuladong/题目/76. 最小覆盖子串.md"
   ]
 }

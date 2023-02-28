@@ -97,7 +97,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/未命名.md",
+                "file": "leetcode/labuladong/题目/380. O(1) 时间插入、删除和获取随机元素.md",
                 "mode": "source",
                 "source": false
               }
@@ -109,14 +109,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/题目/未命名.md",
+                "file": "leetcode/labuladong/题目/710. 黑名单中的随机数.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/题目/未命名.md",
+                "file": "leetcode/labuladong/题目/380. O(1) 时间插入、删除和获取随机元素.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -199,7 +199,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/题目/未命名.md",
+                "file": "leetcode/labuladong/题目/380. O(1) 时间插入、删除和获取随机元素.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/题目/未命名.md"
+                "file": "leetcode/labuladong/题目/380. O(1) 时间插入、删除和获取随机元素.md"
               }
             }
           }
@@ -245,9 +245,10 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "310b2ffbf2f98a12",
+  "active": "c0e9f61564ef2414",
   "lastOpenFiles": [
-    "leetcode/labuladong/未命名.md",
+    "leetcode/labuladong/题目/710. 黑名单中的随机数.md",
+    "leetcode/labuladong/题目/380. O(1) 时间插入、删除和获取随机元素.md",
     "leetcode/日常题目/2363. 合并相似的物品.md",
     "leetcode/日常题目/1255. 得分最高的单词集合.md",
     "leetcode/labuladong/题目/528. 按权重随机选择.md",
@@ -255,7 +256,6 @@
     "leetcode/labuladong/题目/875. 爱吃香蕉的珂珂.md",
     "leetcode/labuladong/题目/410. 分割数组的最大值.md",
     "leetcode/labuladong/题目/1011. 在 D 天内送达包裹的能力.md",
-    "Java/进阶知识/理解HashMap.md",
-    "leetcode/labuladong/题目/54. 螺旋矩阵.md"
+    "Java/进阶知识/理解HashMap.md"
   ]
 }

@@ -95,8 +95,24 @@
             "id": "9fd1649be45240df",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/labuladong/题目/104. 二叉树的最大深度.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "874e4669f21cdf38",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
@@ -124,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -190,6 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -206,6 +223,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -227,7 +245,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树.md"
+              }
             }
           }
         ]
@@ -249,17 +269,17 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "c0e9f61564ef2414",
+  "active": "874e4669f21cdf38",
   "lastOpenFiles": [
-    "leetcode/日常题目/2363. 合并相似的物品.md",
+    "leetcode/labuladong/题目/104. 二叉树的最大深度.md",
     "conflict-files-obsidian-git.md",
+    "leetcode/日常题目/2363. 合并相似的物品.md",
     "leetcode/labuladong/题目/380. O(1) 时间插入、删除和获取随机元素.md",
     "leetcode/labuladong/题目/710. 黑名单中的随机数.md",
     "leetcode/日常题目/1255. 得分最高的单词集合.md",
     "leetcode/labuladong/题目/528. 按权重随机选择.md",
     "leetcode/labuladong/相关算法/数组算法/二分查找.md",
     "leetcode/labuladong/题目/875. 爱吃香蕉的珂珂.md",
-    "leetcode/labuladong/题目/410. 分割数组的最大值.md",
-    "leetcode/labuladong/题目/1011. 在 D 天内送达包裹的能力.md"
+    "leetcode/labuladong/题目/410. 分割数组的最大值.md"
   ]
 }

@@ -253,7 +253,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/未命名.md",
+                "file": "leetcode/labuladong/题目/515. 在每个树行中找最大值.md",
                 "mode": "source",
                 "source": false
               }
@@ -350,7 +350,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/未命名.md",
+                "file": "leetcode/labuladong/题目/515. 在每个树行中找最大值.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -367,7 +367,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/未命名.md",
+                "file": "leetcode/labuladong/题目/515. 在每个树行中找最大值.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -390,7 +390,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/未命名.md"
+                "file": "leetcode/labuladong/题目/515. 在每个树行中找最大值.md"
               }
             }
           }
@@ -414,15 +414,15 @@
   },
   "active": "a10572fdb977ce40",
   "lastOpenFiles": [
-    "leetcode/labuladong/题目/515. 在每个树行中找最大值.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的层序遍历.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+    "leetcode/labuladong/题目/515. 在每个树行中找最大值.md",
     "leetcode/labuladong/相关算法/搜索算法/广度优先搜索(Breath-First Search, BFS).md",
     "leetcode/labuladong/相关算法/搜索算法/深度优先搜索(Depth-First Search,DFS).md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
     "leetcode/labuladong/题目/543. 二叉树的直径.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
-    "leetcode/labuladong/题目/669. 修剪二叉搜索树.md"
+    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md"
   ]
 }

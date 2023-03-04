@@ -193,7 +193,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
                 "mode": "source",
                 "source": false
               }
@@ -290,7 +290,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -307,7 +307,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -330,7 +330,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md"
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md"
               }
             }
           }
@@ -355,8 +355,8 @@
   },
   "active": "a19dbe98aa1862bb",
   "lastOpenFiles": [
-    "leetcode/labuladong/题目/543. 二叉树的直径.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
+    "leetcode/labuladong/题目/543. 二叉树的直径.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",

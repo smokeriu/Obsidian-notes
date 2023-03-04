@@ -1,3 +1,4 @@
 {
-  "minimal-style@@bold-color@@dark": "#FF9B00"
+  "minimal-style@@bold-color@@dark": "#FF9B00",
+  "things-style@@active-line": true
 }

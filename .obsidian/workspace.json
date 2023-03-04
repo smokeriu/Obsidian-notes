@@ -133,7 +133,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+                "file": "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
                 "mode": "source",
                 "source": false
               }
@@ -230,7 +230,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+                "file": "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -247,7 +247,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+                "file": "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -270,7 +270,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md"
+                "file": "leetcode/labuladong/题目/669. 修剪二叉搜索树.md"
               }
             }
           }
@@ -295,8 +295,8 @@
   },
   "active": "88f9c82479a7649a",
   "lastOpenFiles": [
-    "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+    "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
     "leetcode/labuladong/相关算法/数组算法/二分查找.md",
     "leetcode/labuladong/题目/104. 二叉树的最大深度.md",

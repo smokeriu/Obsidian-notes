@@ -128,6 +128,18 @@
             }
           },
           {
+            "id": "88f9c82479a7649a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "63acf4c02685315f",
             "type": "leaf",
             "state": {
@@ -152,7 +164,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -281,8 +293,10 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "28bfa9632a431576",
+  "active": "88f9c82479a7649a",
   "lastOpenFiles": [
+    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+    "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
     "leetcode/labuladong/相关算法/数组算法/二分查找.md",
     "leetcode/labuladong/题目/104. 二叉树的最大深度.md",
@@ -290,8 +304,6 @@
     "leetcode/日常题目/2363. 合并相似的物品.md",
     "leetcode/labuladong/题目/380. O(1) 时间插入、删除和获取随机元素.md",
     "leetcode/labuladong/题目/710. 黑名单中的随机数.md",
-    "leetcode/日常题目/1255. 得分最高的单词集合.md",
-    "leetcode/labuladong/题目/528. 按权重随机选择.md",
-    "leetcode/labuladong/题目/875. 爱吃香蕉的珂珂.md"
+    "leetcode/日常题目/1255. 得分最高的单词集合.md"
   ]
 }

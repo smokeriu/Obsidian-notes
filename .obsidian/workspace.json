@@ -140,6 +140,30 @@
             }
           },
           {
+            "id": "327e9f8df9f65c9b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0c2824db1c5e60a5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "63acf4c02685315f",
             "type": "leaf",
             "state": {
@@ -164,7 +188,7 @@
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 12
       }
     ],
     "direction": "vertical"
@@ -230,7 +254,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -247,7 +271,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -270,7 +294,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/题目/669. 修剪二叉搜索树.md"
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md"
               }
             }
           }
@@ -293,9 +317,10 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "88f9c82479a7649a",
+  "active": "0c2824db1c5e60a5",
   "lastOpenFiles": [
     "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
     "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
     "leetcode/labuladong/相关算法/数组算法/二分查找.md",
@@ -303,7 +328,6 @@
     "conflict-files-obsidian-git.md",
     "leetcode/日常题目/2363. 合并相似的物品.md",
     "leetcode/labuladong/题目/380. O(1) 时间插入、删除和获取随机元素.md",
-    "leetcode/labuladong/题目/710. 黑名单中的随机数.md",
-    "leetcode/日常题目/1255. 得分最高的单词集合.md"
+    "leetcode/labuladong/题目/710. 黑名单中的随机数.md"
   ]
 }

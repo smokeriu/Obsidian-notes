@@ -109,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
                 "mode": "source",
                 "source": false
               }
@@ -206,7 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -223,7 +223,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -246,7 +246,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树.md"
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md"
               }
             }
           }
@@ -271,15 +271,15 @@
   },
   "active": "874e4669f21cdf38",
   "lastOpenFiles": [
+    "leetcode/labuladong/相关算法/数组算法/二分查找.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
     "leetcode/labuladong/题目/104. 二叉树的最大深度.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树.md",
     "conflict-files-obsidian-git.md",
     "leetcode/日常题目/2363. 合并相似的物品.md",
     "leetcode/labuladong/题目/380. O(1) 时间插入、删除和获取随机元素.md",
     "leetcode/labuladong/题目/710. 黑名单中的随机数.md",
     "leetcode/日常题目/1255. 得分最高的单词集合.md",
     "leetcode/labuladong/题目/528. 按权重随机选择.md",
-    "leetcode/labuladong/相关算法/数组算法/二分查找.md",
     "leetcode/labuladong/题目/875. 爱吃香蕉的珂珂.md"
   ]
 }

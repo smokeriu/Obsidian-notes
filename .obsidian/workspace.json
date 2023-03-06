@@ -56,6 +56,18 @@
             }
           },
           {
+            "id": "ab03c5b108aed2d8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "d697eca5f646a8a4",
             "type": "leaf",
             "state": {
@@ -68,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md"
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md"
               }
             }
           }
@@ -197,17 +209,17 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "2106dc2bf2535472",
+  "active": "ab03c5b108aed2d8",
   "lastOpenFiles": [
+    "leetcode/labuladong/题目/116. 填充每个节点的下一个右侧节点指针.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
     "leetcode/labuladong/题目/226. 翻转二叉树.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
     "Java/进阶知识/理解HashMap.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
     "leetcode/labuladong/题目/316. 去除重复字母.md",
     "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
-    "leetcode/labuladong/题目/870. 优势洗牌.md",
-    "leetcode/日常题目/1255. 得分最高的单词集合.md"
+    "leetcode/labuladong/题目/870. 优势洗牌.md"
   ]
 }

@@ -4,83 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "42c69e3f6fc18ce2",
+        "id": "82e43f6fb4457a80",
         "type": "tabs",
         "children": [
           {
-            "id": "8e97ea4e70880597",
+            "id": "b3eb23e830d0fdd0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/870. 优势洗牌.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c31ef4b1111ab698",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f7e71403982e882a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2106dc2bf2535472",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ab03c5b108aed2d8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d697eca5f646a8a4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -146,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -185,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -209,17 +140,17 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "ab03c5b108aed2d8",
+  "active": "b3eb23e830d0fdd0",
   "lastOpenFiles": [
-    "leetcode/labuladong/题目/116. 填充每个节点的下一个右侧节点指针.md",
+    "leetcode/labuladong/题目/870. 优势洗牌.md",
+    "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
+    "leetcode/labuladong/题目/114. 二叉树展开为链表.md",
+    "leetcode/labuladong/题目/116. 填充每个节点的下一个右侧节点指针.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
     "leetcode/labuladong/题目/226. 翻转二叉树.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
-    "Java/进阶知识/理解HashMap.md",
-    "leetcode/labuladong/题目/316. 去除重复字母.md",
-    "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
-    "leetcode/labuladong/题目/870. 优势洗牌.md"
+    "Java/进阶知识/理解HashMap.md"
   ]
 }

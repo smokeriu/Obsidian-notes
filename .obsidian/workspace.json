@@ -4,107 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "236c4b388b2b8eb8",
+        "id": "42c69e3f6fc18ce2",
         "type": "tabs",
         "children": [
           {
-            "id": "31d35d643718dd74",
+            "id": "8e97ea4e70880597",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/相关算法/数组算法/前缀和数组.md",
+                "file": "leetcode/labuladong/题目/870. 优势洗牌.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "1f65588b57be7887",
+            "id": "c31ef4b1111ab698",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Java/进阶知识/理解HashMap.md",
+                "file": "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "1aa84a2573bf4463",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/1011. 在 D 天内送达包裹的能力.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5e109a575db080fc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "faa4131b17477fd7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/528. 按权重随机选择.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ba459d645da6b933",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/日常题目/1255. 得分最高的单词集合.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5f82d76817ed7fc1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/日常题目/2363. 合并相似的物品.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9fd1649be45240df",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/104. 二叉树的最大深度.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "874e4669f21cdf38",
+            "id": "f7e71403982e882a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -116,175 +44,31 @@
             }
           },
           {
-            "id": "28bfa9632a431576",
+            "id": "2106dc2bf2535472",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "88f9c82479a7649a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/669. 修剪二叉搜索树.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "327e9f8df9f65c9b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0c2824db1c5e60a5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "36c041350f3c396b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "503dcbc624b136ea",
+            "id": "d697eca5f646a8a4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a19dbe98aa1862bb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "15eca81d4efc4118",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的层序遍历.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "011b22a86ce9f954",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/515. 在每个树行中找最大值.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "db83cbdbb1f42e4f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/搜索算法/广度优先搜索(Breath-First Search, BFS).md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "26bfa002624b695c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/515. 在每个树行中找最大值.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a10572fdb977ce40",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "63acf4c02685315f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/380. O(1) 时间插入、删除和获取随机元素.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "310b2ffbf2f98a12",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/710. 黑名单中的随机数.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 20
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -350,14 +134,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
             }
           },
@@ -367,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -390,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md"
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md"
               }
             }
           }
@@ -413,17 +197,17 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "a10572fdb977ce40",
+  "active": "2106dc2bf2535472",
   "lastOpenFiles": [
-    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的层序遍历.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
-    "leetcode/labuladong/相关算法/搜索算法/深度优先搜索(Depth-First Search,DFS).md",
-    "leetcode/labuladong/相关算法/搜索算法/广度优先搜索(Breath-First Search, BFS).md",
-    "leetcode/labuladong/题目/76. 最小覆盖子串.md",
-    "leetcode/labuladong/题目/187. 重复的DNA序列.md"
+    "leetcode/labuladong/题目/226. 翻转二叉树.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
+    "Java/进阶知识/理解HashMap.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+    "leetcode/labuladong/题目/316. 去除重复字母.md",
+    "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
+    "leetcode/labuladong/题目/870. 优势洗牌.md",
+    "leetcode/日常题目/1255. 得分最高的单词集合.md"
   ]
 }

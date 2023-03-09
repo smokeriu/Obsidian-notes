@@ -42,9 +42,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e13e3c4cff9bd7b9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -110,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/题目/654. 最大二叉树.md",
+                "file": "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/题目/654. 最大二叉树.md",
+                "file": "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/题目/654. 最大二叉树.md"
+                "file": "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md"
               }
             }
           }
@@ -173,10 +185,10 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "a070ffb3ab9fe1fa",
+  "active": "e13e3c4cff9bd7b9",
   "lastOpenFiles": [
-    "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
     "leetcode/labuladong/题目/654. 最大二叉树.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
     "leetcode/labuladong/题目/870. 优势洗牌.md",
     "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",

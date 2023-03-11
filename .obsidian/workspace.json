@@ -265,7 +265,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
                 "mode": "source",
                 "source": false
               }
@@ -362,7 +362,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -379,7 +379,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -402,7 +402,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md"
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md"
               }
             }
           }

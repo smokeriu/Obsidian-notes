@@ -296,6 +296,18 @@
             }
           },
           {
+            "id": "2dce96f38e4c51ec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "数学/基础/向量与图形/向量.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "63acf4c02685315f",
             "type": "leaf",
             "state": {
@@ -320,7 +332,7 @@
             }
           }
         ],
-        "currentTab": 23
+        "currentTab": 24
       }
     ],
     "direction": "vertical"
@@ -386,7 +398,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/题目/889. 根据前序和后序遍历构造二叉树.md",
+                "file": "数学/基础/向量与图形/向量.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -403,7 +415,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/题目/889. 根据前序和后序遍历构造二叉树.md",
+                "file": "数学/基础/向量与图形/向量.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -426,7 +438,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/题目/889. 根据前序和后序遍历构造二叉树.md"
+                "file": "数学/基础/向量与图形/向量.md"
               }
             }
           }
@@ -449,17 +461,17 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "41e7fd1fe861a221",
+  "active": "2dce96f38e4c51ec",
   "lastOpenFiles": [
+    "数学/未命名.md",
+    "leetcode/labuladong/题目/889. 根据前序和后序遍历构造二叉树.md",
     "leetcode/labuladong/题目/106. 从中序与后序遍历序列构造二叉树.md",
     "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
-    "leetcode/labuladong/题目/889. 根据前序和后序遍历构造二叉树.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
-    "leetcode/labuladong/题目/104. 二叉树的最大深度.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md"
+    "leetcode/labuladong/题目/104. 二叉树的最大深度.md"
   ]
 }

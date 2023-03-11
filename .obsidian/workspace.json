@@ -265,7 +265,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
                 "mode": "source",
                 "source": false
               }
@@ -362,7 +362,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -379,7 +379,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -402,7 +402,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md"
+                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md"
               }
             }
           }
@@ -427,11 +427,11 @@
   },
   "active": "0dfe8070c51eeded",
   "lastOpenFiles": [
+    "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
     "leetcode/labuladong/题目/106. 从中序与后序遍历序列构造二叉树.md",
     "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
     "leetcode/labuladong/题目/104. 二叉树的最大深度.md",

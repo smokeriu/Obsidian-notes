@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "数学/基础/向量与图形/向量的坐标.md",
+                "file": "数学/基础/向量与图形/向量计算.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "数学/基础/向量与图形/向量的坐标.md",
+                "file": "数学/基础/向量与图形/向量计算.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "数学/基础/向量与图形/向量的坐标.md",
+                "file": "数学/基础/向量与图形/向量计算.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "数学/基础/向量与图形/向量的坐标.md"
+                "file": "数学/基础/向量与图形/向量计算.md"
               }
             }
           }
@@ -163,6 +163,7 @@
   },
   "active": "973d608c8252d69a",
   "lastOpenFiles": [
+    "数学/基础/向量与图形/向量的坐标.md",
     "数学/基础/向量与图形/向量计算.md",
     "leetcode/labuladong/相关算法/数组算法/前缀和数组.md",
     "数学/未命名.md",
@@ -171,7 +172,6 @@
     "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
     "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md"
+    "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md"
   ]
 }

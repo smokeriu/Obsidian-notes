@@ -4,107 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "82e43f6fb4457a80",
+        "id": "8e1ee2b3de38cd50",
         "type": "tabs",
         "children": [
           {
-            "id": "b3eb23e830d0fdd0",
+            "id": "d8e63422e74a6d5e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "leetcode/labuladong/题目/654. 最大二叉树.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e4434754fada32cd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a070ffb3ab9fe1fa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/654. 最大二叉树.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e13e3c4cff9bd7b9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "edb54b69bb784a97",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/297. 二叉树的序列化与反序列化.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "81f5e15fd9fd9228",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/297. 二叉树的序列化与反序列化.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f8c9ae25872a6563",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "58d2919a071327e6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/652. 寻找重复的子树.md",
+                "file": "数学/基础/向量与图形/向量.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -170,14 +85,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/题目/652. 寻找重复的子树.md",
+                "file": "数学/基础/向量与图形/向量.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -187,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/题目/652. 寻找重复的子树.md",
+                "file": "数学/基础/向量与图形/向量.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -210,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/labuladong/题目/652. 寻找重复的子树.md"
+                "file": "数学/基础/向量与图形/向量.md"
               }
             }
           }
@@ -233,17 +148,17 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "58d2919a071327e6",
+  "active": "d8e63422e74a6d5e",
   "lastOpenFiles": [
-    "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
-    "leetcode/labuladong/题目/297. 二叉树的序列化与反序列化.md",
+    "leetcode/labuladong/相关算法/数组算法/前缀和数组.md",
+    "数学/基础/向量与图形/向量.md",
+    "数学/未命名.md",
+    "leetcode/labuladong/题目/889. 根据前序和后序遍历构造二叉树.md",
+    "leetcode/labuladong/题目/106. 从中序与后序遍历序列构造二叉树.md",
     "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
-    "leetcode/labuladong/题目/654. 最大二叉树.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
-    "leetcode/labuladong/题目/870. 优势洗牌.md",
-    "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
-    "leetcode/labuladong/题目/114. 二叉树展开为链表.md"
+    "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的中序遍历.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md"
   ]
 }

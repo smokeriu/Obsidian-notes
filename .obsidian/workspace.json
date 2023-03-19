@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "数学/基础/向量与图形/向量.md",
+                "file": "数学/基础/向量与图形/向量计算.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "973d608c8252d69a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "数学/基础/向量与图形/向量的坐标.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "数学/基础/向量与图形/向量.md",
+                "file": "数学/基础/向量与图形/向量的坐标.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "数学/基础/向量与图形/向量.md",
+                "file": "数学/基础/向量与图形/向量的坐标.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "数学/基础/向量与图形/向量.md"
+                "file": "数学/基础/向量与图形/向量的坐标.md"
               }
             }
           }
@@ -148,10 +161,10 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "d8e63422e74a6d5e",
+  "active": "973d608c8252d69a",
   "lastOpenFiles": [
+    "数学/基础/向量与图形/向量计算.md",
     "leetcode/labuladong/相关算法/数组算法/前缀和数组.md",
-    "数学/基础/向量与图形/向量.md",
     "数学/未命名.md",
     "leetcode/labuladong/题目/889. 根据前序和后序遍历构造二叉树.md",
     "leetcode/labuladong/题目/106. 从中序与后序遍历序列构造二叉树.md",

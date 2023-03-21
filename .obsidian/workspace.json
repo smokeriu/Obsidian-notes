@@ -4,47 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "8e1ee2b3de38cd50",
+        "id": "09e62ad8af6282fc",
         "type": "tabs",
         "children": [
           {
-            "id": "d8e63422e74a6d5e",
+            "id": "1b3d23001cbdef07",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "数学/基础/向量与图形/向量计算.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "973d608c8252d69a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "数学/基础/向量与图形/向量计算.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4ccae55b4a8b7258",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "数学/基础/向量与图形/向量计算.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,14 +81,13 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "数学/基础/向量与图形/向量计算.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
             }
           },
@@ -127,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "数学/基础/向量与图形/向量计算.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "数学/基础/向量与图形/向量计算.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -163,9 +130,9 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "canvas:新建白板": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
-      "canvas:Create new canvas": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
@@ -173,17 +140,24 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "4ccae55b4a8b7258",
+  "active": "1b3d23001cbdef07",
   "lastOpenFiles": [
-    "数学/基础/向量与图形/右手方向规则.md",
+    "conflict-files-obsidian-git.md",
+    "leetcode/labuladong/题目/76. 最小覆盖子串.md",
+    "leetcode/labuladong/相关算法/数组算法/滑动窗口.md",
     "数学/基础/向量与图形/向量计算.md",
     "数学/基础/向量与图形/向量的坐标.md",
-    "leetcode/labuladong/相关算法/数组算法/前缀和数组.md",
-    "数学/未命名.md",
-    "leetcode/labuladong/题目/889. 根据前序和后序遍历构造二叉树.md",
-    "leetcode/labuladong/题目/106. 从中序与后序遍历序列构造二叉树.md",
+    "数学/基础/向量与图形/右手方向规则.md",
+    "数学/基础/向量与图形/assets/Pasted image 20230319174047.png",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+    "leetcode/labuladong/题目/297. 二叉树的序列化与反序列化.md",
     "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的后序遍历.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md"
+    "leetcode/labuladong/题目/654. 最大二叉树.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
+    "leetcode/labuladong/题目/870. 优势洗牌.md",
+    "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+    "leetcode/labuladong/题目/114. 二叉树展开为链表.md"
   ]
 }

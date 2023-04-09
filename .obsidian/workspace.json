@@ -54,9 +54,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ecfe7202a51fca49",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "图计算/SparkGraph/Mapping操作.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -122,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "图计算/SparkGraph/顶点对象和边对象.md",
+                "file": "图计算/SparkGraph/Mapping操作.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "图计算/SparkGraph/顶点对象和边对象.md",
+                "file": "图计算/SparkGraph/Mapping操作.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "图计算/SparkGraph/顶点对象和边对象.md"
+                "file": "图计算/SparkGraph/Mapping操作.md"
               }
             }
           }
@@ -185,10 +197,10 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "700fe8ac3e88deda",
+  "active": "ecfe7202a51fca49",
   "lastOpenFiles": [
-    "图计算/SparkGraph/方法含义.md",
     "图计算/SparkGraph/顶点对象和边对象.md",
+    "图计算/SparkGraph/方法含义.md",
     "图计算/基础名词.md",
     "图计算/assets/Pasted image 20230409144004.png",
     "图计算/SparkGraph/RDF图和属性图.md",

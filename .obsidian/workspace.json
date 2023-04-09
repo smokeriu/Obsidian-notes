@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "图计算/SparkGraph/方法和名词.md",
+                "file": "图计算/SparkGraph/方法含义.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "66c74a8b4f9b28ac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "图计算/SparkGraph/基础名词.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "图计算/SparkGraph/方法和名词.md",
+                "file": "图计算/SparkGraph/基础名词.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "图计算/SparkGraph/方法和名词.md",
+                "file": "图计算/SparkGraph/基础名词.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "图计算/SparkGraph/方法和名词.md"
+                "file": "图计算/SparkGraph/基础名词.md"
               }
             }
           }
@@ -148,8 +161,9 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "1b3d23001cbdef07",
+  "active": "66c74a8b4f9b28ac",
   "lastOpenFiles": [
+    "图计算/SparkGraph/方法含义.md",
     "conflict-files-obsidian-git.md",
     "leetcode/labuladong/题目/76. 最小覆盖子串.md",
     "leetcode/labuladong/相关算法/数组算法/滑动窗口.md",
@@ -158,14 +172,6 @@
     "数学/基础/向量与图形/右手方向规则.md",
     "数学/基础/向量与图形/assets/Pasted image 20230319174047.png",
     "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
-    "leetcode/labuladong/题目/297. 二叉树的序列化与反序列化.md",
-    "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
-    "leetcode/labuladong/题目/654. 最大二叉树.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
-    "leetcode/labuladong/题目/870. 优势洗牌.md",
-    "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
-    "leetcode/labuladong/题目/114. 二叉树展开为链表.md"
+    "leetcode/labuladong/题目/297. 二叉树的序列化与反序列化.md"
   ]
 }

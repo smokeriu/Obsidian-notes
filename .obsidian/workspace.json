@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "09e62ad8af6282fc",
+        "id": "8b4ad14e9186c8b2",
         "type": "tabs",
         "children": [
           {
-            "id": "1b3d23001cbdef07",
+            "id": "a26afb8488c70c48",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "图计算/SparkGraph/Mapping操作.md",
+                "file": "图计算/SparkGraph/方法含义.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "图计算/SparkGraph/Mapping操作.md",
+                "file": "图计算/SparkGraph/方法含义.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "图计算/SparkGraph/Mapping操作.md",
+                "file": "图计算/SparkGraph/方法含义.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "图计算/SparkGraph/Mapping操作.md"
+                "file": "图计算/SparkGraph/方法含义.md"
               }
             }
           }
@@ -138,7 +138,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "canvas:新建白板": false,
+      "canvas:Create new canvas": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "daily-notes:打开/创建今天的日记": false,
@@ -148,41 +148,17 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "1b3d23001cbdef07",
+  "active": "a26afb8488c70c48",
   "lastOpenFiles": [
-    "图计算/SparkGraph/顶点对象和边对象.md",
-    "图计算/SparkGraph/assets/Pasted image 20230409151401.png",
-    "图计算/SparkGraph/assets/Pasted image 20230409151240.png",
-    "图计算/SparkGraph/assets/Pasted image 20230409150238.png",
-    "图计算/assets/Pasted image 20230409145344.png",
-    "图计算/assets/Pasted image 20230409145125.png",
-    "图计算/assets/Pasted image 20230409144720.png",
-    "图计算/assets/Pasted image 20230409144354.png",
-    "图计算/assets/Pasted image 20230409144040.png",
-    "图计算/assets/Pasted image 20230409144004.png",
-    "图计算/SparkGraph/方法含义.md",
-    "图计算/SparkGraph/assets",
     "图计算/SparkGraph/Mapping操作.md",
+    "图计算/SparkGraph/顶点对象和边对象.md",
+    "图计算/SparkGraph/方法含义.md",
     "图计算/基础名词.md",
-    "图计算/assets",
-    "图计算/SparkGraph",
-    "图计算",
+    "图计算/assets/Pasted image 20230409144004.png",
+    "图计算/SparkGraph/RDF图和属性图.md",
     "conflict-files-obsidian-git.md",
     "leetcode/labuladong/题目/76. 最小覆盖子串.md",
     "leetcode/labuladong/相关算法/数组算法/滑动窗口.md",
-    "数学/基础/向量与图形/向量计算.md",
-    "数学/基础/向量与图形/向量的坐标.md",
-    "数学/基础/向量与图形/右手方向规则.md",
-    "数学/基础/向量与图形/assets/Pasted image 20230319174047.png",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
-    "leetcode/labuladong/题目/297. 二叉树的序列化与反序列化.md",
-    "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
-    "leetcode/labuladong/题目/654. 最大二叉树.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
-    "leetcode/labuladong/题目/870. 优势洗牌.md",
-    "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
-    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
-    "leetcode/labuladong/题目/114. 二叉树展开为链表.md"
+    "数学/基础/向量与图形/向量计算.md"
   ]
 }

@@ -13,4 +13,4 @@
 - hadoop：用于封装Configuration实现其序列化传输。
 - io：用于定义如何从字节流中读取数据的抽象。
 - lookup：lookup相关功能的抽象。
-- 
+- memory：利用unsafe直接管理内存。

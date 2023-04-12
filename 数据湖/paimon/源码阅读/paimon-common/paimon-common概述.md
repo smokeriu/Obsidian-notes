@@ -11,3 +11,4 @@
 	- 数据元数据如`FieldStats`。
 - fs：文件系统的抽象，提供了local和hdfs作为内置的文件系统。并且定义了pluginable的抽象，用于适配s3等协议。
 - hadoop：用于封装Configuration实现其序列化传输。
+- io：用于定义如何从字节流中读取数据的抽象。

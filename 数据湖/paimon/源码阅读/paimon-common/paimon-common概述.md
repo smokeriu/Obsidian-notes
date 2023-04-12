@@ -7,4 +7,6 @@
 	- serializer：序列化器。
 	- 一些额外的高级数据类型，如BinaryMap等。基础数据类型则使用的是Java的基本类型，如Double，Long。
 - format：
-	- 
+	- 数据类型的抽象。
+	- 数据元数据如`FieldStats`。
+- fs：文件系统的抽象，提供了local和hdfs作为内置的文件系统。并且定义了pluginable的抽象，

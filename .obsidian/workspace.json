@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "图计算/SparkGraph/Pregel.md",
+                "file": "图计算/SparkGraph/方法含义.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "图计算/SparkGraph/Pregel.md",
+                "file": "图计算/SparkGraph/方法含义.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "图计算/SparkGraph/Pregel.md",
+                "file": "图计算/SparkGraph/方法含义.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "图计算/SparkGraph/Pregel.md"
+                "file": "图计算/SparkGraph/方法含义.md"
               }
             }
           }
@@ -163,10 +163,11 @@
   },
   "active": "f6362ecadd7701aa",
   "lastOpenFiles": [
+    "图计算/SparkGraph/Pregel.md",
+    "图计算/SparkGraph/方法含义.md",
     "图计算/SparkGraph/assets/Pasted image 20230412115833.png",
     "图计算/SparkGraph/assets/Pasted image 20230412115553.png",
     "图计算/SparkGraph/Mapping操作.md",
-    "图计算/SparkGraph/Pregel.md",
     "图计算/SparkGraph/未命名",
     "图计算/SparkGraph/顶点对象和边对象.md",
     "图计算/SparkGraph/assets/Pasted image 20230409151401.png",
@@ -177,8 +178,6 @@
     "图计算/assets/Pasted image 20230409144720.png",
     "图计算/assets/Pasted image 20230409144354.png",
     "图计算/assets/Pasted image 20230409144040.png",
-    "图计算/assets/Pasted image 20230409144004.png",
-    "图计算/SparkGraph/方法含义.md",
     "图计算/SparkGraph/assets",
     "图计算/基础名词.md",
     "图计算/assets",

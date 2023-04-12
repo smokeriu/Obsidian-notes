@@ -5,6 +5,6 @@
 - data：数据类型的定义，包括：
 	- columnar：列存类型。
 	- serializer：序列化器。
-	- 
+	- 一些额外的高级数据类型，如BinaryMap等。基础数据类型则使用的是Java的基本类型，如Double，Long。
 - format：
 	- 

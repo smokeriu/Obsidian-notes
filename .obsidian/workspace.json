@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "图计算/SparkGraph/方法含义.md",
+                "file": "图计算/SparkGraph/顶点对象和边对象.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "图计算/SparkGraph/方法含义.md",
+                "file": "图计算/SparkGraph/顶点对象和边对象.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "图计算/SparkGraph/方法含义.md",
+                "file": "图计算/SparkGraph/顶点对象和边对象.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "图计算/SparkGraph/方法含义.md"
+                "file": "图计算/SparkGraph/顶点对象和边对象.md"
               }
             }
           }
@@ -163,6 +163,7 @@
   },
   "active": "f6362ecadd7701aa",
   "lastOpenFiles": [
+    "图计算/SparkGraph/方法含义.md",
     "数据湖/paimon/源码阅读/paimon-core/paimon-core概述.md",
     "数据湖/paimon/源码阅读/paimon-common/paimon-common概述.md",
     "数据湖/paimon/源码阅读/paimon-core",
@@ -172,7 +173,6 @@
     "数据湖",
     "图计算/SparkGraph/assets/Pasted image 20230412133828.png",
     "图计算/SparkGraph/Pregel.md",
-    "图计算/SparkGraph/方法含义.md",
     "图计算/SparkGraph/assets/Pasted image 20230412115833.png",
     "图计算/SparkGraph/assets/Pasted image 20230412115553.png",
     "图计算/SparkGraph/Mapping操作.md",

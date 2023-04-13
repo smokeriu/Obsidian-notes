@@ -163,8 +163,9 @@
   },
   "active": "f6362ecadd7701aa",
   "lastOpenFiles": [
-    "图计算/SparkGraph/顶点对象和边对象.md",
     "图计算/SparkGraph/Pregel.md",
+    "图计算/SparkGraph/Mapping操作.md",
+    "图计算/SparkGraph/顶点对象和边对象.md",
     "图计算/SparkGraph/方法含义.md",
     "数据湖/paimon/源码阅读/paimon-core/paimon-core概述.md",
     "数据湖/paimon/源码阅读/paimon-common/paimon-common概述.md",
@@ -176,7 +177,6 @@
     "图计算/SparkGraph/assets/Pasted image 20230412133828.png",
     "图计算/SparkGraph/assets/Pasted image 20230412115833.png",
     "图计算/SparkGraph/assets/Pasted image 20230412115553.png",
-    "图计算/SparkGraph/Mapping操作.md",
     "图计算/SparkGraph/未命名",
     "图计算/SparkGraph/assets/Pasted image 20230409151401.png",
     "图计算/SparkGraph/assets/Pasted image 20230409151240.png",

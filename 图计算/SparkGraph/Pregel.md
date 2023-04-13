@@ -18,4 +18,4 @@
 
 # pergel函数
 
-
+参考：[pergel](方法含义.md#pergel)

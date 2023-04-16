@@ -4,83 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "8b4ad14e9186c8b2",
+        "id": "09e62ad8af6282fc",
         "type": "tabs",
         "children": [
           {
-            "id": "a26afb8488c70c48",
+            "id": "1b3d23001cbdef07",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "图计算/SparkGraph/Pregel.md",
+                "file": "图计算/SparkGraph/Mapping操作.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "fffa3c0a1de41edc",
+            "id": "f6362ecadd7701aa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "数据湖/paimon/源码阅读/paimon-core/paimon-core概述.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bd35a6196841bc22",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "数据湖/paimon/源码阅读/paimon-common/paimon-common概述.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4633de2e162462ef",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/归并排序.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1633308ea4994110",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/相关算法/二叉树/归并排序.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b96a648a9f0e0cc5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/315. 计算右侧小于当前元素的个数.md",
+                "file": "图计算/SparkGraph/方法含义.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,6 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "图计算/SparkGraph/方法含义.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,6 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "图计算/SparkGraph/方法含义.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -183,7 +137,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "图计算/SparkGraph/方法含义.md"
+              }
             }
           }
         ]
@@ -205,23 +161,53 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "c0e9f61564ef2414",
+  "active": "f6362ecadd7701aa",
   "lastOpenFiles": [
-    "未命名.canvas",
     "leetcode/labuladong/题目/493. 翻转对.md",
     "leetcode/labuladong/题目/315. 计算右侧小于当前元素的个数.md",
-    "leetcode/labuladong/题目/654. 最大二叉树.md",
     "leetcode/labuladong/相关算法/二叉树/归并排序.md",
     "leetcode/labuladong/相关算法/二叉树/assets/Pasted image 20230416153946.png",
-    "数据湖/paimon/源码阅读/paimon-common/paimon-common概述.md",
-    "数据湖/paimon/源码阅读/paimon-core/paimon-core概述.md",
     "图计算/SparkGraph/Pregel.md",
-    "图计算/SparkGraph/Mapping操作.md",
     "图计算/SparkGraph/方法含义.md",
+    "图计算/SparkGraph/Mapping操作.md",
     "图计算/SparkGraph/顶点对象和边对象.md",
+    "数据湖/paimon/源码阅读/paimon-core/paimon-core概述.md",
+    "数据湖/paimon/源码阅读/paimon-common/paimon-common概述.md",
+    "数据湖/paimon/源码阅读/paimon-core",
+    "数据湖/paimon/源码阅读/paimon-common",
+    "数据湖/paimon/源码阅读",
+    "数据湖/paimon",
+    "数据湖",
+    "图计算/SparkGraph/assets/Pasted image 20230412133828.png",
+    "图计算/SparkGraph/assets/Pasted image 20230412115833.png",
+    "图计算/SparkGraph/assets/Pasted image 20230412115553.png",
+    "图计算/SparkGraph/未命名",
+    "图计算/SparkGraph/assets/Pasted image 20230409151401.png",
+    "图计算/SparkGraph/assets/Pasted image 20230409151240.png",
+    "图计算/SparkGraph/assets/Pasted image 20230409150238.png",
+    "图计算/assets/Pasted image 20230409145344.png",
+    "图计算/assets/Pasted image 20230409145125.png",
+    "图计算/assets/Pasted image 20230409144720.png",
+    "图计算/SparkGraph/assets",
     "图计算/基础名词.md",
-    "图计算/assets/Pasted image 20230409144004.png",
-    "图计算/SparkGraph/RDF图和属性图.md",
-    "conflict-files-obsidian-git.md"
+    "图计算/assets",
+    "图计算/SparkGraph",
+    "图计算",
+    "conflict-files-obsidian-git.md",
+    "leetcode/labuladong/题目/76. 最小覆盖子串.md",
+    "leetcode/labuladong/相关算法/数组算法/滑动窗口.md",
+    "数学/基础/向量与图形/向量计算.md",
+    "数学/基础/向量与图形/向量的坐标.md",
+    "数学/基础/向量与图形/右手方向规则.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的前序遍历.md",
+    "leetcode/labuladong/题目/297. 二叉树的序列化与反序列化.md",
+    "leetcode/labuladong/题目/105. 从前序与中序遍历序列构造二叉树.md",
+    "leetcode/labuladong/题目/654. 最大二叉树.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的解题思路.md",
+    "leetcode/labuladong/题目/870. 优势洗牌.md",
+    "leetcode/日常题目/面试题 05.02. 二进制数转字符串.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的遍历.md",
+    "leetcode/labuladong/相关算法/二叉树/二叉树的分类.md",
+    "leetcode/labuladong/题目/114. 二叉树展开为链表.md"
   ]
 }

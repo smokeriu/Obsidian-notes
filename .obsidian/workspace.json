@@ -78,21 +78,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "5d3ffe70fd71369a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/labuladong/题目/493. 翻转对.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -158,7 +146,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/labuladong/题目/493. 翻转对.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +162,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/labuladong/题目/493. 翻转对.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -197,9 +183,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "leetcode/labuladong/题目/493. 翻转对.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -221,10 +205,11 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "5d3ffe70fd71369a",
+  "active": "c0e9f61564ef2414",
   "lastOpenFiles": [
-    "leetcode/labuladong/题目/315. 计算右侧小于当前元素的个数.md",
+    "未命名.canvas",
     "leetcode/labuladong/题目/493. 翻转对.md",
+    "leetcode/labuladong/题目/315. 计算右侧小于当前元素的个数.md",
     "leetcode/labuladong/题目/654. 最大二叉树.md",
     "leetcode/labuladong/相关算法/二叉树/归并排序.md",
     "leetcode/labuladong/相关算法/二叉树/assets/Pasted image 20230416153946.png",

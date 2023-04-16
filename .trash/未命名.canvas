@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"cf9b30e493c28877","x":-125,"y":-30,"width":250,"height":60,"type":"text","text":""},
+		{"id":"7b507b0e3c0e71f2","x":240,"y":-200,"width":400,"height":400,"type":"file","file":"leetcode/labuladong/题目/493. 翻转对.md"}
+	],
+	"edges":[
+		{"id":"fa681292c6b6aa1f","fromNode":"cf9b30e493c28877","fromSide":"right","toNode":"7b507b0e3c0e71f2","toSide":"left"}
+	]
+}

@@ -64,7 +64,7 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 5. triggerAndAcknowledgeAllCoordinatorCheckpointsWithCompletion
 	1. 依次触发所有OperatorCoordinators的Snapshot。
 	2. 通知所有的OperatorCoordinator。判断checkopint的执行情况，并保存OperatorState。
-		1. 这里的State是主键的State，他包含了主节点上Operator的状态，并持有指向子节点具体任务的状态的。
+		1. 这里的State是主键的State，他包含了主节点上Operator的状态，并持有指向子节点具体任务的状态。
 	3. 得到`coordinatorCheckpointsComplete`。
 6. 在第五步完成后，获取第3步生成的pendingCheckpoint，用于生成masterState。得到`masterStatesComplete`。
 7. 等待`masterStatesComplete`和`coordinatorCheckpointsComplete`。用于等待主节点的checkpint执行完成。在进行从节点的checkpoint。
@@ -82,4 +82,7 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 }
 ```
 9. 最终经由TaskManagerGateway，发送到具体的Task执行triggerCheckpointBarrier方法。
+
 ## Barrier
+1. 调用triggerCheckpointAsync
+2. 

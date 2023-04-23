@@ -62,23 +62,23 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 3. createPendingCheckpoint。这表示一个处于中间状态的 checkpoint，持有checkpoint所需的一些信息。
 4. 计算checkpointStorageLocation。
 5. triggerAndAcknowledgeAllCoordinatorCheckpointsWithCompletion
-	1. 依次触发所有 OperatorCoordinators的Snapshot。
+	1. 依次触发所有OperatorCoordinators的Snapshot。
 	2. 通知所有的OperatorCoordinator。
 	3. 得到`coordinatorCheckpointsComplete`。
 6. 在第五步完成后，获取第3步生成的pendingCheckpoint，用于生成masterState。得到`masterStatesComplete`。
-7. 等待`masterStatesComplete`和`coordinatorCheckpointsComplete`。
+7. 等待`masterStatesComplete`和`coordinatorCheckpointsComplete`。用于等待
 8. 如果没有异常，则触发triggerCheckpointRequest。通过triggerTasks的触发Barrier。
 ```java
 for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {  
-	
+	// 所有设置了trigger的。一般都是source
 	if (request.props.isSynchronous()) {  
 		acks.add(  
 			execution.triggerSynchronousSavepoint(  
-			checkpointId, timestamp, checkpointOptions));  
-	} else {  
+				checkpointId, timestamp, checkpointOptions));  
+	} else { 
 		acks.add(execution.triggerCheckpoint(checkpointId, timestamp, checkpointOptions));  
 	}  
 }
 ```
-
+9. 最终经由TaskManagerGateway，发送到具体的Task执行triggerCheckpointBarrier方法。
 ## Barrier

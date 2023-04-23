@@ -43,4 +43,10 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 ```
 其中，`startCheckpointScheduler`会调用timer的`scheduleAtFixedRate`来定时触发checkpoint。
 
+> timer由ScheduledExecutorServiceAdapter触发。
+
 # checkpoint的触发
+
+具体的触发逻辑在`CheckpointCoordinator`的`triggerCheckpoint`中。
+1. 构建CheckpointTriggerRequest。
+2. 

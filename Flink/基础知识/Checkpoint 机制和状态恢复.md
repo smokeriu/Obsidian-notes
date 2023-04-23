@@ -63,10 +63,10 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 4. 计算checkpointStorageLocation。
 5. triggerAndAcknowledgeAllCoordinatorCheckpointsWithCompletion
 	1. 依次触发所有OperatorCoordinators的Snapshot。
-	2. 通知所有的OperatorCoordinator。
+	2. 通知所有的OperatorCoordinator。判断checkopint的执行情况，并保存状态。
 	3. 得到`coordinatorCheckpointsComplete`。
 6. 在第五步完成后，获取第3步生成的pendingCheckpoint，用于生成masterState。得到`masterStatesComplete`。
-7. 等待`masterStatesComplete`和`coordinatorCheckpointsComplete`。用于等待
+7. 等待`masterStatesComplete`和`coordinatorCheckpointsComplete`。用于等待主节点的checkpint执行完成。在进行从节点的checkpoint。
 8. 如果没有异常，则触发triggerCheckpointRequest。通过triggerTasks的触发Barrier。
 ```java
 for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {  

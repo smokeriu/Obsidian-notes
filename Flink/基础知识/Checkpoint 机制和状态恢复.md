@@ -67,6 +67,18 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 	3. 得到`coordinatorCheckpointsComplete`。
 6. 在第五步完成后，获取第3步生成的pendingCheckpoint，用于生成masterState。得到`masterStatesComplete`。
 7. 等待`masterStatesComplete`和`coordinatorCheckpointsComplete`。
-8. 如果没有异常，则触发triggerCheckpointRequest。通过afterSourceBarrierInjection
+8. 如果没有异常，则触发triggerCheckpointRequest。通过triggerTasks的触发Barrier。
+```java
+for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {  
+	
+	if (request.props.isSynchronous()) {  
+		acks.add(  
+			execution.triggerSynchronousSavepoint(  
+			checkpointId, timestamp, checkpointOptions));  
+	} else {  
+		acks.add(execution.triggerCheckpoint(checkpointId, timestamp, checkpointOptions));  
+	}  
+}
+```
 
 ## Barrier

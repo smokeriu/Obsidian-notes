@@ -111,4 +111,7 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 			- 在一些老版本中，对齐会将数据收集在缓存中，而非阻塞这一路。
 		- 不对齐：收到一个Barrier时，将InputBuffer和OutputBuffer中的数据一并缓存。还会缓存上游其他路算子barrier前的数据。
 - CheckpointBarrierTracker：至少一次。
-> 这里的Channel，指的是其接受的
+> 这里的Channel，指的是其接受的parition个数，如果上一步是多线程的，则即使不是shuffle，也可能有多路channel。
+
+
+参考： [flink-source-code-checkpoint](https://blog.jrwang.me/2019/flink-source-code-checkpoint/)

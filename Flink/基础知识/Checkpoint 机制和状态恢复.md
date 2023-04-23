@@ -106,5 +106,5 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 ### processBarrier
 根据是否是精确一次，使用的BarrierHandle会有所不同。
 - SingleCheckpointBarrierHandler：精确一次。
-	- 如果输入有多个，在接收到后，会阻塞这一路（数据放入缓存）。从而实现精确一次。
+	- 如果输入有多个，在接收到一个Barrier后，会直接连同未处理的数据一并放入checkpoint中。
 - CheckpointBarrierTracker：至少一次

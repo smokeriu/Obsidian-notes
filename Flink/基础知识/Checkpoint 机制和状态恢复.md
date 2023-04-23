@@ -85,4 +85,6 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 
 ## Barrier
 1. 调用triggerCheckpointAsync
-2. 
+2. 初始化一个新的`InputsCheckpoint`。subtaskCheckpointCoordinator.initInputsCheckpoint
+3. 触发checkpointState方法。
+4. 

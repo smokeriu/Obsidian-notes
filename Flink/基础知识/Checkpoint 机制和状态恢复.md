@@ -29,3 +29,15 @@ if (checkpointCoordinator.isPeriodicCheckpointingConfigured()) {
 	registerJobStatusListener(checkpointCoordinator.createActivatorDeactivator());  
 }
 ```
+当状态变更为Running时，才会启动coordinator。
+```java
+public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp) {  
+	if (newJobStatus == JobStatus.RUNNING) {  
+		// start the checkpoint scheduler  
+		coordinator.startCheckpointScheduler();  
+	} else {  
+		// anything else should stop the trigger for now  
+		coordinator.stopCheckpointScheduler();  
+	}  
+}
+```

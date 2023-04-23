@@ -94,4 +94,4 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 2. 生成checkpointBarrier。
 3. 向下游发送checkpointBarrier。
 	1. operatorChain.broadcastEvent。
-4. 
+4. 注册对齐定时器，用于将对齐的barrier转换为未对齐的barrier。

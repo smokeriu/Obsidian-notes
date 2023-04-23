@@ -63,5 +63,4 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 4. 计算checkpointStorageLocation。
 5. triggerAndAcknowledgeAllCoordinatorCheckpointsWithCompletion
 	1. 依次触发所有 OperatorCoordinators的Snapshot。
-		1. 一般而言，
-	2. 
+	2. 通知所有的OperatorCoordinator。

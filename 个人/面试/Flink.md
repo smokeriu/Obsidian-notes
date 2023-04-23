@@ -1,1 +1,2 @@
 # Flink的Checkpoint机制
+Flink会在Source中生成一个Barrier的特殊消息事件，其会随着消息流入到后续的

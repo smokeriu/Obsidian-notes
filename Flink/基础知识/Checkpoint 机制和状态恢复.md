@@ -50,5 +50,7 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 具体的触发逻辑在`CheckpointCoordinator`的`triggerCheckpoint`中。
 1. 构建CheckpointTriggerRequest。
 	1. 如果有队列已满（1000），且包含用户手动触发的checkpoint，则跳过这次checkpoint。
-	2. 否则入队，
+	2. 如果距离上一次成功时间较短，也不会发送checkpointRequest。
 2. 触发startTriggeringCheckpoint方法。
+
+## 具体的触发

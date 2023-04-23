@@ -49,4 +49,5 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 
 具体的触发逻辑在`CheckpointCoordinator`的`triggerCheckpoint`中。
 1. 构建CheckpointTriggerRequest。
-2. 
+	1. 如果有用户手动触发的checkpoint
+2. 触发startTriggeringCheckpoint方法。

@@ -64,5 +64,7 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 5. triggerAndAcknowledgeAllCoordinatorCheckpointsWithCompletion
 	1. 依次触发所有 OperatorCoordinators的Snapshot。
 	2. 通知所有的OperatorCoordinator。
-6. 在第五步完成后，获取第3步生成的pendingCheckpoint，用于生成masterState。
-7. 等待masterStatesComplete和
+	3. 得到`coordinatorCheckpointsComplete`。
+6. 在第五步完成后，获取第3步生成的pendingCheckpoint，用于生成masterState。得到`masterStatesComplete`。
+7. 等待`masterStatesComplete`和`coordinatorCheckpointsComplete`。
+8. 

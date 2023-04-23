@@ -59,5 +59,5 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 	2. 默认会对source打上trigger，用于实际触发checkpoint消息。为operator和sink打上waitFor和commit标签，用于报告checkpoint的完成。
 	3. 如果此时有Task已经结束则会复杂一些，不过总体来说规则是一样的。
 2. 生成递增的checkpointID。
-3. createPendingCheckpoint。这表示一个处于中间状态的 checkpoint，
+3. createPendingCheckpoint。这表示一个处于中间状态的 checkpoint，持有checkpoint所需的一些信息。
 4. 计算checkpointStorageLocation。

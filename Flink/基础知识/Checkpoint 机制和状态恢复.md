@@ -96,3 +96,8 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 	1. operatorChain.broadcastEvent。
 4. 注册对齐定时器，用于将对齐的barrier转换为未对齐的barrier。
 5. 将StreamOperator的snapshotState方法加入Future。等待所有节点执行结束。
+
+### Barrier的处理
+
+### createInputProcessor
+在初始化Multiple/One/TwoInputStreamTask时，会生成CheckpointBarrierHandler。上述3中InputStreamTask覆盖了所有非Source的Task。

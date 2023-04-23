@@ -104,4 +104,7 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 > CheckpointedInputGate是对InputGate的进一步封装，使用的是组合的方式。
 
 ### processBarrier
-根据是否是精确一次，使用的Barrier
+根据是否是精确一次，使用的BarrierHandle会有所不同。
+- SingleCheckpointBarrierHandler：精确一次。
+	- 如果输入有多个，在接收到后，会阻塞这一路（数据放入缓存）。从而实现精确一次。
+- CheckpointBarrierTracker：至少一次

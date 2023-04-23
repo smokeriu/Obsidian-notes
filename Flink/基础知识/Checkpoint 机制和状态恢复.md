@@ -101,3 +101,4 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 
 ### createInputProcessor
 在初始化Multiple/One/TwoInputStreamTask时，会生成CheckpointBarrierHandler。上述3中InputStreamTask覆盖了所有非Source的Task。
+其内部是CheckpointedInputGate，会在收到Barrier消息后调用processBarrier方法。

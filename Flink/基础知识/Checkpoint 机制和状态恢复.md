@@ -55,4 +55,6 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 
 ## 具体的触发
 1. 生成一个checkpoint计划：`checkpointPlanCalculator.calculateCheckpointPlan()`。
+	1. 检查是否所有task都在RUNNING。
+	2. 
 2. 

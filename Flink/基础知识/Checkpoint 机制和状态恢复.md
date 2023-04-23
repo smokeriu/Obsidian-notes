@@ -41,5 +41,6 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 	}  
 }
 ```
+其中，`startCheckpointScheduler`会调用timer的`scheduleAtFixedRate`来定时触发checkpoint。
 
 # checkpoint的触发

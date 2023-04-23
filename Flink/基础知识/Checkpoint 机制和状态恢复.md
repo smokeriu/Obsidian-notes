@@ -107,6 +107,6 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 根据是否是精确一次，使用的BarrierHandle会有所不同。
 - SingleCheckpointBarrierHandler：精确一次。
 	- 提供了了对齐和不对齐两种形式。
-		- 对齐：收到
-		- 不对齐：
+		- 对齐：收到一个Barrier时，先缓存，等待其他Input的Barrier。
+		- 不对齐：收到一个Barrier时，将InputBuffer和OutputBuffer中的数据一并缓存。还会缓存上游其他路算子barrier前的数据。
 - CheckpointBarrierTracker：至少一次

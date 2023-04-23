@@ -54,3 +54,5 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 2. 触发startTriggeringCheckpoint方法。
 
 ## 具体的触发
+1. 生成一个checkpoint计划：`checkpointPlanCalculator.calculateCheckpointPlan()`。
+2. 

@@ -61,3 +61,4 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 2. 生成递增的checkpointID。
 3. createPendingCheckpoint。这表示一个处于中间状态的 checkpoint，持有checkpoint所需的一些信息。
 4. 计算checkpointStorageLocation。
+5. triggerAndAcknowledgeAllCoordinatorCheckpointsWithCompletion

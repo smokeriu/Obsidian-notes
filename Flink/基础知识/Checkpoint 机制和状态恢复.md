@@ -41,3 +41,5 @@ public void jobStatusChanges(JobID jobId, JobStatus newJobStatus, long timestamp
 	}  
 }
 ```
+
+# checkpoint的触发

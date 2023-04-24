@@ -1,3 +1,5 @@
+> 代码参考的Flink version: 1.16
+
 # Checkpoint的发起
 在`StreamingJobGraphGenerator`中，生成JobGraph后会调用`configureCheckpointing` 方法进行 Checkpoint相关的配置。具体是`configureCheckpointing方法`。
 这里会将：状态后端，Checkpoint配置一并配置。生成一个JobCheckpointingSettings。
@@ -109,7 +111,7 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 7. 完成快照，并向JobMaster的coordinator报告情况。
 	1. 具体的快照完成被放在了异步的AsyncCheckpointRunnable中。
 
-> 注意，这里
+> 注意，这里在第6步和第7步均发送了报告完成的消息，但目的地不一样。
 
 ### Barrier的处理
 
@@ -130,8 +132,12 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 processBarrier用于协调具体如何应对Barrier，具体的操作则由triggerCheckpointOnBarrier方法实现。
 
 
-参考： [flink-source-code-checkpoint](https://blog.jrwang.me/2019/flink-source-code-checkpoint/)
-
 ## 执行checkpoint
 在CheckpointableTask的triggerCheckpointOnBarrier时，即表示一个Operator收到了Barrier，便会执行一系列checkpoint的操作。
 具体的实现放在了subtaskCheckpointCoordinator.checkpointState中，具体的操作和[[Checkpoint 机制和状态恢复#checkpointState]]一致。
+
+# 总结
+
+
+# 参考
+参考： [flink-source-code-checkpoint](https://blog.jrwang.me/2019/flink-source-code-checkpoint/)

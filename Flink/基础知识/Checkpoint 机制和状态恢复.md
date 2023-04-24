@@ -111,7 +111,7 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 7. 完成快照，并向JobMaster的coordinator报告情况。
 	1. 具体的快照完成被放在了异步的AsyncCheckpointRunnable中。
 
-> 注意，这里在第6步和第7步均发送了报告完成的消息，但目的地不一样。
+> 注意，这里在第6步和第7步均发送了报告完成的消息，但目的地不一样。后者才是真正的完成checkpoint后发送的消息。前者则是用于在checkpoint期间对数据进行阻塞，从而保证一致性。
 
 ### Barrier的处理
 
@@ -137,6 +137,8 @@ processBarrier用于协调具体如何应对Barrier，具体的操作则由trigg
 具体的实现放在了subtaskCheckpointCoordinator.checkpointState中，具体的操作和[[Checkpoint 机制和状态恢复#checkpointState]]一致。
 
 # 总结
+
+1. checkpoint由
 
 
 # 参考

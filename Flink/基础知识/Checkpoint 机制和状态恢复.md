@@ -121,7 +121,4 @@ processBarrier用于协调具体如何应对Barrier，具体的操作则由trigg
 
 ## 执行checkpoint
 在CheckpointableTask的triggerCheckpointOnBarrier时，即表示一个Operator收到了Barrier，便会执行一系列checkpoint的操作。
-具体的实现放在了subtaskCheckpointCoordinator.checkpointState中，主要执行了如下操作：
-1. 如果收到的checkpoint已经被标记为停止，则向后续节点发送停止checkpoint的信息。
-	1. 
-2. 
+具体的实现放在了subtaskCheckpointCoordinator.checkpointState中，具体的操作和[[Checkpoint 机制和状态恢复#checkpointState]]

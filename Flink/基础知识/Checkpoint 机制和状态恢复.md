@@ -115,3 +115,6 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 
 
 参考： [flink-source-code-checkpoint](https://blog.jrwang.me/2019/flink-source-code-checkpoint/)
+
+### 
+在CheckpointableTask的triggerCheckpointOnBarrier

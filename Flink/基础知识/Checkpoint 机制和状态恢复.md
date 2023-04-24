@@ -104,7 +104,8 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 	1. 向外部缓存数据：channelStateWriter.finishOutput。
 6. 执行快照：takeSnapshotSync。
 	1. 调用operatorChain.snapshotState。
-7. 将StreamOperator的snapshotState方法加入Future。等待所有节点执行结束。
+7. 完成快照，并向coordinator报告情况。
+8. 将StreamOperator的snapshotState方法加入Future。等待所有节点执行结束。
 
 ### Barrier的处理
 

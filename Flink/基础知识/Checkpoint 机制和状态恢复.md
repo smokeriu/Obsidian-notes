@@ -138,7 +138,10 @@ processBarrier用于协调具体如何应对Barrier，具体的操作则由trigg
 
 # 总结
 
-1. checkpoint由
+1. checkpoint由ExecutionGraphBuilder创建的CheckpointCoordinator负责。
+2. 触发checkpoint时，会先生成checkpointPlan，此时会先触发master和coordinator的checkpoint，并等待完成。
+3. 其他的checkpoint基本都由CheckpointableTask接口定义，其中source会调用`triggerCheckpointOnBarrier方法，而operator会调用`triggerCheckpointAsync`方法。但最终具体的逻辑会回到`subtaskCheckpointCoordinator.checkpointState`中。
+4. 
 
 
 # 参考

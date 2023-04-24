@@ -105,8 +105,11 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 6. 执行快照：takeSnapshotSync。
 	1. 调用operatorChain.snapshotState。
 	2. 具体的快照逻辑则取决于StreamOperator的snapshotState方法，并加入Future。
-7. 完成快照，并向coordinator报告情况。
-8. 
+	3. 向operatorCoordinator发送消息，报告这个task的checkpoint已经完成。
+7. 完成快照，并向JobMaster的coordinator报告情况。
+	1. 具体的快照完成被放在了异步的AsyncCheckpointRunnable中。
+
+> 注意，这里
 
 ### Barrier的处理
 

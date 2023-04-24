@@ -90,6 +90,9 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 3. 触发checkpointState方法。这里就涉及到Barrier了
 
 ### checkpointState
+
+> Source 和 operator的处理逻辑均在这里。
+
 1. 让下游准备处理Barrier。
 	1. operatorChain.prepareSnapshotPreBarrier
 2. 生成checkpointBarrier。

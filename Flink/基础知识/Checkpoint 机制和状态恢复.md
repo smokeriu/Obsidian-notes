@@ -94,8 +94,9 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 > Source 和 operator的处理逻辑均在这里。
 
 1. 让下游准备处理Barrier。
-	1. operatorChain.prepareSnapshotPreBarrier
+	1. operatorChain.prepareSnapshotPreBarrier。
 2. 生成checkpointBarrier。
+	1. 意思是无论Source还是operator都会在这里生成自己的Barrier，用于向下游传递。
 3. 向下游发送checkpointBarrier。
 	1. operatorChain.broadcastEvent。
 4. 注册对齐定时器，用于将对齐的barrier转换为未对齐的barrier。

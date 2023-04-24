@@ -100,7 +100,11 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 3. 向下游发送checkpointBarrier。
 	1. operatorChain.broadcastEvent。
 4. 注册对齐定时器，用于将对齐的barrier转换为未对齐的barrier。
-5. 将StreamOperator的snapshotState方法加入Future。等待所有节点执行结束。
+5. 如果需要缓存in-flight数据（即非对齐）
+	1. 向外部缓存数据：channelStateWriter.finishOutput。
+6. 执行快照：takeSnapshotSync。
+	1. 调用operatorChain.snapshotState。
+7. 将StreamOperator的snapshotState方法加入Future。等待所有节点执行结束。
 
 ### Barrier的处理
 

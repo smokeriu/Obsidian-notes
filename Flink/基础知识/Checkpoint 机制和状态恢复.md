@@ -84,7 +84,8 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 9. 最终经由TaskManagerGateway，发送到具体的Task执行triggerCheckpointBarrier方法。
 
 ## Barrier
-1. 调用triggerCheckpointAsync
+1. 调用triggerCheckpointAsync。这是CheckpointableTask接口所定义的方法，用于sourceTask触发barrier。
+	1. 同接口还定义了triggerCheckpointOnBarrier，用于一般的operator处理收到barrier后的操作。
 2. 初始化一个新的`InputsCheckpoint`。subtaskCheckpointCoordinator.initInputsCheckpoint
 3. 触发checkpointState方法。这里就涉及到Barrier了
 
@@ -113,8 +114,11 @@ for (Execution execution : checkpoint.getCheckpointPlan().getTasksToTrigger()) {
 - CheckpointBarrierTracker：至少一次。
 > 这里的Channel，指的是其接受的parition个数，如果上一步是多线程的，则即使不是shuffle，也可能有多路channel。
 
+processBarrier用于协调具体如何应对Barrier，具体的操作则由triggerCheckpointOnBarrier方法实现。
+
 
 参考： [flink-source-code-checkpoint](https://blog.jrwang.me/2019/flink-source-code-checkpoint/)
 
 ## 执行checkpoint
 在CheckpointableTask的triggerCheckpointOnBarrier时，即表示一个Operator收到了Barrier，便会执行一系列checkpoint的操作。
+具体的实现放在了subtaskCheckpointCoordinator.checkpointState中，

@@ -15,6 +15,7 @@
 	1. RecordWriter 包含一组序列化器，每个消费数据的 Task 分别对应一个。
 	2. ChannelSelector 会选择一个或多个序列化器处理记录。例如，如果记录需要被广播，那么就会被交给每一个序列化器进行处理；如果记录是按照 hash 进行分区的，ChannelSelector 会计算记录的哈希值，然后选择对应的序列化器。
 2. 序列化器会将记录序列化为二进制数据，并将其存放在固定大小的 buffer 中（一条记录可能需要跨越多个 buffer）。这些 buffer 被交给 BufferWriter 处理，写入到 ResultPartition（RP）中。
+	1. RP 由多个子分区（ResultSubpartitions - RSs）构成，每一个子分区都只收集特定消费者需要的数据。在上图中，需要被第二个 reducer （在 TaskManager 2 中）消费的记录被放在 RS2 中。由于第一个 Buffer 已经生成，RS2 就变成可被消费的状态了（注意，这个行为实现了一个 streaming shuffle），接着它通知 JobManager。
 
 
 # 参考

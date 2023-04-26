@@ -24,12 +24,15 @@
 
 ## JobVertex
 
+> 多个operator会被chain到一起形成JobVertex
+
+`JobGraph` 是对 `StreamGraph` 进一步进行优化后得到的逻辑图，它尽量把可以 chain 到一起 operator 合并为一个 `JobVertex`。
 
 ## IntermediateDataset
 
 > 表示一个Jobvertex的输出结果。
 
-`JobGraph` 中对中间结果的抽象。`JobGraph` 是对 `StreamGraph` 进一步进行优化后得到的逻辑图，它尽量把可以 chain 到一起 operator 合并为一个 `JobVertex`。而 `IntermediateDataset` 就表示一个 `JobVertex` 的**输出结果**。
+`JobGraph` 中对中间结果的抽象。而 `IntermediateDataset` 就表示一个 `JobVertex` 的**输出结果**。
 
 `JobVertex` 的输入是 `JobEdge`，而 `JobEdge` 可以看作是 `IntermediateDataset` 的消费者（上一个vertex产生的结果）。一个 `JobVertex` 也可能产生多个 `IntermediateDataset`。
 

@@ -8,6 +8,7 @@
 > 对于非shuffle场景，flink会尽力优化为operator-chain。
 
 # 字节缓冲区在两个 Task 之间的传输
+![[Pasted image 20230426161454.png]]
 
 
 

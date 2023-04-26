@@ -1,0 +1,1 @@
+一个 TaskManager 中可能会同时并行运行多个 Task，每个 Task 都在单独的线程中运行。在不同的 TaskManager 中运行的 Task 之间进行数据传输要基于网络进行通信。实际上，是 TaskManager 和另一个 TaskManager 之间通过网络进行通信，通信是基于 Netty 创建的标准的 TCP 连接，同一个 TaskManager 内运行的不同 Task 会复用网络连接。

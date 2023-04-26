@@ -22,6 +22,12 @@
 
 # 基本概念
 
+## IntermediateDataset
+`JobGraph` 中对中间结果的抽象。`JobGraph` 是对 `StreamGraph` 进一步进行优化后得到的逻辑图，它尽量把可以 chain 到一起 operator 合并为一个 `JobVertex`。而 `IntermediateDataset` 就表示一个 `JobVertex` 的**输出结果**。
+
+
+
+## IntermediateResult 和 IntermediateResultpartition
 
 
 # 参考

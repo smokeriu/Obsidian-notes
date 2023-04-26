@@ -49,7 +49,7 @@
 
 由于一个节点在实际运行时可能有多个并行子任务同时运行，所以 `ExecutionJobVertex` 按照并行度的设置被拆分为多个 `ExecutionVertex`，每一个表示一个并行的子任务。同样的，一个 `IntermediataResult` 也会被拆分为多个 `IntermediateResultPartition`，`IntermediateResultPartition` 对应 `ExecutionVertex` 的输出结果。
 
-一个 `IntermediateDataset` 只有一个消费者，那么一个 `IntermediataResult` 也只会有一个消费者。但是到了 `IntermediateResultPartition` 这里，由于节点被拆分成了并行化的节点，所以一个 `IntermediateResultPartition` 可能会有**多个** `ExecutionEdge` 作为消费者。
+一个 `IntermediateDataset` 只有一个消费者，那么一个 `IntermediataResult` 也只会有**一个**消费者。但是到了 `IntermediateResultPartition` 这里，由于节点被拆分成了并行化的节点，所以一个 `IntermediateResultPartition` 可能会有**多个** `ExecutionEdge` 作为消费者。
 
 
 

@@ -10,5 +10,7 @@
 # 字节缓冲区在两个 Task 之间的传输
 
 
+
 # 参考
-[Data exchange between taks](https://cwiki.apache.org/confluence/display/FLINK/Data+exchange+between+tasks)
+1. [Data exchange between tasks](https://cwiki.apache.org/confluence/display/FLINK/Data+exchange+between+tasks)
+2. [Task 之间的数据传输](https://blog.jrwang.me/2019/flink-source-code-data-exchange/)

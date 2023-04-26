@@ -18,6 +18,7 @@
 	1. RP 由多个子分区（ResultSubpartitions - RSs）构成，每一个子分区都只收集特定消费者需要的数据。在上图中，需要被第二个 reducer （在 TaskManager 2 中）消费的记录被放在 RS2 中。由于第一个 Buffer 已经生成，RS2 就变成可被消费的状态了（注意，这个行为实现了一个 streaming shuffle），接着它通知 JobManager。
 3. JobManager查找RS2的消费者，然后通知 TaskManager 2 一个数据块已经可以访问了。通知TM2的消息会被发送到InputChannel，该inputchannel被认为是接收这个buffer的，接着通知RS2可以初始化一个网络传输了。然后，RS2通过TM1的网络栈请求该buffer，然后双方基于 Netty 准备进行数据传输。
 	1. 网络连接是在TaskManager（而非特定的task）之间长时间存在的。
+4. 一旦 Buffer 被 TM2 接收，它同样会经过一个类似的结构，起始于 InputChannel，进入 InputGate（它包含多个IC），最终进入一个反序列化器（RecordDeserializer），它会从 buffer 中将记录还原成指定类型的对象，然后将其传递给接收数据的 Task。
 
 
 # 参考

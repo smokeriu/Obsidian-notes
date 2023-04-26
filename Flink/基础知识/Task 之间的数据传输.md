@@ -22,7 +22,13 @@
 
 # 基本概念
 
+## JobVertex
+
+
 ## IntermediateDataset
+
+> 表示一个Jobvertex的输出结果。
+
 `JobGraph` 中对中间结果的抽象。`JobGraph` 是对 `StreamGraph` 进一步进行优化后得到的逻辑图，它尽量把可以 chain 到一起 operator 合并为一个 `JobVertex`。而 `IntermediateDataset` 就表示一个 `JobVertex` 的**输出结果**。
 
 `JobVertex` 的输入是 `JobEdge`，而 `JobEdge` 可以看作是 `IntermediateDataset` 的消费者（上一个vertex产生的结果）。一个 `JobVertex` 也可能产生多个 `IntermediateDataset`。
@@ -35,6 +41,10 @@
 `JobGraph` 被进一步转换成可以被调度的并行化版本的执行图，即 `ExecutionGraph`。在 `ExecutionGraph` 中
 - 和 `JobVertex` 对应的节点是 `ExecutionJobVertex`。
 - 和 `IntermediateDataset` 对应的则是 `IntermediataResult`。
+
+由于一个节点在实际运行时可能有多个并行子任务同时运行，所以 `ExecutionJobVertex` 按照并行度的设置被拆分为多个 `ExecutionVertex`，每一个表示一个并行的子任务。同样的，一个 `IntermediataResult` 也会被拆分为多个 `IntermediateResultPartition`，`IntermediateResultPartition` 对应 `ExecutionVertex` 的输出结果。
+
+一个 `IntermediateDataset` 只有一个消费者，那么一个 `IntermediataResult` 也只会有一个消费者；但是到了 `IntermediateResultPartition` 这里，由于节点被拆分成了并行化的节点，所以一个 `IntermediateResultPartition` 可能会有多个 `ExecutionEdge` 作为消费者。
 
 
 

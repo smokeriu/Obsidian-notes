@@ -20,6 +20,9 @@
 	1. 网络连接是在TaskManager（而非特定的task）之间长时间存在的。
 4. 一旦 Buffer 被 TM2 接收，它同样会经过一个类似的结构，起始于 InputChannel，进入 InputGate（它包含多个IC），最终进入一个反序列化器（RecordDeserializer），它会从 buffer 中将记录还原成指定类型的对象，然后将其传递给接收数据的 Task。
 
+# 基本概念
+
+
 
 # 参考
 1. [Data exchange between tasks](https://cwiki.apache.org/confluence/display/FLINK/Data+exchange+between+tasks)

@@ -9,7 +9,12 @@
 
 # 字节缓冲区在两个 Task 之间的传输
 ![[Pasted image 20230426161454.png]]
+> 该图展示了一条记录从source到sink的全生命周期流程。
 
+1. 最初，MapDriver 生成数据记录（通过 Collector 收集）并传递给 RecordWriter 对
+	1. RecordWriter 包含一组序列化器，每个消费数据的 Task 分别对应一个。
+	2. ChannelSelector 会选择一个或多个序列化器处理记录。例如，如果记录需要被广播，那么就会被交给每一个序列化器进行处理；如果记录是按照 hash 进行分区的，ChannelSelector 会计算记录的哈希值，然后选择对应的序列化器。
+2. 序列化器会将记录序列化为二进制数据，并将其存放在固定大小的 buffer 中（一条记录可能需要跨越多个 buffer）。这些 buffer 被交给 BufferWriter 处理，写入到 ResultPartition（RP）中。
 
 
 # 参考

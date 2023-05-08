@@ -51,6 +51,8 @@
 
 一个 `IntermediateDataset` 只有一个消费者，那么一个 `IntermediataResult` 也只会有**一个**消费者。但是到了 `IntermediateResultPartition` 这里，由于节点被拆分成了并行化的节点，所以一个 `IntermediateResultPartition` 可能会有**多个** `ExecutionEdge` 作为消费者。
 
+## ResultPartition 和 ResultSubpartition
+
 
 
 # 参考

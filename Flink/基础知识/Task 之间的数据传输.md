@@ -67,7 +67,9 @@
 -   `BLOCKING`：非流水线模式，无反压，不限制使用的网络缓冲的数量
 -   `PIPELINED`：流水线模式，有反压，不限制使用的网络缓冲的数量
 -   `PIPELINED_BOUNDED`：流水线模式，有反压，限制使用的网络缓冲的数量
-其中**是否流水线模式**这个属性会对消费行为产生很大的影响：如果是流水线模式，那么在 ResultPartition 接收到第一个 Buffer 时，消费者任务就可以进行准备消费；而如果非流水线模式，那么消费者将等到生产端任务生产完数据之后才进行消费。目前在 Stream 模式下使用的类型是 `PIPELINED_BOUNDED`。（）
+> 其中**是否流水线模式**这个属性会对消费行为产生很大的影响：如果是流水线模式，那么在 ResultPartition 接收到第一个 Buffer 时，消费者任务就可以进行准备消费；而如果非流水线模式，那么消费者将等到生产端任务生产完数据之后才进行消费。目前在 Stream 模式下使用的类型是 `PIPELINED_BOUNDED`。（非流水线模式适用于Batch任务，能够获得更好的性能）
+
+
 
 # 参考
 1. [Data exchange between tasks](https://cwiki.apache.org/confluence/display/FLINK/Data+exchange+between+tasks)

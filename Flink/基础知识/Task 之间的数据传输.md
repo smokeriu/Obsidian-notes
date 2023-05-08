@@ -40,7 +40,7 @@
 
 其逻辑如图所示：
 ![[assets/IntermediateDataset.png]]
-> 
+> IntermediateDataset经由edge传递
 
 ## IntermediateResult 和 IntermediateResultpartition
 

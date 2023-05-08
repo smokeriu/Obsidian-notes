@@ -62,6 +62,12 @@
 
 `ExecutionVertex` 的输出结果 `IntermediateResultPartition` 相对应的则是 `ResultPartition`。`IntermediateResultPartition` 可能会有多个 `ExecutionEdge` 作为消费者，那么在 Task 这里，`ResultPartition` 就会被拆分为多个 `ResultSubpartition`，下游每一个需要从当前 `ResultPartition` 消费数据的 Task 都会有一个专属的 `ResultSubpartition`。
 
+`ResultPartitionType` 指定了 `ResultPartition` 的不同属性，这些属性包括**是否流水线模式**、**是否会产生反压**以及**是否限制使用的 Network buffer 的数量**。`ResultPartitionType` 有三个枚举值：
+
+-   `BLOCKING`：非流水线模式，无反压，不限制使用的网络缓冲的数量
+-   `PIPELINED`：流水线模式，有反压，不限制使用的网络缓冲的数量
+-   `PIPELINED_BOUNDED`：流水线模式，有反压，限制使用的网络缓冲的数量
+其中**是否流水线模式**这个属性会对消费行为产生很大的影响：如果是流水线模式，那么在 ResultPartition 接收到第一个 Buffer 时，消费者任务就可以进行准备消费；而如果非流水线模式，那么消费者将等到生产端任务生产完数据之后才进行消费。目前在 Stream 模式下使用的类型是 `PIPELINED_BOUNDED`。（）
 
 # 参考
 1. [Data exchange between tasks](https://cwiki.apache.org/confluence/display/FLINK/Data+exchange+between+tasks)

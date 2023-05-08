@@ -54,6 +54,8 @@
 
 一个 `IntermediateDataset` 只有一个消费者，那么一个 `IntermediataResult` 也只会有**一个**消费者。但是到了 `IntermediateResultPartition` 这里，由于节点被拆分成了并行化的节点，所以一个 `IntermediateResultPartition` 可能会有**多个** `ExecutionEdge` 作为消费者。
 
+下图展示了某一个条边uh
+
 ## ResultPartition 和 ResultSubpartition
 `ExecutionGraph` 还是 JobManager 中用于描述作业拓扑的一种逻辑上的数据结构，其中表示并行子任务的 `ExecutionVertex` 会被调度到 TaskManager 中执行，一个 `Task` 对应一个 `ExecutionVertex`。
 

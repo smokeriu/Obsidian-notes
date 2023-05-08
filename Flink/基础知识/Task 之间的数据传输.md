@@ -39,6 +39,7 @@
 > 需要说明的一点是，目前一个 `IntermediateDataset` 实际上只会有一个 `JobEdge` 作为消费者，也就是说，一个 `JobVertex` 的下游有多少 `JobVertex` 需要依赖当前节点的数据，那么当前节点就有对应数量的 `IntermediateDataset`。
 
 
+
 ## IntermediateResult 和 IntermediateResultpartition
 
 > 在ExecutionGraph对输出结果的抽象，IntermediateResultpartition是根据并行的子任务对IntermediateResult拆分后的结果。

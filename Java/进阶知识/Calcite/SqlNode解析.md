@@ -13,5 +13,8 @@ final SqlParser sqlParser = SqlParser.create(sql, config);
 final SqlNode sqlNode = sqlParser.parseStmt();
 ```
 
-sqlNode是一个顶级父类，其主要的子类有：
-- 
+sqlNode是一个顶级父类，比较常用到的有：
+- SqlCall
+- SqlLiteral：一个常量。
+- SqlIdentifier：一个标识符，
+- SqlNodeList：由sqlNode组成的集合，一般用于描述一个配置集合，如`Create Table`的列定义就是一个SqlNodeList

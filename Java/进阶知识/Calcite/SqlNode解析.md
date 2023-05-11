@@ -17,6 +17,23 @@ sqlNode是一个顶级父类，比较常用到的有：
 - SqlCall：一个Sql操作，如Select，Join，Where等。
 - SqlLiteral：一个常量。
 - SqlIdentifier：一个标识符，如表名，字段名等。
-- SqlNodeList：由sqlNode组成的集合，一般用于描述一个配置集合，如`Create Table`的列定义就是一个SqlNodeList。
+- SqlNodeList：由sqlNode组成的集合，如select
 
-以SqlSelect为例，其是SqlCall的子类，表示一条Select字句。
+
+# 常用类
+## SelectCall
+表示一条Select字句。其定义主要有：
+```java
+SqlNodeList keywordList;  
+SqlNodeList selectList;  
+@Nullable SqlNode from;  
+@Nullable SqlNode where;  
+@Nullable SqlNodeList groupBy;  
+@Nullable SqlNode having;  
+SqlNodeList windowDecls;  
+@Nullable SqlNodeList orderBy;  
+@Nullable SqlNode offset;  
+@Nullable SqlNode fetch;  
+@Nullable SqlNodeList hints;
+```
+都对应一个select会包含的元素。

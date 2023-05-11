@@ -14,7 +14,9 @@ final SqlNode sqlNode = sqlParser.parseStmt();
 ```
 
 sqlNode是一个顶级父类，比较常用到的有：
-- SqlCall
+- SqlCall：一个Sql操作，如Select，Join，Where等。
 - SqlLiteral：一个常量。
-- SqlIdentifier：一个标识符，
-- SqlNodeList：由sqlNode组成的集合，一般用于描述一个配置集合，如`Create Table`的列定义就是一个SqlNodeList
+- SqlIdentifier：一个标识符，如表名，字段名等。
+- SqlNodeList：由sqlNode组成的集合，一般用于描述一个配置集合，如`Create Table`的列定义就是一个SqlNodeList。
+
+以SqlSelect为例，其是SqlCall的子类，

@@ -13,3 +13,5 @@ final SqlParser sqlParser = SqlParser.create(sql, config);
 final SqlNode sqlNode = sqlParser.parseStmt();
 ```
 
+sqlNode是一个顶级父类，其主要的子类有：
+- 

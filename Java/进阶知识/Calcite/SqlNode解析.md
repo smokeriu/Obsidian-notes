@@ -12,3 +12,4 @@ private static final SqlParser.Config DEFAULT_CONFIG = SqlParser.config()
 final SqlParser sqlParser = SqlParser.create(sql, config);
 final SqlNode sqlNode = sqlParser.parseStmt();
 ```
+

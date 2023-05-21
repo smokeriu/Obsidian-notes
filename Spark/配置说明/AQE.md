@@ -13,6 +13,6 @@
 | spark.sql.adaptive.coalescePartitions.parallelismFirst    | 开启后将通过minPartitionSize来计算并最大化并行度，避免性能回退。     | true   |
 | spark.sql.adaptive.coalescePartitions.minPartitionSize    | coalesce后最小的分区大小。不得高于advisoryPartitionSizeInBytes的20%  | 1MB    |
 | spark.sql.adaptive.coalescePartitions.initialPartitionNum | coalesce前的初始分区数。如果不设置则使用`spark.sql.shuffle.partitions` | none   |
-| spark.sql.adaptive.advisoryPartitionSizeInBytes   |                                                                      |        |
+| spark.sql.adaptive.advisoryPartitionSizeInBytes   | 用于建议spark                                                                    |        |
 
 ## 赛奥

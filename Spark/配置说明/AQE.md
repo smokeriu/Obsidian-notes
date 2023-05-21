@@ -17,7 +17,11 @@
 
 需要注意：
 - `spark.sql.adaptive.coalescePartitions.parallelismFirst`开启后(`3.2`引入)，会使`advisoryPartitionSizeInBytes`失效，因为spark会尽可能的基于`minPartitionSize`的值来最大化并行度。
-- `advisoryPartitionSizeInBytes`只是一个建议值。
+- `advisoryPartitionSizeInBytes`只是一个建议值。他的目的有两个：
+	- 将小的分区合并为targetSize。
+	- 将过大的分区差分成targetSize。
+	- 该参数可以一定程度上缓解shuffle后产生过多的小文件。
+- `minPartitionSize`本质上是`advisoryPartitionSizeInBytes`的进一步设置值，
 
 参考：[spark 3.0.1中的AQE的配置](https://segmentfault.com/a/1190000038342937)
 

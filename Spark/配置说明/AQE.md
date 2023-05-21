@@ -15,4 +15,10 @@
 | spark.sql.adaptive.coalescePartitions.initialPartitionNum | coalesce前的初始分区数。如果不设置则使用`spark.sql.shuffle.partitions` | none   |
 | spark.sql.adaptive.advisoryPartitionSizeInBytes   | 用于建议spark的shuffle分区大小。                                                                    | 64MB        |
 
+需要注意：
+- `spark.sql.adaptive.coalescePartitions.parallelismFirst`开启后(`3.2`引入)，会使`advisoryPartitionSizeInBytes`失效，因为spark会尽可能的基于`minPartitionSize`的值来最大化并行度。
+- `advisoryPartitionSizeInBytes`只是一个建议值。
+
+参考：[spark 3.0.1中的AQE的配置](https://segmentfault.com/a/1190000038342937)
+
 ## 赛奥

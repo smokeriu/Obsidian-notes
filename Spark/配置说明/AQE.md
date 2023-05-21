@@ -5,8 +5,12 @@
 
 # 主要配置
 ## Coalescing Post Shuffle Partitions
-用于在shuffle时，合并发出的分区，主要控制参数：
-| 参数                                          | 含义           | 默认值 |
-| --------------------------------------------- | -------------- | ------ |
-| spark.sql.adaptive.coalescePartitions.enabled | 是否开启该功能 | true   |
-|                                               |                |        |
+用于在shuffle时，合并发出的分区，注意，要使用该功能，需要启用AQE。
+主要控制参数：
+| 参数                                                   | 含义                                                                                                                                                        | 默认值 |
+| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| spark.sql.adaptive.coalescePartitions.enabled          | 是否开启该功能。                                                                                                                                            | true   |
+| spark.sql.adaptive.coalescePartitions.parallelismFirst | 若开启，则不关注参数`spark.sql.adaptive.advisoryPartitionSizeInBytes`，转而通过参数`spark.sql.adaptive.coalescePartitions.minPartitionSize`来最大化并行度。 | true   |
+|                                                        |                                                                                                                                                             |        |
+| 
+|                                                                                                                                                             |        |

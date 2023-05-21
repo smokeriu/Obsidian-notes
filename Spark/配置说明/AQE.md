@@ -12,5 +12,5 @@
 | spark.sql.adaptive.coalescePartitions.enabled          | 是否开启该功能。                                                                                                                                            | true   |
 | spark.sql.adaptive.coalescePartitions.parallelismFirst | 若开启，则不关注参数`spark.sql.adaptive.advisoryPartitionSizeInBytes`，转而通过参数`spark.sql.adaptive.coalescePartitions.minPartitionSize`来最大化并行度。 | true   |
 |                                                        |                                                                                                                                                             |        |
-| 
-|                                                                                                                                                             |        |
+
+## 赛奥

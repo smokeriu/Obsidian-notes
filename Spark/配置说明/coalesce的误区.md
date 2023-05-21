@@ -3,11 +3,15 @@
 
 如下两种情况需要使用repartition而非coalesce：
 
-# 没有shuffle，但包含复杂的UDF
+# 避免coalesce
+## 没有shuffle，但包含复杂的UDF
 在一般认识下，coalesce会经由窄依赖进行下推，如果使用的某个function是耗时的，这会导致并行度降低，从而影响性能。
 
-# 包含了shuffle，但收缩过于剧烈
-coalesce的用于将分区进行合并，但如果指定的参数收缩得过于剧烈，这回
+## 包含了shuffle，但收缩过于剧烈
+coalesce的用于将分区进行合并，但如果指定的参数收缩得过于剧烈（如设置为1），这回导致Shuffle计算也被集中到单个节点上。
+
+# 如何选择
+
 
 
 

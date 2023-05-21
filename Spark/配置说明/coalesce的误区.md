@@ -12,9 +12,11 @@ coalesce的用于将分区进行合并，但如果指定的参数收缩得过于
 
 # 如何选择
 
+缩小分区优先使用coalesce，但需要注意，如果分区收缩过于剧烈，则应当使用repartition。
 
 
 
 参考:
 - [coalesce-reduces-parallelism-of-entire-stage-spark](https://stackoverflow.com/questions/44494656/coalesce-reduces-parallelism-of-entire-stage-spark)
 - [spark-coalesce20-overwrite-parallelism-of-repartition1000-groupbyxxx-apply](https://stackoverflow.com/questions/57952905/spark-coalesce20-overwrite-parallelism-of-repartition1000-groupbyxxx-apply)
+- [spark-repartition-vs-coalesce](https://stackoverflow.com/questions/31610971/spark-repartition-vs-coalesce)

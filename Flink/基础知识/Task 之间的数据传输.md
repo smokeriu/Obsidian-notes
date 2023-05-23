@@ -86,7 +86,7 @@ InputGate与JobEdge相对应，用于消费上一个Vertex产生的数据，是�
 有如下注意点：
 - 一个`InputChannel`消费一个`ResultSubPartition`的数据。即一个`InputGate`中的`inputChannel`数量，取决于上游的`ResultSubPartition`数量。
 	- `ResultSubPartition`的数量其实原则上也取决于数据被多少个下游所需要。
-- InputGate的数量则取决于有多少个下游。即一个下游的Exc
+- InputGate的数量则取决于有多少个下游。即一个下游的Execution
 
 # 参考
 1. [Data exchange between tasks](https://cwiki.apache.org/confluence/display/FLINK/Data+exchange+between+tasks)

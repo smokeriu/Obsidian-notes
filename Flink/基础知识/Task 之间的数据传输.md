@@ -79,8 +79,14 @@ InputGate与JobEdge相对应，用于消费上一个Vertex产生的数据，是�
 其位于Graph中的位置如图所示：
 ![[assets/InputGate.png]]
 
+其与上下游Map和Reduce关系如图所示：
+![[assets/Pasted image 20230523200400.png]]
+> Map和reduce可以类比到ExecutionVertex上去，由于InputGate接受的可能是shuffle后的数据。导致每个InputGate面对的数据来源个数可能不一样。
+
 有如下注意点：
-- 一个InputChannel消费一个ResultSubPartition的数据
+- 一个`InputChannel`消费一个`ResultSubPartition`的数据。即一个`InputGate`中的`inputChannel`数量，取决于上游的`ResultSubPartition`数量。
+	- `ResultSubPartition`的数量其实原则上也取决于数据被多少个下游所需要。
+- InputGate的数量则取决于有多少个下游。即一个下游的Exc
 
 # 参考
 1. [Data exchange between tasks](https://cwiki.apache.org/confluence/display/FLINK/Data+exchange+between+tasks)

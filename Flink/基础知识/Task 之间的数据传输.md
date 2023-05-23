@@ -74,6 +74,13 @@
 
 ## InputGate和InputChannel
 InputGate与JobEdge相对应，用于消费上一个Vertex产生的数据，是生产者-消费者模式。
+在外部，InputGate与下游的Vertex(Reducer)一一对应，即下游有多少个reducer，就会有多少个InputGate。
+在内部，InputGate由InputChannel组成，InputChannel则与上游的Mapper数量决定。
+其位于Graph中的位置如图所示：
+![[assets/InputGate.png]]
+
+有如下注意点：
+- 一个InputChannel消费一个ResultSubPartition的数据
 
 # 参考
 1. [Data exchange between tasks](https://cwiki.apache.org/confluence/display/FLINK/Data+exchange+between+tasks)

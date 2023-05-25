@@ -19,6 +19,8 @@ public abstract class ResultPartition implements ResultPartitionWriter {
 	// 从而计算出每条记录发往那个channel
 	// 在目前实现中，其总是等于最大并行度。
 	private final int numTargetKeyGroups;
+	// 用于提供bufferPool
+	private final SupplierWithException<BufferPool, IOException> bufferPoolFactory;
 }
 ```
 

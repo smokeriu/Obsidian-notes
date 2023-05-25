@@ -14,7 +14,7 @@ public abstract class ResultPartition implements ResultPartitionWriter {
 	protected final ResultPartitionManager partitionManager;
 	// subPartition的数量，在1.16的版本中，具体的subPartition由子类自行管理
 	protected final int numSubpartitions;
-	
+	// 发生shuffle使，需要根据下游的redcuer数量
 	private final int numTargetKeyGroups;
 }
 ```

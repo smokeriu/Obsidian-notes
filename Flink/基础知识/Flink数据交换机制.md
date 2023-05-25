@@ -12,7 +12,8 @@ public abstract class ResultPartition implements ResultPartitionWriter {
 	protected final ResultPartitionType partitionType;
 	// 管理TaskManager上的所有ResultPartition
 	protected final ResultPartitionManager partitionManager;
-	// subPartition的数量，在1.16的版本中，具体的subPartition由子类自行管理
+	// subPartition的数量， 一般为下游reduce的数量，
+	// 在1.16的版本中，具体的subPartition由子类自行管理
 	protected final int numSubpartitions;
 	// 发生shuffle时，需要根据下游的redcuer数量来按照key进行分析，
 	// 从而计算出每条记录发往那个channel

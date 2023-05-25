@@ -8,7 +8,7 @@
 
 ```java
 public abstract class ResultPartition implements ResultPartitionWriter {
-	// 类型，Flink根据是否锁、有界、
+	// 类型，Flink根据是否锁、有界、持久化等维度定义了多种类型
 	protected final ResultPartitionType partitionType;
 	// 管理TaskManager上的所有ResultPartition
 	protected final ResultPartitionManager partitionManager;

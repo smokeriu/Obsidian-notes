@@ -22,5 +22,18 @@ public abstract class ResultPartition implements ResultPartitionWriter {
 }
 ```
 
+> 在flink1.16下，SubPartition的创建由ResultPartitionFactory统一负责。
+
+```java
+if (type == ResultPartitionType.PIPELINED_APPROXIMATE) {  
+	subpartitions[i] =  
+		new PipelinedApproximateSubpartition(  
+			i, configuredNetworkBuffersPerChannel, pipelinedPartition);  
+} else {  
+	subpartitions[i] =  
+		new PipelinedSubpartition(  
+			i, configuredNetworkBuffersPerChannel, pipelinedPartition);  
+}
+```
 
 ## Task的输入

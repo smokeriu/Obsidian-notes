@@ -14,7 +14,9 @@ public abstract class ResultPartition implements ResultPartitionWriter {
 	protected final ResultPartitionManager partitionManager;
 	// subPartition的数量，在1.16的版本中，具体的subPartition由子类自行管理
 	protected final int numSubpartitions;
-	// 发生shuffle使，需要根据下游的redcuer数量
+	// 发生shuffle时，需要根据下游的redcuer数量来按照key进行分析，
+	// 从而计算出每条记录发往那个channel
+	// 在目前实现中，其总是等于最大并行度。
 	private final int numTargetKeyGroups;
 }
 ```

@@ -80,8 +80,9 @@ public void emitRecord(ByteBuffer record, int targetSubpartition) throws IOExcep
 	BufferBuilder buffer = appendUnicastDataForNewRecord(record, targetSubpartition);  
   
 	while (record.hasRemaining()) {  
-		// buffer已经写满，则flush
-		finishUnicastBufferBuilder(targetSubpartition);  
+		// buffer已经写满，但这条记录存在部分数据没有写入，则flush现有buffer
+		finishUnicastBufferBuilder(targetSubpartition);
+		// 申请新的buffer，并立即flush这条未完成的部分
 		buffer = appendUnicastDataForRecordContinuation(record, targetSubpartition);  
 	}  
   

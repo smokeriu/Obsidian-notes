@@ -78,7 +78,7 @@ protected void emit(T record, int targetSubpartition) throws IOException {
 public void emitRecord(ByteBuffer record, int targetSubpartition) throws IOException {  
 	// 尝试写入数据
 	BufferBuilder buffer = appendUnicastDataForNewRecord(record, targetSubpartition);  
-  
+	// 由于实际可用的内存可能不足以承载单条消息，所以这里使用的while循环
 	while (record.hasRemaining()) {  
 		// buffer已经写满，但这条记录存在部分数据没有写入，则flush现有buffer
 		finishUnicastBufferBuilder(targetSubpartition);

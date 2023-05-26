@@ -58,20 +58,40 @@ public abstract class RecordWriter<T extends IOReadableWritable> implements Avai
 3. 向ResultPartition请求buffer，执行数据的写入。
 4. 向ResultPartition请求Consumer，将数据向下流。
 
-> 不同的ResultParition实现有区别，
+> 不同的ResultPartition实现有区别，这里以BufferWritingResultPartition举例。
 
 其代码为：
 ```java
+// ChannelSelectorRecordWriter.java
 // 1. 决定输出的targetSubPartition
 public void emit(T record) throws IOException {  
 	emit(record, channelSelector.selectChannel(record));  
 }
+// RecordWriter.java
 // 2. 序列化数据
 protected void emit(T record, int targetSubpartition) throws IOException {    
 	targetPartition.emitRecord(serializeRecord(serializer, record), targetSubpartition);
 }
 
-// 
+// BufferWritingResultPartition.java
+// 3. 提交序列化后的数据
+public void emitRecord(ByteBuffer record, int targetSubpartition) throws IOException {  
+	// 申请buffer
+	BufferBuilder buffer = appendUnicastDataForNewRecord(record, targetSubpartition);  
+  
+	while (record.hasRemaining()) {  
+		// full buffer, partial record  
+		finishUnicastBufferBuilder(targetSubpartition);  
+		buffer = appendUnicastDataForRecordContinuation(record, targetSubpartition);  
+	}  
+  
+	if (buffer.isFull()) {  
+		// full buffer, full record  
+		finishUnicastBufferBuilder(targetSubpartition);  
+	}  
+  
+// partial buffer, full record  
+}
 ```
 
 ## Task的输入

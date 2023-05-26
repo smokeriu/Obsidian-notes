@@ -38,4 +38,14 @@ if (type == ResultPartitionType.PIPELINED_APPROXIMATE) {
 }
 ```
 
+### 数据的写出
+数据写出由`RecordWriter`负责，其是`ResultPartitionWriter`的一层封装。
+```java
+public abstract class RecordWriter<T extends IOReadableWritable> implements AvailabilityProvider {
+	protected final ResultPartitionWriter targetPartition;
+	// 等于su'bp'a'r'ti'ti
+	protected final int numberOfChannels;
+}
+```
+
 ## Task的输入

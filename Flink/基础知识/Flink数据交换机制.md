@@ -39,13 +39,39 @@ if (type == ResultPartitionType.PIPELINED_APPROXIMATE) {
 ```
 
 ### 数据的写出
-数据写出由`RecordWriter`负责，其是`ResultPartitionWriter`的一层封装。
+数据写出由`RecordWriter`负责，其是`ResultPartition`的一层封装。
 ```java
 public abstract class RecordWriter<T extends IOReadableWritable> implements AvailabilityProvider {
 	protected final ResultPartitionWriter targetPartition;
-	// 等于su'bp'a'r'ti'ti
+	// channels数量，等于subPartition数量
 	protected final int numberOfChannels;
+	// 序列化产生的数据
+	protected final DataOutputSerializer serializer;
 }
+```
+
+> 目前实现中，子类包含了`BroadcastRecordWriter`和`ChannelSelectorRecordWriter`，这里我们主要讨论后者。
+
+主要流程为：
+1. 决定输出的targetSubPartition。其等价于targetChannel。
+2. 序列化将要输出的数据。
+3. 向ResultPartition请求buffer，执行数据的写入。
+4. 向ResultPartition请求Consumer，将数据向下流。
+
+
+
+其代码为：
+```java
+// 1. 决定输出的targetSubPartition
+public void emit(T record) throws IOException {  
+	emit(record, channelSelector.selectChannel(record));  
+}
+// 2. 序列化数据
+protected void emit(T record, int targetSubpartition) throws IOException {    
+	targetPartition.emitRecord(serializeRecord(serializer, record), targetSubpartition);
+}
+
+// 
 ```
 
 ## Task的输入

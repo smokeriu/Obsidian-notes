@@ -58,7 +58,7 @@ public abstract class RecordWriter<T extends IOReadableWritable> implements Avai
 3. 向ResultPartition请求buffer，执行数据的写入。
 4. 向ResultPartition请求Consumer，将数据向下流。
 
-
+> 不同的ResultParition实现有区别，
 
 其代码为：
 ```java

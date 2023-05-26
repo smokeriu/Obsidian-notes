@@ -76,11 +76,11 @@ protected void emit(T record, int targetSubpartition) throws IOException {
 // BufferWritingResultPartition.java
 // 3. 提交序列化后的数据
 public void emitRecord(ByteBuffer record, int targetSubpartition) throws IOException {  
-	// 申请buffer
+	// 尝试写入数据
 	BufferBuilder buffer = appendUnicastDataForNewRecord(record, targetSubpartition);  
   
 	while (record.hasRemaining()) {  
-		// full buffer, partial record  
+		// buffer已经写满，则flush
 		finishUnicastBufferBuilder(targetSubpartition);  
 		buffer = appendUnicastDataForRecordContinuation(record, targetSubpartition);  
 	}  
@@ -91,6 +91,23 @@ public void emitRecord(ByteBuffer record, int targetSubpartition) throws IOExcep
 	}  
   
 // partial buffer, full record  
+}
+
+// 具体的写入逻辑
+private BufferBuilder appendUnicastDataForNewRecord(  
+	final ByteBuffer record, final int targetSubpartition) throws IOException {  
+	// 申请buffer
+	BufferBuilder buffer = unicastBufferBuilders[targetSubpartition];  
+  
+	if (buffer == null) {
+		// 新建buffer  
+		buffer = requestNewUnicastBufferBuilder(targetSubpartition);  
+		addToSubpartition(buffer, targetSubpartition, 0, record.remaining());  
+	}  
+	// 写入数据
+	buffer.appendAndCommit(record);  
+  
+	return buffer;  
 }
 ```
 

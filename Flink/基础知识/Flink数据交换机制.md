@@ -43,19 +43,22 @@ ResultPartition[] resultPartitions =
 	new ResultPartition[resultPartitionDeploymentDescriptors.size()];
 
 for (int partitionIndex = 0;  
-	partitionIndex < resultPartitions.length;  
-	partitionIndex++) {  
+		partitionIndex < resultPartitions.length;  
+		partitionIndex++) {  
 	resultPartitions[partitionIndex] =  
-resultPartitionFactory.create(  
-ownerContext.getOwnerName(),  
-partitionIndex,  
-resultPartitionDeploymentDescriptors.get(partitionIndex));  
+		resultPartitionFactory.create(  
+			ownerContext.getOwnerName(),  
+			partitionIndex,  
+			resultPartitionDeploymentDescriptors.get(partitionIndex));  
 }
 ```
 #### SubResultPartition
 
 
 ```java
+// ResultPartitionFactory.java
+final ResultPartition partition;
+ResultSubpartition[] subpartitions = new ResultSubpartition[num];
 if (type == ResultPartitionType.PIPELINED_APPROXIMATE) {  
 	subpartitions[i] =  
 		new PipelinedApproximateSubpartition(  
@@ -65,6 +68,10 @@ if (type == ResultPartitionType.PIPELINED_APPROXIMATE) {
 		new PipelinedSubpartition(  
 			i, configuredNetworkBuffersPerChannel, pipelinedPartition);  
 }
+
+partition = new PipelinedResultPartition(...sub);
+
+return partition;
 ```
 
 ### 数据的写出

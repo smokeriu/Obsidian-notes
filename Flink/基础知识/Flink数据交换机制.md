@@ -149,8 +149,35 @@ private BufferBuilder appendUnicastDataForNewRecord(
 	return buffer;  
 }
 ```
-在完成写出后，根据设置，可能立即flush数据，也可能通过如OutputFlusher等其他线程i
-第四步一般发生于subPartition的flush阶段。
+在完成写出后，根据设置，可能立即flush数据，也可能通过如OutputFlusher等其他线程触发flush。flush由subPartition负责，当数据flush后，则下游便可见。
+```java
+public void flush() {  
+	final boolean notifyDataAvailable;  
+	synchronized (buffers) {  
+		if (buffers.isEmpty() || flushRequested) {  
+			return;  
+	}  
+	// if there is more then 1 buffer, we already notified the reader  
+	// (at the latest when adding the second buffer)  
+		boolean isDataAvailableInUnfinishedBuffer =  
+			buffers.size() == 1 && buffers.peek().getBufferConsumer().isDataAvailable();  
+			
+	notifyDataAvailable = !isBlocked && isDataAvailableInUnfinishedBuffer;  
+	flushRequested = buffers.size() > 1 || isDataAvailableInUnfinishedBuffer;  
+	}  
+	if (notifyDataAvailable) {  
+		// 通知下游
+		notifyDataAvailable();  
+	}  
+}
+
+private void notifyDataAvailable() {  
+	final PipelinedSubpartitionView readView = this.readView;  
+	if (readView != null) {  
+		readView.notifyDataAvailable();  
+	}  
+}
+```
 
 
 ## Task的输入

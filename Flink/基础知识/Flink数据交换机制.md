@@ -34,7 +34,26 @@ final ResultPartitionWriter[] resultPartitionWriters =
 		.toArray(new ResultPartitionWriter[] {});
 ```
 
-目前唯一的实现是`NettyShuffleEnvironment`。其内部由ResultPartitionFactory统一负责
+目前唯一的实现是`NettyShuffleEnvironment`。其内部由ResultPartitionFactory统一负责ResultPartition和ResultPartition的创建
+
+#### ResultPartition
+```java
+// NettyShuffleEnvironment.java
+ResultPartition[] resultPartitions =  
+	new ResultPartition[resultPartitionDeploymentDescriptors.size()];
+
+for (int partitionIndex = 0;  
+	partitionIndex < resultPartitions.length;  
+	partitionIndex++) {  
+	resultPartitions[partitionIndex] =  
+resultPartitionFactory.create(  
+ownerContext.getOwnerName(),  
+partitionIndex,  
+resultPartitionDeploymentDescriptors.get(partitionIndex));  
+}
+```
+#### SubResultPartition
+
 
 ```java
 if (type == ResultPartitionType.PIPELINED_APPROXIMATE) {  

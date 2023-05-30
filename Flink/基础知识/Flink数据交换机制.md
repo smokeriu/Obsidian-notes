@@ -191,5 +191,6 @@ private void notifyDataAvailable() {
 }
 ```
 
+实际的数据读取由ResultSubpartitionView负责.
 
 ## Task的输入

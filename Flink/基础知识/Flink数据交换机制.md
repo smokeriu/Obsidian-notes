@@ -191,6 +191,7 @@ private void notifyDataAvailable() {
 }
 ```
 
-实际的数据读取由ResultSubpartitionView负责.
+实际的数据读取由`ResultSubpartitionView`负责。subPartition会通知与自身关联的`ResultSubpartitionView`数据已经可读。
+
 
 ## Task的输入

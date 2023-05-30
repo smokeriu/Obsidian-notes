@@ -24,7 +24,7 @@ public abstract class ResultPartition implements ResultPartitionWriter {
 }
 ```
 
-
+> 
 
 > 在flink1.16下，SubPartition的创建由ResultPartitionFactory统一负责。
 

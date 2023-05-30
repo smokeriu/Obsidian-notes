@@ -7,6 +7,7 @@
 输出会写入到`ResultPartition` 中，其实现了ResultPartitionWriter。
 
 ```java
+// ResultPartition.java
 public abstract class ResultPartition implements ResultPartitionWriter {
 	// 类型，Flink根据是否锁、有界、持久化等维度定义了多种类型
 	protected final ResultPartitionType partitionType;
@@ -27,7 +28,7 @@ public abstract class ResultPartition implements ResultPartitionWriter {
 > 在Flink1.16中，ResultPartition由Task通过shuffleEnvironment创建。
 
 ```java
-// 
+// Task.java
 final ResultPartitionWriter[] resultPartitionWriters =  
 	shuffleEnvironment  
 		.createResultPartitionWriters(  
@@ -90,7 +91,7 @@ public abstract class RecordWriter<T extends IOReadableWritable> implements Avai
 > 目前实现中，子类包含了`BroadcastRecordWriter`和`ChannelSelectorRecordWriter`，这里我们主要讨论后者。
 
 主要流程为：
-1. 决定输出的targetSubPartition。其等价于targetChannel。
+1. 决定输出的targetSubPartition，其等价于targetChannel。
 2. 序列化将要输出的数据。
 3. 向ResultPartition请求buffer，执行数据的写入。
 4. 向ResultPartition请求Consumer，将数据向下流。
@@ -111,7 +112,7 @@ protected void emit(T record, int targetSubpartition) throws IOException {
 }
 
 // BufferWritingResultPartition.java
-// 3. 提交序列化后的数据
+// 3. 请求buffer，提交序列化后的数据
 public void emitRecord(ByteBuffer record, int targetSubpartition) throws IOException {  
 	// 尝试写入数据
 	BufferBuilder buffer = appendUnicastDataForNewRecord(record, targetSubpartition);  

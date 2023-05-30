@@ -139,14 +139,22 @@ private BufferBuilder appendUnicastDataForNewRecord(
 	BufferBuilder buffer = unicastBufferBuilders[targetSubpartition];  
   
 	if (buffer == null) {
-		// 新建buffer  
+		// 新建buffer
 		buffer = requestNewUnicastBufferBuilder(targetSubpartition);  
+		// 使buffer与consumer关联
 		addToSubpartition(buffer, targetSubpartition, 0, record.remaining());  
 	}  
 	// 写入数据
 	buffer.appendAndCommit(record);  
   
 	return buffer;  
+}
+
+// 关联buffer与consumer
+private void addToSubpartition(...){
+	int desirableBufferSize =
+		subpartitions[targetSubpartition].add(
+			buffer.createBufferConsumerFromBeginning(), partialRecordLength);
 }
 ```
 在完成写出后，根据设置，可能立即flush数据，也可能通过如OutputFlusher等其他线程触发flush。flush由subPartition负责，当数据flush后，则下游便可见。

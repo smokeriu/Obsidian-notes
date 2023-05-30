@@ -24,9 +24,17 @@ public abstract class ResultPartition implements ResultPartitionWriter {
 }
 ```
 
-> 
+> 在Flink1.16中，ResultPartition由Task通过shuffleEnvironment创建。
 
-> 在flink1.16下，SubPartition的创建由ResultPartitionFactory统一负责。
+```java
+final ResultPartitionWriter[] resultPartitionWriters =  
+	shuffleEnvironment  
+		.createResultPartitionWriters(  
+			taskShuffleContext, resultPartitionDeploymentDescriptors)  
+		.toArray(new ResultPartitionWriter[] {});
+```
+
+目前唯一的实现是`NettyShuffleEnvironment`。其内部由ResultPartitionFactory统一负责
 
 ```java
 if (type == ResultPartitionType.PIPELINED_APPROXIMATE) {  

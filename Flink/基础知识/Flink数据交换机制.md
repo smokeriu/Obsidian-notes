@@ -27,6 +27,7 @@ public abstract class ResultPartition implements ResultPartitionWriter {
 > 在Flink1.16中，ResultPartition由Task通过shuffleEnvironment创建。
 
 ```java
+// 
 final ResultPartitionWriter[] resultPartitionWriters =  
 	shuffleEnvironment  
 		.createResultPartitionWriters(  
@@ -54,10 +55,10 @@ for (int partitionIndex = 0;
 ```
 #### SubResultPartition
 
-
 ```java
 // ResultPartitionFactory.java
 final ResultPartition partition;
+
 ResultSubpartition[] subpartitions = new ResultSubpartition[num];
 if (type == ResultPartitionType.PIPELINED_APPROXIMATE) {  
 	subpartitions[i] =  
@@ -69,7 +70,7 @@ if (type == ResultPartitionType.PIPELINED_APPROXIMATE) {
 			i, configuredNetworkBuffersPerChannel, pipelinedPartition);  
 }
 
-partition = new PipelinedResultPartition(...sub);
+partition = new PipelinedResultPartition(...subpartitions);
 
 return partition;
 ```

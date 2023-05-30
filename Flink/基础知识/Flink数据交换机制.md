@@ -149,5 +149,8 @@ private BufferBuilder appendUnicastDataForNewRecord(
 	return buffer;  
 }
 ```
+在完成写出后，根据设置，可能立即flush数据，也可能通过如OutputFlusher等其他线程i
+第四步一般发生于subPartition的flush阶段。
+
 
 ## Task的输入

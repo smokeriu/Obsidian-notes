@@ -152,9 +152,11 @@ private BufferBuilder appendUnicastDataForNewRecord(
 
 // 关联buffer与consumer
 private void addToSubpartition(...){
+	BufferConsumer bufferConsumer = buffer.createBufferConsumerFromBeginning();
+	
 	int desirableBufferSize =
 		subpartitions[targetSubpartition].add(
-			buffer.createBufferConsumerFromBeginning(), partialRecordLength);
+			bufferConsumer, partialRecordLength);
 }
 ```
 在完成写出后，根据设置，可能立即flush数据，也可能通过如OutputFlusher等其他线程触发flush。flush由subPartition负责，当数据flush后，则下游便可见。

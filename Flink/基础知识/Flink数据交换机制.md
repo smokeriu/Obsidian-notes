@@ -151,6 +151,7 @@ private BufferBuilder appendUnicastDataForNewRecord(
 ```
 在完成写出后，根据设置，可能立即flush数据，也可能通过如OutputFlusher等其他线程触发flush。flush由subPartition负责，当数据flush后，则下游便可见。
 ```java
+// PipelinedSubpartition.java
 public void flush() {  
 	final boolean notifyDataAvailable;  
 	synchronized (buffers) {  

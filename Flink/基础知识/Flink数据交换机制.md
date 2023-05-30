@@ -154,6 +154,7 @@ private BufferBuilder appendUnicastDataForNewRecord(
 // PipelinedSubpartition.java
 public void flush() {  
 	final boolean notifyDataAvailable;  
+	// buffer为下游的comsumer
 	synchronized (buffers) {  
 		if (buffers.isEmpty() || flushRequested) {  
 			return;  

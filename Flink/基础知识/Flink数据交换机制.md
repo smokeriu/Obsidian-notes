@@ -217,3 +217,37 @@ public void notifyDataAvailable() {
 	requestQueue.notifyReaderNonEmpty(this);  
 }
 ```
+
+最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。
+
+```java
+private Optional<BufferOrEvent> getNextBufferOrEvent(boolean blocking)  
+		throws IOException, InterruptedException {  
+	if (hasReceivedAllEndOfPartitionEvents) {  
+		return Optional.empty();  
+	}  
+
+	if (closeFuture.isDone()) {  
+		throw new CancelTaskException("Input gate is already closed.");  
+	}
+  
+	Optional<InputWithData<InputChannel, BufferAndAvailability>> next =  
+		waitAndGetNextData(blocking);  
+	if (!next.isPresent()) {  
+		throughputCalculator.pauseMeasurement();  
+		return Optional.empty();  
+	}
+  
+	throughputCalculator.resumeMeasurement();  
+  
+	InputWithData<InputChannel, BufferAndAvailability> inputWithData = next.get();  
+	final BufferOrEvent bufferOrEvent =  
+		transformToBufferOrEvent(  
+			inputWithData.data.buffer(),  
+			inputWithData.moreAvailable,  
+		inputWithData.input,  
+inputWithData.morePriorityEvents);  
+throughputCalculator.incomingDataSize(bufferOrEvent.getSize());  
+return Optional.of(bufferOrEvent);  
+}
+```

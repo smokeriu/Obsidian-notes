@@ -196,6 +196,9 @@ private void notifyDataAvailable() {
 
 ## Task的输入
 `notifyDataAvailable`会通知`InputChannel`和`inputGate`，即数据可读：
+
+> 这里先以localInputChannel举例
+
 ```java
 // InputChannel.java
 protected void notifyChannelNonEmpty() {  

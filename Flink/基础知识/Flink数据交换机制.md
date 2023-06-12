@@ -245,9 +245,9 @@ private Optional<BufferOrEvent> getNextBufferOrEvent(boolean blocking)
 		transformToBufferOrEvent(  
 			inputWithData.data.buffer(),  
 			inputWithData.moreAvailable,  
-		inputWithData.input,  
-inputWithData.morePriorityEvents);  
-throughputCalculator.incomingDataSize(bufferOrEvent.getSize());  
-return Optional.of(bufferOrEvent);  
+			inputWithData.input,  
+			inputWithData.morePriorityEvents);  
+	throughputCalculator.incomingDataSize(bufferOrEvent.getSize());  
+	return Optional.of(bufferOrEvent);  
 }
 ```

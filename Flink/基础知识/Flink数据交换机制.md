@@ -197,11 +197,23 @@ private void notifyDataAvailable() {
 ## Task的输入
 `notifyDataAvailable`会通知`InputChannel`和`inputGate`，即数据可读：
 
-> 这里先以localInputChannel举例
+> 这里先以localInputChannel举例，另外一个实现则是`CreditBasedSequenceNumberingViewReader`
 
 ```java
 // InputChannel.java
+// 本地buffer采取这种方式
 protected void notifyChannelNonEmpty() {  
 	inputGate.notifyChannelNonEmpty(this);  
+}
+void notifyChannelNonEmpty(InputChannel channel) {  
+	queueChannel(checkNotNull(channel), null, false);  
+}
+
+
+
+// CreditBasedSequenceNumberingViewReader.java
+// 分布式采取这种方式
+public void notifyDataAvailable() {  
+	requestQueue.notifyReaderNonEmpty(this);  
 }
 ```

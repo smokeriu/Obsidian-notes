@@ -297,6 +297,16 @@ public BufferAndAvailability getNextBuffer() throws IOException {
 		return null;  
 	}
 }
+
+BufferResponse msg =  
+	new BufferResponse(  
+		next.buffer(),  
+		next.getSequenceNumber(),  
+		reader.getReceiverId(),  
+		next.buffersInBacklog());
+
+channel.writeAndFlush(msg).addListener(writeListener);
+
 ```
 
 

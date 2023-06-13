@@ -308,6 +308,12 @@ BufferResponse msg =
 channel.writeAndFlush(msg).addListener(writeListener);
 
 ```
+这里便将数据向网络写出
+```java
+if (msgClazz == NettyMessage.BufferResponse.class) {
+	
+}
+```
 
 
 最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。

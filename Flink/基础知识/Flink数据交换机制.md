@@ -148,7 +148,7 @@ private BufferBuilder appendUnicastDataForNewRecord(
 	return buffer;  
 }
 
-// 关联buffer与consumer
+// 关联buffer、consumer与subPartition
 private void addToSubpartition(...){
 	BufferConsumer bufferConsumer = buffer.createBufferConsumerFromBeginning();
 	

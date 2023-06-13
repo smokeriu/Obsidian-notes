@@ -197,12 +197,14 @@ private void notifyDataAvailable() {
 ```java
 // 本地情况
 // LocalInputChannel.java
+// 将自身传递给subpartitionView，用作数据可读的通知。
 ResultSubpartitionView subpartitionView =  
 	partitionManager.createSubpartitionView(  
 		partitionId, consumedSubpartitionIndex, this);
 
 // 分布式情况
 // CreditBasedSequenceNumberingViewReader.java
+// 将自身传递给subpartitionView，用作数据可读的通知。
 this.subpartitionView =  
 	partitionProvider.createSubpartitionView(  
 		resultPartitionId, subPartitionIndex, this);
@@ -216,19 +218,17 @@ ResultSubpartitionView readView = subpartition.createReadView(availabilityListen
 ```
 
 当输出数据可读时，即会通过`ResultSubpartitionView`让consumer直到数据可读，此时，数据仍然存放在`subPartition`的`BufferConsumer`中。
-
-### ResultSubpartitionView
-在构建ResultSubpartitionView时，会传递BufferAvailabilityListener，这个listener其实就是下游的reader。
+LocalInputChannel.java和CreditBasedSequenceNumberingViewReader都实现了BufferAvailabilityListener，用于及时直到上游数据可读。
 
 
 ## Task的输入
-`notifyDataAvailable`会通知`InputChannel`和`inputGate`，即数据可读：
+`notifyDataAvailable`会通知`InputChannel`，即数据可读：
 
 > 这里先以localInputChannel举例，另外一个实现则是`CreditBasedSequenceNumberingViewReader`
 
 ```java
 // InputChannel.java
-// 本地buffer采取这种方式
+// 本地buffer采取这种方式，通知inputGate
 protected void notifyChannelNonEmpty() {  
 	inputGate.notifyChannelNonEmpty(this);  
 }

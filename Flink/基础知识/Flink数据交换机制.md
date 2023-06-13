@@ -450,4 +450,20 @@ private DeserializationResult readNonSpanningRecord(T target) throws IOException
 }
 
 ```
-实际数据如何读取有target控制，但总体而言，是通过DataInputView获取数据的。
+实际数据如何读取有target控制，但总体而言，是通过DataInputView获取数据的。而实际数据通过buffer交给了NonSpanningWrapper或SpanningWrapper
+```java
+public void setNextBuffer(Buffer buffer) throws IOException {  
+	currentBuffer = buffer;  
+	// 获取数据的内存地址，并交给wrapper
+	int offset = buffer.getMemorySegmentOffset();  
+	MemorySegment segment = buffer.getMemorySegment();  
+	int numBytes = buffer.getSize();  
+  
+// check if some spanning record deserialization is pending  
+	if (spanningWrapper.getNumGatheredBytes() > 0) {  
+		spanningWrapper.addNextChunkFromMemorySegment(segment, offset, numBytes);  
+	} else {  
+		nonSpanningWrapper.initializeFromMemorySegment(segment, offset, numBytes + offset);  
+	}  
+}
+```

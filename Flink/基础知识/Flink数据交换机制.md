@@ -282,7 +282,13 @@ private void registerAvailableReader(NetworkSequenceViewReader reader) {
 	reader.setRegisteredAsAvailable(true);  
 }
 ```
+相比于本地，网络还涉及从实际的机器上获取数据：
+```java
+NetworkSequenceViewReader reader = pollAvailableReader();
+next = reader.getNextBuffer();
 
+
+```
 
 
 最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。

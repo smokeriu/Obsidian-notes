@@ -266,8 +266,12 @@ void notifyReaderNonEmpty(final NetworkSequenceViewReader reader) {
 		ctx.pipeline().fireUserEventTriggered(reader));  
 }
 
-// 
-
+// 经过netty中转，将reader加入到可读的队列中。
+public void userEventTriggered(ChannelHandlerContext ctx, Object msg) throws Exception {
+	if (msg instanceof NetworkSequenceViewReader) {
+		enqueueAvailableReader((NetworkSequenceViewReader) msg);
+	}
+}
 
 ```
 

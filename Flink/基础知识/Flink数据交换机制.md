@@ -221,6 +221,8 @@ public void notifyDataAvailable() {
 }
 ```
 
+上述两个Reader在初始化ui
+
 最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。
 
 ```java

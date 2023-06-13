@@ -260,6 +260,12 @@ private Optional<InputWithData<InputChannel, BufferAndAvailability>> waitAndGetN
 public void notifyDataAvailable() {  
 	requestQueue.notifyReaderNonEmpty(this);  
 }
+
+void notifyReaderNonEmpty(final NetworkSequenceViewReader reader) {   
+	ctx.executor().execute(() -> 
+		ctx.pipeline().fireUserEventTriggered(reader));  
+}
+
 ```
 
 最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。

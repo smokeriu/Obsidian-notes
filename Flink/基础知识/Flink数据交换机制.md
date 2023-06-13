@@ -326,8 +326,14 @@ throws Throwable {
 			bufferOrEvent.getBuffer(), bufferOrEvent.sequenceNumber, bufferOrEvent.backlog);  
 	}
 }
-```
 
+// RemoteInputChannel.java
+public void onBuffer(Buffer buffer, int sequenceNumber, int backlog) throws IOException {
+	SequenceBuffer sequenceBuffer = new SequenceBuffer(buffer, sequenceNumber);
+	receivedBuffers.add(sequenceBuffer);
+}
+```
+## 
 
 最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。
 

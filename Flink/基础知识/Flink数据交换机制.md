@@ -421,20 +421,33 @@ protected boolean getNextRecord(T target) throws IOException, InterruptedExcepti
 // SpillingAdaptiveSpanningRecordDeserializer.java
 private DeserializationResult readNextRecord(T target) throws IOException {  
 	if (nonSpanningWrapper.hasCompleteLength()) {  
+		// 读取数据
 		return readNonSpanningRecord(target);  
 	} else if (nonSpanningWrapper.hasRemaining()) {  
 		nonSpanningWrapper.transferTo(spanningWrapper.lengthBuffer);  
 		return PARTIAL_RECORD;  
 	} else if (spanningWrapper.hasFullRecord()) {  
+		// 读取数据
 		target.read(spanningWrapper.getInputView());  
 		spanningWrapper.transferLeftOverTo(nonSpanningWrapper);  
 		return nonSpanningWrapper.hasRemaining()  
 			? INTERMEDIATE_RECORD_FROM_BUFFER  
 			: LAST_RECORD_FROM_BUFFER;  
+	} else {  
+		return PARTIAL_RECORD;  
+	}  
+}
 
-} else {  
-return PARTIAL_RECORD;  
-}  
+private DeserializationResult readNonSpanningRecord(T target) throws IOException {  
+	int recordLen = nonSpanningWrapper.readInt();  
+	if (nonSpanningWrapper.canReadRecord(recordLen)) {  
+		// 读取数据
+		return nonSpanningWrapper.readInto(target);  
+	} else {  
+		spanningWrapper.transferFrom(nonSpanningWrapper, recordLen);  
+		return PARTIAL_RECORD;  
+	}  
 }
 
 ```
+实际数据如何读取有target控制，但总体而言，是通过

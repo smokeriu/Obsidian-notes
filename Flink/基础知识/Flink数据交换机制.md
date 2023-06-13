@@ -344,9 +344,9 @@ abstract Optional<BufferAndAvailability> getNextBuffer()
 	throws IOException, InterruptedException;
 ```
 
-不同的InputChannel实现会有所不同，但本质就是把缓存的buffer提取出来。调用getNextBuffer的是inputGate的`waitAndGetNextData`方法。
+不同的InputChannel实现会有所不同，但本质就是把缓存的buffer提取出来。调用getNextBuffer的是`InputGate`的`waitAndGetNextData`方法。
 
-> 不同
+> 不同`InputGate`的实现会有所区别
 
 ```java
 // SingleInputGate.java
@@ -354,8 +354,10 @@ private Optional<InputWithData<InputChannel, BufferAndAvailability>> waitAndGetN
 	boolean blocking) throws IOException, InterruptedException {
 	
 	final InputChannel inputChannel = inputChannelOpt.get();
+	// getNextBuffer
 	Optional<BufferAndAvailability> bufferAndAvailabilityOpt =  
 		inputChannel.getNextBuffer();
+		
 	final BufferAndAvailability bufferAndAvailability = bufferAndAvailabilityOpt.get();
 
 	return Optional.of(  
@@ -365,34 +367,24 @@ private Optional<InputWithData<InputChannel, BufferAndAvailability>> waitAndGetN
 			!inputChannelsWithData.isEmpty(),  
 			morePriorityEvents));
 }
-```
 
-
-
-```java
-// 
+// 再通过getNextBufferOrEvent封装一层
 private Optional<BufferOrEvent> getNextBufferOrEvent(boolean blocking)  
-		throws IOException, InterruptedException {  
-	
-  
+	throws IOException, InterruptedException {
+
+	// waitAndGetNextData
 	Optional<InputWithData<InputChannel, BufferAndAvailability>> next =  
-		waitAndGetNextData(blocking);  
-	if (!next.isPresent()) {  
-		throughputCalculator.pauseMeasurement();  
-		return Optional.empty();  
-	}
-  
-	throughputCalculator.resumeMeasurement();  
-  
+		waitAndGetNextData(blocking);
+
 	InputWithData<InputChannel, BufferAndAvailability> inputWithData = next.get();  
 	final BufferOrEvent bufferOrEvent =  
 		transformToBufferOrEvent(  
 			inputWithData.data.buffer(),  
 			inputWithData.moreAvailable,  
 			inputWithData.input,  
-			inputWithData.morePriorityEvents);  
-	throughputCalculator.incomingDataSize(bufferOrEvent.getSize());  
-	return Optional.of(bufferOrEvent);  
+			inputWithData.morePriorityEvents);
+
+	return Optional.of(bufferOrEvent);
 }
 ```
 

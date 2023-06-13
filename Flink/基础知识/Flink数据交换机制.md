@@ -252,7 +252,7 @@ private Optional<InputWithData<InputChannel, BufferAndAvailability>> waitAndGetN
 			morePriorityEvents));
 }
 ```
-通过上述处理，将channel添加到ga
+通过上述处理，将channel添加到gate的缓存中，
 
 ### Network
 ```java

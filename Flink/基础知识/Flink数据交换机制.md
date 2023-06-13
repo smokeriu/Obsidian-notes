@@ -337,23 +337,20 @@ public void onBuffer(Buffer buffer, int sequenceNumber, int backlog) throws IOEx
 
 ## 读取数据
 
-会通过调用getNextBuffer方法来持续的获取数据。
+会通过调用getNextBuffer方法来持续的获取数据Buffer。
 
 ```java
 abstract Optional<BufferAndAvailability> getNextBuffer()  
 	throws IOException, InterruptedException;
 ```
 
+不同的InputChannel实现会有所不同，但本质就是把缓存的buffer提取出来。
+
 ```java
+// 
 private Optional<BufferOrEvent> getNextBufferOrEvent(boolean blocking)  
 		throws IOException, InterruptedException {  
-	if (hasReceivedAllEndOfPartitionEvents) {  
-		return Optional.empty();  
-	}  
-
-	if (closeFuture.isDone()) {  
-		throw new CancelTaskException("Input gate is already closed.");  
-	}
+	
   
 	Optional<InputWithData<InputChannel, BufferAndAvailability>> next =  
 		waitAndGetNextData(blocking);  
@@ -375,3 +372,4 @@ private Optional<BufferOrEvent> getNextBufferOrEvent(boolean blocking)
 	return Optional.of(bufferOrEvent);  
 }
 ```
+

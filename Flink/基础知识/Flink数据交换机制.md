@@ -209,7 +209,11 @@ void notifyChannelNonEmpty(InputChannel channel) {
 	queueChannel(checkNotNull(channel), null, false);  
 }
 
-
+// 将channel加入到队列中
+private boolean queueChannelUnsafe(InputChannel channel, boolean priority) {
+	// ...
+	inputChannelsWithData.add(channel, priority, alreadyEnqueued);
+}
 
 // CreditBasedSequenceNumberingViewReader.java
 // 分布式采取这种方式

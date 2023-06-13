@@ -450,4 +450,4 @@ private DeserializationResult readNonSpanningRecord(T target) throws IOException
 }
 
 ```
-实际数据如何读取有target控制，但总体而言，是通过
+实际数据如何读取有target控制，但总体而言，是通过DataInputView获取数据的。

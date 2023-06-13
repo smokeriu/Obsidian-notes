@@ -308,10 +308,23 @@ BufferResponse msg =
 channel.writeAndFlush(msg).addListener(writeListener);
 
 ```
-这里便将数据向网络写出
+这里便将数据信息向网络写出，其他节点接收到对应的信息，并获取inputChannel。
 ```java
+// CreditBasedPartitionRequestClientHandler.java
 if (msgClazz == NettyMessage.BufferResponse.class) {
-	
+	NettyMessage.BufferResponse bufferOrEvent = (NettyMessage.BufferResponse) msg;
+	RemoteInputChannel inputChannel = inputChannels.get(bufferOrEvent.receiverId);
+	decodeBufferOrEvent(inputChannel, bufferOrEvent);
+}
+
+// 处理数据
+private void decodeBufferOrEvent(  
+RemoteInputChannel inputChannel, NettyMessage.BufferResponse bufferOrEvent)  
+throws Throwable {  
+	if (bufferOrEvent.getBuffer() != null) {  
+		inputChannel.onBuffer(  
+			bufferOrEvent.getBuffer(), bufferOrEvent.sequenceNumber, bufferOrEvent.backlog);  
+	}
 }
 ```
 

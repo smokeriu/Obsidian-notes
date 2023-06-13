@@ -222,12 +222,11 @@ LocalInputChannel.java和CreditBasedSequenceNumberingViewReader都实现了Buffe
 
 
 ## Task的输入
-`notifyDataAvailable`会通知`InputChannel`，即数据可读：
-
-> 这里先以localInputChannel举例，另外一个实现则是`CreditBasedSequenceNumberingViewReader`
+`notifyDataAvailable`会通知`InputChannel`，即数据可读。目前主要是两种实现：
+- localInputChannel：本地数据交互。
+- CreditBasedSequenceNumberingViewReader：涉及shuffle时的数据交互。
 
 ### Local
-
 ```java
 // InputChannel.java
 // 本地buffer采取这种方式，通知inputGate
@@ -252,7 +251,7 @@ private Optional<InputWithData<InputChannel, BufferAndAvailability>> waitAndGetN
 			morePriorityEvents));
 }
 ```
-通过上述处理，将channel添加到gate的缓存中，
+通过上述处理，将channel添加到gate的缓存中。
 
 ### Network
 ```java

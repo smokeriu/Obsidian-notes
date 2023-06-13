@@ -226,6 +226,8 @@ LocalInputChannel.java和CreditBasedSequenceNumberingViewReader都实现了Buffe
 
 > 这里先以localInputChannel举例，另外一个实现则是`CreditBasedSequenceNumberingViewReader`
 
+### Local
+
 ```java
 // InputChannel.java
 // 本地buffer采取这种方式，通知inputGate
@@ -240,16 +242,26 @@ private boolean queueChannelUnsafe(InputChannel channel, boolean priority) {
 	// ...
 	inputChannelsWithData.add(channel, priority, alreadyEnqueued);
 }
+// 读取数据
+private Optional<InputWithData<InputChannel, BufferAndAvailability>> waitAndGetNextData(...){
+	return Optional.of(  
+		new InputWithData<>(  
+			inputChannel,  
+			bufferAndAvailability,  
+			!inputChannelsWithData.isEmpty(),  
+			morePriorityEvents));
+}
+```
+通过上述处理，将channel添加到ga
 
-// =========
-
+### Network
+```java
 // CreditBasedSequenceNumberingViewReader.java
 // 分布式采取这种方式
 public void notifyDataAvailable() {  
 	requestQueue.notifyReaderNonEmpty(this);  
 }
 ```
-
 
 最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。
 

@@ -397,6 +397,7 @@ protected boolean getNextRecord(T target) throws IOException, InterruptedExcepti
 	while(true){
 
 		if(currentRecordDeserializer != null){
+			// 实际获取数据的地方
 			DeserializationResult result = currentRecordDeserializer.getNextRecord(target);
 			
 		}

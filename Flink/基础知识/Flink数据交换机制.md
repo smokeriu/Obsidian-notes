@@ -289,17 +289,13 @@ next = reader.getNextBuffer();
 
 public BufferAndAvailability getNextBuffer() throws IOException {  
 	BufferAndBacklog next = subpartitionView.getNextBuffer();  
-	if (next != null) {  
-		if (next.buffer().isBuffer() && --numCreditsAvailable < 0) {  
-			throw new IllegalStateException("no credit available");  
-	}  
   
 	final Buffer.DataType nextDataType = getNextDataType(next);  
 	return new BufferAndAvailability(  
 		next.buffer(), nextDataType, next.buffersInBacklog(), next.getSequenceNumber());  
 	} else {  
 		return null;  
-}  
+	}
 }
 ```
 

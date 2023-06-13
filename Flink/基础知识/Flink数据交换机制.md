@@ -222,6 +222,27 @@ public void notifyDataAvailable() {
 ```
 
 ### 输入和输出的关联
+输入会通过与subPartition关联，并构建`ResultSubpartitionView`：
+```java
+// 本地情况
+// LocalInputChannel.java
+ResultSubpartitionView subpartitionView =  
+	partitionManager.createSubpartitionView(  
+		partitionId, consumedSubpartitionIndex, this);
+
+// 分布式情况
+// 
+this.subpartitionView =  
+	partitionProvider.createSubpartitionView(  
+	resultPartitionId, subPartitionIndex, this);
+
+// ResultPartitionManager.java
+subpartitionView =  
+	partition.createSubpartitionView(subpartitionIndex, availabilityListener);
+```
+
+
+
 上述两个Reader在初始化时，会与subPartition进行关联：
 ```java
 

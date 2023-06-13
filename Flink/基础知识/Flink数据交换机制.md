@@ -192,6 +192,32 @@ private void notifyDataAvailable() {
 实际的数据读取由`ResultSubpartitionView`负责。subPartition会通知与自身关联的`ResultSubpartitionView`数据已经可读。
 
 
+## 输入和输出的关联
+输入会通过与subPartition关联，并构建`ResultSubpartitionView`：
+```java
+// 本地情况
+// LocalInputChannel.java
+ResultSubpartitionView subpartitionView =  
+	partitionManager.createSubpartitionView(  
+		partitionId, consumedSubpartitionIndex, this);
+
+// 分布式情况
+// CreditBasedSequenceNumberingViewReader.java
+this.subpartitionView =  
+	partitionProvider.createSubpartitionView(  
+		resultPartitionId, subPartitionIndex, this);
+
+// ResultPartitionManager.java
+subpartitionView =  
+	partition.createSubpartitionView(subpartitionIndex, availabilityListener);
+
+// BufferWritingResultPartition.java
+ResultSubpartitionView readView = subpartition.createReadView(availabilityListener);
+```
+
+当输出数据可读时，即会通过
+
+
 ## Task的输入
 `notifyDataAvailable`会通知`InputChannel`和`inputGate`，即数据可读：
 
@@ -221,32 +247,6 @@ public void notifyDataAvailable() {
 }
 ```
 
-### 输入和输出的关联
-输入会通过与subPartition关联，并构建`ResultSubpartitionView`：
-```java
-// 本地情况
-// LocalInputChannel.java
-ResultSubpartitionView subpartitionView =  
-	partitionManager.createSubpartitionView(  
-		partitionId, consumedSubpartitionIndex, this);
-
-// 分布式情况
-// 
-this.subpartitionView =  
-	partitionProvider.createSubpartitionView(  
-	resultPartitionId, subPartitionIndex, this);
-
-// ResultPartitionManager.java
-subpartitionView =  
-	partition.createSubpartitionView(subpartitionIndex, availabilityListener);
-```
-
-
-
-上述两个Reader在初始化时，会与subPartition进行关联：
-```java
-
-```
 
 最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。
 

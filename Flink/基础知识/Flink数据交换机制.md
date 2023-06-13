@@ -215,7 +215,10 @@ subpartitionView =
 ResultSubpartitionView readView = subpartition.createReadView(availabilityListener);
 ```
 
-当输出数据可读时，即会通过
+当输出数据可读时，即会通过`ResultSubpartitionView`让consumer直到数据可读，此时，数据仍然存放在`subPartition`的`BufferConsumer`中。
+
+### 
+在构建BufferAvailabilityListener时，会传递BufferAvailabilityListener，
 
 
 ## Task的输入

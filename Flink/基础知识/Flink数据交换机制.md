@@ -273,7 +273,17 @@ public void userEventTriggered(ChannelHandlerContext ctx, Object msg) throws Exc
 	}
 }
 
+private void enqueueAvailableReader(final NetworkSequenceViewReader reader) throws Exception {
+	registerAvailableReader(reader);
+}
+
+private void registerAvailableReader(NetworkSequenceViewReader reader) {  
+	availableReaders.add(reader);  
+	reader.setRegisteredAsAvailable(true);  
+}
 ```
+
+
 
 最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。
 

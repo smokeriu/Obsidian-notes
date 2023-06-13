@@ -266,6 +266,9 @@ void notifyReaderNonEmpty(final NetworkSequenceViewReader reader) {
 		ctx.pipeline().fireUserEventTriggered(reader));  
 }
 
+// 
+
+
 ```
 
 最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。

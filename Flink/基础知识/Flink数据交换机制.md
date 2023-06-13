@@ -395,6 +395,12 @@ private Optional<BufferOrEvent> getNextBufferOrEvent(boolean blocking)
 protected boolean getNextRecord(T target) throws IOException, InterruptedException{
 
 	while(true){
+
+		if(currentRecordDeserializer != null){
+			DeserializationResult result = currentRecordDeserializer.getNextRecord(target);
+			
+		}
+
 		final BufferOrEvent bufferOrEvent =  
 			inputGate.getNext().orElseThrow(IllegalStateException::new);
 

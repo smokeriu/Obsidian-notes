@@ -333,9 +333,16 @@ public void onBuffer(Buffer buffer, int sequenceNumber, int backlog) throws IOEx
 	receivedBuffers.add(sequenceBuffer);
 }
 ```
-## 
+通过上述处理，其他机器上的数据便缓存到该节点，用作后续读取需要。
 
-最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。
+## 读取数据
+
+会通过调用getNextBuffer方法来持续的获取数据。
+
+```java
+abstract Optional<BufferAndAvailability> getNextBuffer()  
+	throws IOException, InterruptedException;
+```
 
 ```java
 private Optional<BufferOrEvent> getNextBufferOrEvent(boolean blocking)  

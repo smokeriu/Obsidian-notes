@@ -394,7 +394,18 @@ private Optional<BufferOrEvent> getNextBufferOrEvent(boolean blocking)
 ```java
 protected boolean getNextRecord(T target) throws IOException, InterruptedException{
 
-	
+	while(true){
+		final BufferOrEvent bufferOrEvent =  
+			inputGate.getNext().orElseThrow(IllegalStateException::new);
+
+
+		if (bufferOrEvent.isBuffer()) {  
+			// 将buffer设置到currentRecordDeserializer中。
+			currentRecordDeserializer = recordDeserializers.get(bufferOrEvent.getChannelInfo());  
+			currentRecordDeserializer.setNextBuffer(...);  
+			partialData.put(currentRecordDeserializer, Boolean.TRUE);  
+}
+	}
 
 }
 ```

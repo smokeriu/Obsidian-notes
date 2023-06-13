@@ -397,7 +397,7 @@ protected boolean getNextRecord(T target) throws IOException, InterruptedExcepti
 	while(true){
 
 		if(currentRecordDeserializer != null){
-			// 实际获取数据的地方
+			// 实际获取数据的地方， 数据其实会在里面被存放仅target中。
 			DeserializationResult result = currentRecordDeserializer.getNextRecord(target);
 			
 		}
@@ -411,8 +411,30 @@ protected boolean getNextRecord(T target) throws IOException, InterruptedExcepti
 			currentRecordDeserializer = recordDeserializers.get(bufferOrEvent.getChannelInfo());  
 			currentRecordDeserializer.setNextBuffer(...);  
 			partialData.put(currentRecordDeserializer, Boolean.TRUE);  
-}
+		}
 	}
 
 }
+```
+
+```java
+// SpillingAdaptiveSpanningRecordDeserializer.java
+private DeserializationResult readNextRecord(T target) throws IOException {  
+	if (nonSpanningWrapper.hasCompleteLength()) {  
+		return readNonSpanningRecord(target);  
+	} else if (nonSpanningWrapper.hasRemaining()) {  
+		nonSpanningWrapper.transferTo(spanningWrapper.lengthBuffer);  
+		return PARTIAL_RECORD;  
+	} else if (spanningWrapper.hasFullRecord()) {  
+		target.read(spanningWrapper.getInputView());  
+		spanningWrapper.transferLeftOverTo(nonSpanningWrapper);  
+		return nonSpanningWrapper.hasRemaining()  
+			? INTERMEDIATE_RECORD_FROM_BUFFER  
+			: LAST_RECORD_FROM_BUFFER;  
+
+} else {  
+return PARTIAL_RECORD;  
+}  
+}
+
 ```

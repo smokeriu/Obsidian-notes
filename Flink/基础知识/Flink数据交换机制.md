@@ -128,8 +128,6 @@ public void emitRecord(ByteBuffer record, int targetSubpartition) throws IOExcep
 		// full buffer, full record  
 		finishUnicastBufferBuilder(targetSubpartition);  
 	}  
-  
-// partial buffer, full record  
 }
 
 // 具体的写入逻辑

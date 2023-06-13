@@ -221,7 +221,11 @@ public void notifyDataAvailable() {
 }
 ```
 
-上述两个Reader在初始化ui
+### 输入和输出的关联
+上述两个Reader在初始化时，会与subPartition进行关联：
+```java
+
+```
 
 最终，会通过调用getNextBufferOrEvent方法来持续的获取数据。
 

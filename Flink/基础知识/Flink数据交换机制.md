@@ -418,7 +418,28 @@ protected boolean getNextRecord(T target) throws IOException, InterruptedExcepti
 }
 ```
 
-读取数据是由RecordDeserializer负责的，其读取BufferOrEvent的内存信息，从而获取数据：
+读取数据是由RecordDeserializer负责的，其读取BufferOrEvent的内存信息，从而获取数据，数据通过buffer交给了`NonSpanningWrapper`或`SpanningWrapper`。
+
+> spanningWrapper是RecordDeserializer内部负责数据交换的组件
+
+```java
+public void setNextBuffer(Buffer buffer) throws IOException {  
+	currentBuffer = buffer;  
+	// 获取数据的内存地址，并交给wrapper
+	int offset = buffer.getMemorySegmentOffset();  
+	MemorySegment segment = buffer.getMemorySegment();  
+	int numBytes = buffer.getSize();  
+  
+	// 
+	if (spanningWrapper.getNumGatheredBytes() > 0) {  
+		spanningWrapper.addNextChunkFromMemorySegment(segment, offset, numBytes);  
+	} else {  
+		nonSpanningWrapper.initializeFromMemorySegment(segment, offset, numBytes + offset);  
+	}  
+}
+```
+
+总体而言，通过DataInputView获取数据的。
 
 ```java
 // SpillingAdaptiveSpanningRecordDeserializer.java
@@ -452,23 +473,4 @@ private DeserializationResult readNonSpanningRecord(T target) throws IOException
 	}  
 }
 
-```
-
-实际数据如何读取有target控制，但总体而言，是通过DataInputView获取数据的。而实际数据通过buffer交给了`NonSpanningWrapper`或`SpanningWrapper`。
-
-```java
-public void setNextBuffer(Buffer buffer) throws IOException {  
-	currentBuffer = buffer;  
-	// 获取数据的内存地址，并交给wrapper
-	int offset = buffer.getMemorySegmentOffset();  
-	MemorySegment segment = buffer.getMemorySegment();  
-	int numBytes = buffer.getSize();  
-  
-// check if some spanning record deserialization is pending  
-	if (spanningWrapper.getNumGatheredBytes() > 0) {  
-		spanningWrapper.addNextChunkFromMemorySegment(segment, offset, numBytes);  
-	} else {  
-		nonSpanningWrapper.initializeFromMemorySegment(segment, offset, numBytes + offset);  
-	}  
-}
 ```

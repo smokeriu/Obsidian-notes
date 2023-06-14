@@ -391,7 +391,10 @@ private Optional<BufferOrEvent> getNextBufferOrEvent(boolean blocking)
 实际对外提供数据的是`InputGate`的`getNext`或`pollNext`方法，二者的主要区别在于是否阻塞。
 
 而实际读取数据的抽象是`AbstractRecordReader`。其在`getNextRecord`方法中读取数据：
+
 > target是实际数据去往的的地方，所以方法的返回值是boolean。
+
+
 ```java
 protected boolean getNextRecord(T target) throws IOException, InterruptedException{
 

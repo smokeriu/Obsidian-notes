@@ -282,7 +282,7 @@ private void registerAvailableReader(NetworkSequenceViewReader reader) {
 	reader.setRegisteredAsAvailable(true);  
 }
 ```
-相比于本地，网络还涉及从实际的机器上获取数据：
+相比于本地，网络还涉及从实际的机器上获取数据，数据通过netty在需要的时候发往其他节点：
 ```java
 NetworkSequenceViewReader reader = pollAvailableReader();
 next = reader.getNextBuffer();

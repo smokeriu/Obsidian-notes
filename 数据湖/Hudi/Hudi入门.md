@@ -21,6 +21,15 @@ Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和�
 
 #### TimestampBasedKeyGenerator
 这种建生成器是SimpleKeyGenerator的一种实现，其特点是：
-- 分区需要使用时间字段，且会被转换为
+- 分区需要使用时间字段，且会被转换为timestamp类型，而非string类型。
+- 主键仍然使用指定的列，但只能是单个列。
+其需要提供如下参数
+| 参数 | 说明 |
+| ---- | ---- |
+| `hoodie.deltastreamer.keygen.timebased.timestamp.type`     |      |
+
+
+#### 其它参数
+
 
 ### 预合并

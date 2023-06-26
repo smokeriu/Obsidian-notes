@@ -25,11 +25,17 @@ Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和�
 - 主键仍然使用指定的列，但只能是单个列。
 其需要提供如下参数：
 - `hoodie.deltastreamer.keygen.timebased.timestamp.type`：类型。
+	- 即指定为分区的字段格式，包括了：
+		- `UNIX_TIMESTAMP`：
+		- `DATE_STRING`：字符串的日期，需要指定输入格式。
+		- `MIXED`：
+		- `EPOCHMILLISECONDS`：毫秒级的
+		- `SCALAR`：
 - `hoodie.deltastreamer.keygen.timebased.input.dateformat`：输入格式
 - `hoodie.deltastreamer.keygen.timebased.output.dateformat`：输出格式。
 	- 格式都是形如：`yyyy-MM-dd`。
 - `hoodie.deltastreamer.keygen.timebased.timezone`：时区。
-	- 如：`UTC`，`GMT+8:00`DfataFrame
+	- 如：`UTC`，`GMT+8:00`等。
 #### 其它参数
 
 

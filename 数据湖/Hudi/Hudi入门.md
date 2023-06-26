@@ -77,4 +77,6 @@ Hudi内置了数个合并比较逻辑：
 	- 写出合并永远使用插入的记录。
 - `DefaultHoodieRecordPayload`：
 	- 预合并和写出合并都使用较大的`precombine`字段所在的记录。
-	- 
+- `EventTimeAvroPayload`：
+- `OverwriteNonDefaultsWithLatestAvroPayload`：
+- `#### PartialUpdateAvroPayload`

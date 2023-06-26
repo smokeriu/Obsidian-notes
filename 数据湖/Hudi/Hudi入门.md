@@ -57,4 +57,5 @@ Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和�
 - `PRECOMBINE_FIELD_OPT_KEY`：选择一个字段，参与合并比较。默认为`ts`。
 - `WRITE_PAYLOAD_CLASS`：决定了如何进行合并比较。
 Hudi内置了数个合并比较逻辑：
-- #### OverwriteWithLatestAvroPayload
+- `OverwriteWithLatestAvroPayload`（默认）：用于使用最新数据，如果写入的数据具有同样的唯一键
+- `DefaultHoodieRecordPayload`：

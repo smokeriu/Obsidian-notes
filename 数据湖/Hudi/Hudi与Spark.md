@@ -47,13 +47,14 @@ option("as.of.instant", "2021-07-28")
 Hudi支持增量读取，其含义为：读取指定时间范围内更新/插入的**最新**数据。
 与历史快照的主要区别是：
 - 得到的数据永远是**最新**的数据。
-	- 如果记录1在时刻B被修改，时刻C又被修改，则
+	- 如果记录1在时刻B被修改，时刻C又被修改，则无论指定何种范围，查出来的都是时刻C被修改的数据。
 - 只会得到时间范围内变化的数据。
+	- 如果记录1在时刻B被修改，记录2在时刻C被修改，如果范围只包含时刻C，则只会查到记录2。
 
 
 在增量读取模式下，需要提供如下参数：
 - `hoodie.datasource.query.type`：读取方式，设定为`incremental`。
-- `hoodie.datasource.read.begin.instanttime`：范围起始时间
+- `hoodie.datasource.read.begin.instanttime`：范围起始时间。必填。
 	- 精确到秒：`20230626181800`。注意并非时间戳。
 - `hoodie.datasource.read.end.instanttime`：范围终止时间。
 	- 可不提供，则使用当前时间。

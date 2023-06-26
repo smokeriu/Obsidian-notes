@@ -18,9 +18,18 @@ config("spark.sql.extensions",
 ## 读
 Hudi读取数据基于文件存放的位置。
 ```scala
-
+val tripsSnapshotDF = spark.read
+	.format("hudi")
+	.load(basePath)
 ```
 
+Hudi也支持读取历史快照
+```scala
+option("as.of.instant", "20210728141108100")
+option("as.of.instant", "2021-07-28 14:11:08.200")
+// equal to 
+option("as.of.instant", "2021-07-28")
+```
 
 ## 写
 

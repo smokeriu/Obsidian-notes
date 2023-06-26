@@ -9,13 +9,17 @@ config("spark.serializer",
 	   "org.apache.spark.serializer.KryoSerializer")  
 config("spark.sql.catalog.hudi", 
 	   "org.apache.spark.sql.hudi.catalog.HoodieCatalog")  
-config("spark.sql.extensions", "org.apache.spark.sql.hudi.HoodieSparkSessionExtension")
+config("spark.sql.extensions",
+	   "org.apache.spark.sql.hudi.HoodieSparkSessionExtension")
 ```
 
 # 批任务
 
 ## 读
+Hudi读取数据基于文件存放的位置。
+```scala
 
+```
 
 
 ## 写

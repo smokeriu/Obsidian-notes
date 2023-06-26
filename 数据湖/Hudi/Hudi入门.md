@@ -39,6 +39,7 @@ Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和�
 	- 如：`UTC`，`GMT+8:00`等。
 - `hoodie.deltastreamer.keygen.timebased.timestamp.scalar.time.unit`。标量的单位
 	- 当type类型为`SCALAR`时，指定这个配置来决定scalar的单位，如days，hours等。
+
 #### 其它参数
 
 

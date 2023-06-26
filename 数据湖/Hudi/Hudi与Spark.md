@@ -22,6 +22,7 @@ val tripsSnapshotDF = spark.read
 	.format("hudi")
 	.load(basePath)
 ```
+读取hudi，除了自身的数据外，还会将hudi的元数据读取出来。
 
 ### 历史快照
 Hudi也支持根据时间读取历史快照

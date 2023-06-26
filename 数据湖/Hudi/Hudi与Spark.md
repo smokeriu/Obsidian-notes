@@ -23,13 +23,15 @@ val tripsSnapshotDF = spark.read
 	.load(basePath)
 ```
 
-Hudi也支持读取历史快照
+### 历史快照
+Hudi也支持根据时间读取历史快照
 ```scala
 option("as.of.instant", "20210728141108100")
 option("as.of.instant", "2021-07-28 14:11:08.200")
-// equal to 
+// equal to 2021-07-28 00:00:00
 option("as.of.instant", "2021-07-28")
 ```
+即读取这个时间点，hudi中的数据快照。
 
 ## 写
 

@@ -26,6 +26,7 @@ val tripsSnapshotDF = spark.read
 ### 历史快照
 Hudi也支持根据时间读取历史快照
 ```scala
+// 注意这个不是时间戳
 option("as.of.instant", "20210728141108100")
 option("as.of.instant", "2021-07-28 14:11:08.200")
 // equal to 2021-07-28 00:00:00

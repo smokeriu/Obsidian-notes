@@ -47,6 +47,9 @@ Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和�
 
 #### 其它参数
 有一些其它参数，用于控制分区建的表现形式：
-
+- `hoodie.datasource.write.partitionpath.urlencode`：是否编码url样式的分区。默认`false`。
+	- 如果不编码，而分区字段中存在如`/`的数据，则会产生子文件夹。
+- `hoodie.datasource.write.hive_style_partitioning`：分区是否采用hive样式。默认`false`。
+	- 即生成`key=value`的文件夹样式，而不是直接使用value。
 
 ### 预合并

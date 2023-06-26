@@ -26,10 +26,10 @@ Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和�
 其需要提供如下参数：
 - `hoodie.deltastreamer.keygen.timebased.timestamp.type`：类型。
 	- 即指定为分区的字段格式，包括了：
-		- `UNIX_TIMESTAMP`：字段就是一个时间戳的情况。
+		- `UNIX_TIMESTAMP`：字段就是一个时间戳的情况。如果输入字段是其他类型，则是秒类型的`SCALAR`。
 		- `DATE_STRING`：字符串的日期，需要指定输入格式。
 		- `MIXED`：混合模式，不过官方没有说明，看代码与DATE_STRING用途一致。
-		- `EPOCHMILLISECONDS`：毫秒级的long类型的时间戳。
+		- `EPOCHMILLISECONDS`：毫秒级的`SCALAR`类型。
 		- `SCALAR`：根据指定的`time.unit`，来生成时间， 是`EPOCHMILLISECONDS`的拓展版。
 	- 如果输入的数据为null，则会转换为1970的初始时间。
 - `hoodie.deltastreamer.keygen.timebased.input.dateformat`：输入格式。

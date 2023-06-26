@@ -52,10 +52,12 @@ Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和�
 - `hoodie.datasource.write.hive_style_partitioning`：分区是否采用hive样式。默认`false`。
 	- 即生成`key=value`的文件夹样式，而不是直接使用value。
 
-### 预合并
+### 合并
 由于Hudi具有唯一标识，当具有同样HoodieKey的数据写入时（或者是同一批数据中存在同样的数据时），Hudi根据预合并来决定如何保留数据。预合并需要指定预合并字段：
 - `PRECOMBINE_FIELD_OPT_KEY`：选择一个字段，参与合并比较。默认为`ts`。
 - `WRITE_PAYLOAD_CLASS`：决定了如何进行合并比较。
+这个合并过程大体
+
 Hudi内置了数个合并比较逻辑：
 - `OverwriteWithLatestAvroPayload`（默认）：永远使用最新数据。
 - `DefaultHoodieRecordPayload`：

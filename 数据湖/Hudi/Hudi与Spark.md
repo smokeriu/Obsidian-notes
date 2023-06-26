@@ -41,12 +41,16 @@ option("as.of.instant", "2021-07-28")
 - `hoodie.datasource.query.type`：读取方式，设定为`read_optimized`。
 和历史快照一样，这种模式也可以通过指定`as.of.instant`来读取某一个时刻的快照。
 
+> 如果表模式是merge_on_read，则使用该模式会得到第一次插入数据时的数据。
+
 ### 增量读取
 Hudi支持增量读取，其含义为：读取指定时间范围内更新/插入的**最新**数据。
 与历史快照的主要区别是：
 - 得到的数据永远是**最新**的数据。
-	- 即如果一条数据
+	- 如果记录1在时刻B被修改，时刻C又被修改，则
 - 只会得到时间范围内变化的数据。
+
+
 在增量读取模式下，需要提供如下参数：
 - `hoodie.datasource.query.type`：读取方式，设定为`incremental`。
 - `hoodie.datasource.read.begin.instanttime`：范围起始时间

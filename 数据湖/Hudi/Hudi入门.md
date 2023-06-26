@@ -7,9 +7,11 @@
 Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和分区。
 ### 主键和分区
 在hudi中，主键和分区是有关联性的。hudi的每个记录都由HoodieKey唯一标识，而HoodieKey由主键和分区键共同组成。
-- `RECORDKEY_FIELD_OPT_KEY`
+- `RECORDKEY_FIELD_OPT_KEY`：配置哪些字段用于生成主键。默认为`uuid`。
+- `PARTITIONPATH_FIELD_OPT_KEY`：配置哪些字段用于生成分区键。默认为`partitionpath`。
+
 默认（布隆索引）情况下，主键只保证其在分区下的唯一性。HoodieKey保证全局唯一性。
-主键和分区建都是hudi的**必要**字段，默认使用数据中的名叫`uuid`的字段作为主键，名叫`partitionpath`的字段作为分区键。
+主键和分区建都是hudi的**必要**字段。
 
 通过`KEYGENERATOR_CLASS_OPT_KEY`可以指定如何生成键（主键和分区键）：
 - `SimpleKeyGenerator`：即建由单个字段构成。
@@ -44,6 +46,7 @@ Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和�
 总的而言，如果输入的是字符串类型，则需要指定`input.dateformat`。而`timestamp.type`更多的则是控制一些附加参数，如`UNIX_TIMESTAMP`隐含了`scalar.time.unit`为秒。
 
 #### 其它参数
-有一些其它参数，用于控制分区
+有一些其它参数，用于控制分区建的表现形式：
+
 
 ### 预合并

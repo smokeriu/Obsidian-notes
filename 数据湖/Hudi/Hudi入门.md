@@ -67,10 +67,14 @@ Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和�
 		1. 取决与参数：`hoodie.combine.before.insert`。
 	3. 预合并阶段，数据仍然未写出。
 2. 获取数据索引（可选）。
-	1. 当使用insert和upsert时，会为数据打上tag。目的是在实际写出阶段
+	1. 当使用insert和upsert时，会为数据打上tag。目的是在实际写出阶段对数据进行合并。
 3. 写出合并。比较存储中的数据和预合并得到的待插入数据。
 	1. 当存储中已经存在重复HoodieKey的数据时，如何选择使用哪条数据。
 
 Hudi内置了数个合并比较逻辑：
-- `OverwriteWithLatestAvroPayload`（默认）：永远使用最新数据。
+- `OverwriteWithLatestAvroPayload`（默认）：
+	- 预合并时使用较大的`precombine`字段所在的记录。
+	- 写出合并永远使用插入的记录。
 - `DefaultHoodieRecordPayload`：
+	- 预合并和写出合并都使用较大的`precombine`字段所在的记录。
+	- 

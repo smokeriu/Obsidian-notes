@@ -28,7 +28,7 @@ Hudi现阶段**必须需要**3种元数据字段用于对数据进行去重和�
 	- 即指定为分区的字段格式，包括了：
 		- `UNIX_TIMESTAMP`：字段就是一个时间戳的情况。
 		- `DATE_STRING`：字符串的日期，需要指定输入格式。
-		- `MIXED`：
+		- `MIXED`：混合mo'ui
 		- `EPOCHMILLISECONDS`：毫秒级的long类型的时间戳。
 		- `SCALAR`：根据指定的`time.unit`，来生成时间， 是`EPOCHMILLISECONDS`的拓展版。
 	- 如果输入的数据为null，则会转换为1970的初始时间。

@@ -83,4 +83,4 @@ Hudi内置了数个合并比较逻辑：
 - `OverwriteNonDefaultsWithLatestAvroPayload`：
 	- 与`OverwriteWithLatestAvroPayload`类似，只是在写出合并时，当且仅当`precombine`字段值与Storage中的值不一致时，才用新数据覆盖旧数据。
 - `PartialUpdateAvroPayload`：
-	- 
+	- 部分更新，其主要策略与`OverwriteNonDefaultsWithLatestAvroPayload`一致，

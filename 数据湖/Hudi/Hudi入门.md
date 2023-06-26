@@ -78,5 +78,6 @@ Hudi内置了数个合并比较逻辑：
 - `DefaultHoodieRecordPayload`：
 	- 预合并和写出合并都使用较大的`precombine`字段所在的记录。
 - `EventTimeAvroPayload`：
+	- 使用数据中的事件时间作为比较依据，与`DefaultHoodieRecordPayload`的唯一区别在于，
 - `OverwriteNonDefaultsWithLatestAvroPayload`：
 - `PartialUpdateAvroPayload`：

@@ -81,5 +81,6 @@ Hudi内置了数个合并比较逻辑：
 	- 使用数据中的事件时间作为比较依据，与`DefaultHoodieRecordPayload`的唯一区别在于，其不再需要追踪metadata的event-time数据。
 	- 官网写说使用这个payload需要指定`hoodie.payload.event.time.field`，但实际代码中这个配置只在`DefaultHoodieRecordPayload`中使用。暂时不清楚是否是我的理解错误。
 - `OverwriteNonDefaultsWithLatestAvroPayload`：
-	- 与`OverwriteWithLatestAvroPayload`类型，只是在写出合并时，当且仅当`precombine`字段值与Storage中的值b
+	- 与`OverwriteWithLatestAvroPayload`类似，只是在写出合并时，当且仅当`precombine`字段值与Storage中的值不一致时，才用新数据覆盖旧数据。
 - `PartialUpdateAvroPayload`：
+	- 

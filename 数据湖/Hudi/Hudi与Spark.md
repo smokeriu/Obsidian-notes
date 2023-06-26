@@ -39,6 +39,9 @@ Hudi支持增量读取，其含义为：读取指定时间范围内更新/插入
 与历史快照的主要区别是：
 - 得到的数据永远是最新的数据。
 - 只会得到时间范围内变化的数据。
+在增量读取模式下，需要提供如下参数：
+- `hoodie.datasource.read.begin.instanttime`：范围起始时间
+- `hoodie.datasource.read.end.instanttime`：范围终止时间。（）
 
 
 ## 写

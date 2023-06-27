@@ -70,6 +70,9 @@ Hudi在写入时，有两层来控制写入逻辑：
 1. 由Spark的SaveMode来控制初始逻辑。
 2. 有Hudi的OPERATION_OPT_KEY来控制实际逻辑。
 
+### Spark SaveMode
+- Overwrite：
+- Append：
 
 
 # 流任务

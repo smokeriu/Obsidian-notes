@@ -66,7 +66,10 @@ Hudi支持增量读取，其含义为：读取指定时间范围内更新/插入
 
 
 ## 写
-Hudi提供了对overwrite和append的模式支持。
+Hudi在写入时，有两层来控制写入逻辑：
+1. 由Spark的SaveMode来控制初始逻辑。
+2. 有Hudi的OPERATION_OPT_KEY来控制实际逻辑。
+
 
 
 # 流任务

@@ -34,4 +34,4 @@ $$
 =
 softmax(\mathbf{o})_i - y_i
 $$
-> 表示softmax的第i个元素，与目标第i个元素的差值。
+> 这里求导需要将Softmax函数带入损失函数公式，最后的结果可以替换会softmax函数。

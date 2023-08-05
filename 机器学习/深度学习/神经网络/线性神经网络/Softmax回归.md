@@ -30,5 +30,7 @@ l(\mathbf{y}, \hat{\mathbf{y}}) =
 $$
 对这个损失函数求梯度，得到：
 $$
-
+\partial_{o_i}l(\mathbf{y}, \hat{\mathbf{y}})
+=
+softmax(\mathbf{o})_i - y_i
 $$

@@ -34,3 +34,4 @@ $$
 =
 softmax(\mathbf{o})_i - y_i
 $$
+> 表示softmax的第i个元素，与目标第i个元素的差值。

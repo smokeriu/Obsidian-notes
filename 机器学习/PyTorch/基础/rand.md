@@ -1,5 +1,6 @@
 Torch提供了两个函数来生成随机分布的数据
 # rand
+**均匀分布**
 
 ```python
 torch.rand(*sizes, out=None) -> Tensor
@@ -11,4 +12,12 @@ torch.rand(*sizes, out=None) -> Tensor
 	- 如果指定了out，方法返回值和out对应的变量，会拥有一样的数据
 
 例如：
+```python
+torch.rand(2,3)
+# 生成一个2*3的矩阵
+```
 # randn
+**标准正态分布**
+```python
+torch.rand(*sizes, out=None) -> Tensor
+``` 

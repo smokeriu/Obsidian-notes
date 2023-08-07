@@ -29,7 +29,7 @@ torch.arange(start, end, steps)
 ```python
 torch.logspace(start, end, steps, base=10.0)
 ```
-返回一个一维张量，
+返回一个一维张量，同样是生成steps个点，但需要指定对数的底（base）。
 
 
 # 张量
@@ -68,5 +68,7 @@ torch.normal(means, std, out=None) -> Tensor
 
 例如：
 ```python
-
+means = torch.arange(0,10)
+std = torch.linspace(1,0,10)
+torch.normal(means,std)
 ```

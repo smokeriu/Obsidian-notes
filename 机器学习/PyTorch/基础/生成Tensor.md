@@ -47,7 +47,7 @@ torch.rand(*sizes, out=None) -> Tensor
 torch.rand(2,3)
 # 生成一个2*3的矩阵
 ```
-# randn
+## randn
 **标准正态分布**
 ```python
 torch.rand(*sizes, out=None) -> Tensor
@@ -55,7 +55,7 @@ torch.rand(*sizes, out=None) -> Tensor
 
 返回一个张量，包含了从**标准正态分布**（均值为0，方差为1，即高斯白噪声）中抽取的一组随机数。张量的形状由参数sizes定义。
 
-# normal
+## normal
 **离散正态分布**
 ```python
 torch.normal(means, std, out=None) -> Tensor
@@ -82,3 +82,10 @@ torch.normal(means,std)
 torch.normal(means,std, [2,3])
 # 生成一个2*3的张量
 ```
+
+# 仿造
+## zero_like
+```python
+zeros_like(input) -> Tensor
+```
+返回一个张量，其值全为0，形状与input一致。

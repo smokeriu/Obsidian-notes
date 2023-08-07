@@ -19,6 +19,16 @@ torch.arange(start=0, end, step=1, out=None, dtype=None, requires_grad=False) ->
 ## range
 与arange类似，不过生成的是左闭右闭的向量。
 
+## linspace
+**线性间距向量**
+```python
+torch.arange(start, end, step)
+```
+返回一个1维张量，包含在区间start和end上均匀间隔的**step个点**。这里step指定的是个数，而不是步长。
+## logspace
+
+
+
 # 张量
 ## rand
 **均匀分布**

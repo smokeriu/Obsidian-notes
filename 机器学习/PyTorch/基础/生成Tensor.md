@@ -5,7 +5,7 @@ Torch提供了一些生成张量的方法。
 ```python
 torch.arange(start=0, end, step=1, out=None, dtype=None, requires_grad=False) -> Tensor
 ```
-生成一个左闭右开的向量，其中：
+返回一个一维张量，生成一个左闭右开的向量，其中：
 - start：起始值。
 - end：终止值。（不包含）
 - step：步长。
@@ -22,11 +22,14 @@ torch.arange(start=0, end, step=1, out=None, dtype=None, requires_grad=False) ->
 ## linspace
 **线性间距向量**
 ```python
-torch.arange(start, end, step)
+torch.arange(start, end, steps)
 ```
-返回一个1维张量，包含在区间start和end上均匀间隔的**step个点**。这里step指定的是个数，而不是步长。
+返回一个一维张量，包含在区间start和end上均匀间隔的**step个点**。这里steps指定的*是个数，而不是步长*。
 ## logspace
-
+```python
+torch.logspace(start, end, steps, base=10.0)
+```
+返回一个一维张量，
 
 
 # 张量

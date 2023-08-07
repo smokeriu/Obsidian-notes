@@ -29,3 +29,12 @@ torch.rand(*sizes, out=None) -> Tensor
 torch.normal(means, std, out=None) -> Tensor
 ```
 返回一个张量，包含了均值为`means`，方差为`std`的离散正态分布。张量的形状由参数means和std共同定义。
+
+- means：是一个**张量**，包含每个输出元素相关的正态分布的均值。
+- std：是一个**张量**，包含每个输出元素相关的正态分布的标准差。
+均值和标准差的形状不须匹配，但每个张量的**元素个数须相同**。
+
+例如：
+```python
+
+```

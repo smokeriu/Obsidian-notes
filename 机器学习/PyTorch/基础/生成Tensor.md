@@ -59,13 +59,14 @@ torch.rand(*sizes, out=None) -> Tensor
 **离散正态分布**
 ```python
 torch.normal(means, std, out=None) -> Tensor
-torch.normal(means, std, size,out=None) -> Tensor
+torch.normal(means, std, size, out=None) -> Tensor
 ```
 返回一个张量，包含了均值为`means`，方差为`std`的离散正态分布。张量的形状由参数means和std共同定义。
-
 - means：是一个**张量**，包含每个输出元素相关的正态分布的均值。
-	- 也可以是一个float类型的标量，此时所有
+	- 也可以是一个float类型的标量，此时所有元素均使用该值作为均值。
 - std：是一个**张量**，包含每个输出元素相关的正态分布的标准差。
+	- 也可以是一个float类型的标量，此时所有元素均使用该值作为标准差。
+特别的，如果means和std都为张量，则需要形状yi'vi
 
 例如：
 ```python
@@ -73,4 +74,11 @@ means = torch.arange(0,10)
 std = torch.linspace(1,0,10)
 torch.normal(means,std)
 # 因为means是一维张量，所以结果也是一维张量
+```
+
+特别的，如果means和std都是float，则需要指定size。
+例如：
+```python
+torch.normal(means,std, [2,3])
+# 生成一个
 ```

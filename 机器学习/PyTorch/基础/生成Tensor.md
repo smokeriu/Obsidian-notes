@@ -2,9 +2,11 @@ Torch提供了一些生成张量的方法。
 
 # 向量
 ## arange
-生成向量
+```python
+torch.arange(start=0, end, step=1, *, out=None, dtype=None, layout=torch.strided, device=None, requires_grad=False) → Tensor
+```
 
-# vh'x
+# 张量
 # rand
 **均匀分布**
 ```python

@@ -3,8 +3,15 @@ Torch提供了一些生成张量的方法。
 # 向量
 ## arange
 ```python
-torch.arange(start=0, end, step=1, *, out=None, dtype=None, layout=torch.strided, device=None, requires_grad=False) → Tensor
+torch.arange(start=0, end, step=1, out=None, dtype=None, requires_grad=False) -> Tensor
 ```
+生成一个左闭右开的向量，其中：
+- start：起始值。
+- end：终止值。（包含）
+- step：
+- out：
+- dtype：
+- 
 
 # 张量
 # rand

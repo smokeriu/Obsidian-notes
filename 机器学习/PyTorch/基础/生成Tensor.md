@@ -71,4 +71,5 @@ torch.normal(means, std, out=None) -> Tensor
 means = torch.arange(0,10)
 std = torch.linspace(1,0,10)
 torch.normal(means,std)
+# 因为means是一维张量，所以结果也是一维张量
 ```

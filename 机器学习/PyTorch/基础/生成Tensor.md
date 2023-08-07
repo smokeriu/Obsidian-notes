@@ -66,7 +66,7 @@ torch.normal(means, std, size, out=None) -> Tensor
 	- 也可以是一个float类型的标量，此时所有元素均使用该值作为均值。
 - std：是一个**张量**，包含每个输出元素相关的正态分布的标准差。
 	- 也可以是一个float类型的标量，此时所有元素均使用该值作为标准差。
-特别的，如果means和std都为张量，则需要形状yi'vi
+特别的，如果means和std都为张量，则需要形状一致。
 
 例如：
 ```python
@@ -80,5 +80,5 @@ torch.normal(means,std)
 例如：
 ```python
 torch.normal(means,std, [2,3])
-# 生成一个
+# 生成一个2*3的张量
 ```

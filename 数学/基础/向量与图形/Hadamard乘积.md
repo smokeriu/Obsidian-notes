@@ -1,4 +1,3 @@
-Hadamard乘积
 假设$\vec{s}$和$\vec{t}$是两个同样维度的向量，则使用$\vec{s} \odot \vec{t}$表示按元素乘积，例如：
 $$
 \left[

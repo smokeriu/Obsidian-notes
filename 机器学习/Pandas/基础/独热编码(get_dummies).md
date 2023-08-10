@@ -3,10 +3,11 @@ pandas提供了get_dummies函数，用于将非数值数据转换为数值数据
 > 这图可能有一点小问题，pandas会在新列名中，将原有列名作为前缀加上，即新的三列为：`Color_Red`，`Color_Yellow`，`Color_Green`。
 # 定义
 ```python
-def get_dummies(data, dummy_na=False, drop_first=False , ...)
+def get_dummies(data, columns=None, dummy_na=False, drop_first=False, ...)
 ```
 其中，
 - `data`：表示需要处理的数据，一般是DataFrame。
+- `columns`：表示要处理的列名列表。默认为None
 - `dummy_na`：增加一列来表示NaN值，即将原有数据中的NaN值形成单独一列。
 	- 默认为false，则会丢弃所有NaN的特征值。
 - `drop_first`：是否丢弃第一列。
@@ -14,7 +15,7 @@ def get_dummies(data, dummy_na=False, drop_first=False , ...)
 
 默认情况下，会对data中的*所有*非数值列应用独热编码，**数值列则不会编码**。
 
-# 实例
+# 示例
 
 
 

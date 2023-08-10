@@ -6,8 +6,12 @@ def get_dummies(data, dummy_na=False, drop_first=False , ...)
 ```
 其中，
 - `data`：表示需要处理的数据，一般是DataFrame。
-- `dummy_na`：
+- `dummy_na`：增加一列来表示NaN值，即将原有数据中的NaN值形成单独一列。
+	- 默认为false，则会丢弃所有NaN的特征值。
 - `drop_first`：是否丢弃第一列。
-	- 因为转成列后，
+	- 因为转成列后，其实我们依靠`k-1`列已经能够描述所有数据。所以某些情况下我们可以丢弃第一列。
 
 默认情况下，会对data中的所有非数值列应用独热编码。
+
+
+# drop_first

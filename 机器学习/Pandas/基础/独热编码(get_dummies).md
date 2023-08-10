@@ -19,10 +19,11 @@ def get_dummies(data, columns=None, dummy_na=False, drop_first=False, ...)
 
 # 示例
 ```python
-pd.get_dummies(df) # 对所有object类型的列应用独热编码，
-pd.get_dummies(df, columns=['A','B']) # 
+pd.get_dummies(df) # 对所有object类型的列应用独热编码。
+pd.get_dummies(df, columns=['A','B']) # 只对A列和B列应用独热编码。
 ```
 
+# 注意
+需要避免对离散值特别多的列应用独热编码，例如某一列的离散值有10
 
-
-# drop_first
+# 陷阱

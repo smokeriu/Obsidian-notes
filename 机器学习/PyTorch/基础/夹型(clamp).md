@@ -15,5 +15,9 @@ x = min if x < min
 x = max if x > max
 ```
 
-# 示例
-我们可以将jp'go
+我们可以使用inf来
+我们可以将训练后的结果进行收缩：
+```python
+torch.clamp(net(features), 1, float('inf'))
+```
+这里，我们将小于1的值设置为1，但不对上限进行限制

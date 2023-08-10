@@ -9,8 +9,9 @@ def get_dummies(data, columns=None, dummy_na=False, drop_first=False, ...)
 - `data`：表示需要处理的数据，一般是DataFrame。
 - `columns`：表示要处理的列名列表。默认为None，表示所有`object`列。
 	- 指定columns可以强制对非`object`列进行编码。
-- `dummy_na`：增加一列来表示NaN值，即将原有数据中的NaN值形成单独一列。
-	- 默认为false，则会丢弃所有NaN的特征值。
+- `dummy_na`：增加一列来表示NaN值，即将原有数据中的NaN值形成单独一列，用1表示NaN。0表示非NaN。
+	- 默认为False，则会丢弃所有NaN的特征值。
+	- 如果为True，即使数据没有值为NaN，也会增加一列NaN的值。
 - `drop_first`：是否丢弃第一列。
 	- 因为转成列后，其实我们依靠`k-1`列已经能够描述所有数据。所以某些情况下我们可以丢弃第一列。
 

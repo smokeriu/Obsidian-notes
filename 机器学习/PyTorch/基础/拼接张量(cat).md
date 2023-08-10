@@ -6,5 +6,5 @@ torch.cat(tensors: Union[Tuple[Tensor, ...], List[Tensor]],
 ```
 其中：
 - `tensors`表示需要关联的张量，一般为一个列表。
-- dim表示关联维度。
-	- mo'rf
+- `dim`表示关联维度。
+	- 默认为0，表示竖向拼接，对矩阵的表现类似于`union`。

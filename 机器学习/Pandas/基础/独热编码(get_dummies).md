@@ -14,5 +14,8 @@ def get_dummies(data, dummy_na=False, drop_first=False , ...)
 
 默认情况下，会对data中的*所有*非数值列应用独热编码，**数值列则不会编码**。
 
+# 实例
+
+
 
 # drop_first

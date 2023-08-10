@@ -1,0 +1,1 @@
+pandas提供了get_dummies函数，用于处理非数值数据

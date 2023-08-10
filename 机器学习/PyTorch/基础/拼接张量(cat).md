@@ -11,4 +11,9 @@ torch.cat(tensors: Union[Tuple[Tensor, ...], List[Tensor]],
 
 需要注意，因为张量可以是N维的，所以dim也可以是`N-1`的数字，则表示按照第几维拼接。
 
-例如，我们
+例如：
+```python
+x = torch.rand([2,3,4,5])
+torch.rand([2,3,4,5])
+torch
+```

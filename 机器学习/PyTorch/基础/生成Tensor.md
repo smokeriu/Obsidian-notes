@@ -1,5 +1,6 @@
 Torch提供了一些生成张量的方法。
-
+# 转换
+Tensor能从其他框架中将矩阵转换为Tensor，如Pandas、Numpy。
 # 向量
 ## arange
 ```python

@@ -29,7 +29,16 @@ def try_all_gpus():  #@save
 # 使用GPU
 ## 张量使用GPU
 默认情况，张量是在CPU上创建的，有两种方式来使用GPU：
-1. 创建时指定
+1. 创建时指定：
 ```python
-
+X1 = torch.ones(2, 3, device=try_gpu())
 ```
+
+2. 将已有的张量*复制*到GPU上：
+```python
+X2 = torch.ones(2, 3)
+Z = X2.cuda(1)
+```
+
+
+特别的，当我们有多张卡时，

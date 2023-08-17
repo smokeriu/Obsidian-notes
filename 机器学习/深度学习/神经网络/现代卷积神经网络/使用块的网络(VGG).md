@@ -35,3 +35,4 @@ def vgg_block(num_convs, in_channels, out_channels):
 ## VGG网络
 整个VGG网络的结构如图所示：
 ![[assets/Pasted image 20230817105257.png|500]]
+除了重复使用VGG块以外，其实网络整体与[[深度卷积神经网络(AlexNet)]]是类似的，都是先经过卷积神经网络，在通过[[../../多层感知机/多层感知机|多层感知机]]将数据平铺。

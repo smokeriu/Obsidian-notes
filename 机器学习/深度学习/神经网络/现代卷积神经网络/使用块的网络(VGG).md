@@ -25,4 +25,8 @@ def vgg_block(num_convs, in_channels, out_channels):
 - `num_convs`：卷积层的数量。
 - `in_channels`：输入通道的数量。
 - `out_channels`：输出通道数量。
-通过观察，我们发现，
+通过观察，我们发现其特点是：
+- 多个累积的卷积层串联。
+- 从第二个卷积层开始，输入通道数就等于输出通道数了。
+- 最后通过一个汇聚层采样，而不是每个卷积层后都跟随一个汇聚层。
+

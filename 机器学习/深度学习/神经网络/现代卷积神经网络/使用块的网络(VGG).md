@@ -30,7 +30,7 @@ def vgg_block(num_convs, in_channels, out_channels):
 - 从第二个卷积层开始，输入通道数就等于输出通道数了。
 - 最后通过一个汇聚层采样，而不是每个卷积层后都跟随一个汇聚层。
 用图像表示为：
-![[assets/Pasted image 20230817105155.png|500]]
+![[assets/Pasted image 20230817105155.png|300]]
 
 ## VGG网络
 整个VGG网络的结构如图所示：

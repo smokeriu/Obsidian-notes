@@ -21,3 +21,8 @@ def vgg_block(num_convs, in_channels, out_channels):
     layers.append(nn.MaxPool2d(kernel_size=2,stride=2))
     return nn.Sequential(*layers)
 ```
+其中：
+- `num_convs`：卷积层的数量。
+- `in_channels`：输入通道的数量。
+- `out_channels`：输出通道数量。
+通过观察，我们发现，

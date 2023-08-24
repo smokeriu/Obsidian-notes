@@ -12,4 +12,14 @@ NiN块以一个普通卷积层开始，后面是两个1×1的卷积层。这两�
 用图展示：
 ![[assets/Pasted image 20230824151008.png|200]]
 
-其中，每一个卷积
+其中，每一个卷积块之间使用最大[[../卷积神经网络/汇聚层|汇聚层]]相连，最终的结果则使用平均汇聚层。
+每个卷积块用PyTorch表示为：
+```python
+def nin_block(in_channels, out_channels, kernel_size, strides, padding):
+    return nn.Sequential(
+        nn.Conv2d(in_channels, out_channels, kernel_size, strides, padding),
+        nn.ReLU(),
+        nn.Conv2d(out_channels, out_channels, kernel_size=1), nn.ReLU(),
+        nn.Conv2d(out_channels, out_channels, kernel_size=1), nn.ReLU())
+```
+可以看到，后面接了两个1x1的卷积层，且输入输出通道数相等。

@@ -1,0 +1,2 @@
+GoogleNet带来了一个观点：有时使用不同大小的卷积核组合是有利的。
+在GoogleNet中，基本的卷积块被称为*Inception块*。

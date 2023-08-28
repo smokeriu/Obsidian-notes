@@ -12,4 +12,8 @@ $$
 ![[assets/Pasted image 20230828164704.png|500]]
 > 上图中，左侧围ResNet，右侧为DenseNet。
 
-整体上，DenseNet由稠密块和
+整体上，DenseNet由*稠密块*(Dense block)和*过渡层*(transition layer)组成。前者定义如何连接输入和输出，而后者则控制通道数量，使其不会太复杂。
+
+# 稠密块
+稠密块即上文所说的，
+# 过渡层

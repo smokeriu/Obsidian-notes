@@ -1,4 +1,15 @@
 > 是[[残差网络(ResNet)]]和[[../../../../数学/基础/微积分/泰勒公式|泰勒公式]]的结合。
 
 在ResNet中，我们函数$f$拆分为两部分：一个简单的线性项$x$和一个复杂的非线性项$g(x)$。不过二者是简单相加的。
-DenseNet中，我们通过连接来替代简单相加：
+DenseNet中，我们通过*连接*来替代简单相加：
+$$
+\mathbf{x} \to \left[
+\mathbf{x},
+f_1(\mathbf{x}),
+f_2([\mathbf{x}, f_1(\mathbf{x})]), f_3([\mathbf{x}, f_1(\mathbf{x}), f_2([\mathbf{x}, f_1(\mathbf{x})])]), \ldots\right].
+$$
+即他们的关系变为了：
+![[assets/Pasted image 20230828164704.png|500]]
+> 上图中，左侧围ResNet，右侧为DenseNet。
+
+整体上，DenseNet由稠密块和

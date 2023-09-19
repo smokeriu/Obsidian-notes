@@ -23,3 +23,5 @@ $$
 $$
 \mathbf{Z}_t = \sigma(\mathbf{X}_t \mathbf{W}_{xz} + \mathbf{H}_{t-1} \mathbf{W}_{hz} + \mathbf{b}_z)
 $$
+整体上，其形状如图：
+![[assets/Pasted image 20230919195828.png|500]]

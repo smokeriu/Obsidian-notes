@@ -11,6 +11,10 @@ $$
 - 输入为$\mathbf{X}_t \in \mathbb{R}^{n \times d}$。
 - 上一个时间步的隐状态为$\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$。
 - 激活函数表示为$\sigma$。
+- 权重为$\mathbf{W}_{xr}\in \mathbb{R}^{d \times h}$和$\mathbf{W}_{hr} \in \mathbb{R}^{h \times h}$。
+- 偏置为$\mathbf{b}_r \in \mathbb{R}^{1 \times h}$。
+
+显然由于偏置的形状，与之求和时会触发广播机制。
 
 # 更新门
 更新门将允许我们控制新状态中*有多少个*是旧状态的副本。

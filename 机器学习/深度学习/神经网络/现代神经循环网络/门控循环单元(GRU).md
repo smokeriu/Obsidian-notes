@@ -26,3 +26,10 @@ $$
 整体上，其形状如图：
 ![[assets/Pasted image 20230919195828.png|500]]
 # 候选隐状态
+将重置门与常规隐状态更新机制集成，得到时间步$t$的候选隐状态$\tilde{\mathbf{H}}_t \in \mathbb{R}^{n \times h}$：
+$$
+\tilde{\mathbf{H}}_t = \tanh(\mathbf{X}_t \mathbf{W}_{xh} + \left(\mathbf{R}_t \odot \mathbf{H}_{t-1}\right) \mathbf{W}_{hh} + \mathbf{b}_h),
+$$
+其中：
+- 权重参数为$\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$和$\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$。
+这里使用[[../../../../数学/基础/向量与图形/Hadamard乘积|Hadamard乘积]]来处理重置门和上一步的隐状态，可以减少以往状态的影响。

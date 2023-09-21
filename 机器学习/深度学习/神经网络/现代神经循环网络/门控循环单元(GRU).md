@@ -65,8 +65,11 @@ $$
 $$
 \mathbf{H}_t = \mathbf{Z}_t \odot \mathbf{H}_{t-1}  + (1 - \mathbf{Z}_t) \odot \mathbf{X}_t.
 $$
-即最终的隐状态，可以简化的看做：
+
+
+
+更新门$\mathbf{Z}_t$的目标是使模型可以完全不依赖*于当前的输入*。而重置门$\mathbf{R}_t$的目标则是使模型可以完全不关注*上一个隐状态*，即最终的隐状态，可以简化的看做：
 $$
 \mathbf{H}_t = \mathbf{R}_t \odot \mathbf{H}_{t-1}  + \mathbf{Z}_t \odot \mathbf{X}_t.
 $$
-> 当然，在GRU设计中，$\mathbf{Z}_t$同样会影响$\mathbf{H}_{t-1}$，但GRU的本质，就是引入了两个矩阵来控制输入和上一个隐状态的取舍。
+> 当然，在GRU设计中，$\mathbf{Z}_t$同样会影响$\mathbf{H}_{t-1}$。

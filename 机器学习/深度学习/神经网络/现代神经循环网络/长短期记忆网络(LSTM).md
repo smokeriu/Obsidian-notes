@@ -16,9 +16,12 @@ $$
 \end{aligned}\end{split}
 $$
 # 候选记忆元
-候选记忆元公式上与门类似，不过将激活函数更换成了[[../../多层感知机/激活函数#tanh函数|tanh]]，更接近于循环层：
+候选记忆元$\tilde{\mathbf{C}}_t$公式上与门类似，不过将激活函数更换成了[[../../多层感知机/激活函数#tanh函数|tanh]]，更接近于循环层：
 $$
 \tilde{\mathbf{C}}_t = \text{tanh}(\mathbf{X}_t \mathbf{W}_{xc} + \mathbf{H}_{t-1} \mathbf{W}_{hc} + \mathbf{b}_c),
 $$
 其结构如图：
 ![[assets/Pasted image 20230921192613.png|500]]
+
+# 记忆元
+uu'r

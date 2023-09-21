@@ -26,6 +26,10 @@ $$
 整体上，其形状如图：
 ![[assets/Pasted image 20230919195828.png|500]]
 # 候选隐状态
+在[[../循环神经网络/循环神经网络#循环层|循环神经网络]]中，得到过隐状态的一般公式：
+$$
+\mathbf{H}_t = \phi(\mathbf{X}_t \mathbf{W}_{xh} + \mathbf{H}_{t-1} \mathbf{W}_{hh}  + \mathbf{b}_h)
+$$
 将重置门与常规隐状态更新机制集成，得到时间步$t$的候选隐状态$\tilde{\mathbf{H}}_t \in \mathbb{R}^{n \times h}$：
 $$
 \tilde{\mathbf{H}}_t = \tanh(\mathbf{X}_t \mathbf{W}_{xh} + \left(\mathbf{R}_t \odot \mathbf{H}_{t-1}\right) \mathbf{W}_{hh} + \mathbf{b}_h),
@@ -34,12 +38,13 @@ $$
 - 权重参数为$\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$和$\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$。
 这里使用[[../../../../数学/基础/向量与图形/Hadamard乘积|Hadamard乘积]]来处理重置门和上一步的隐状态，可以减少以往状态的影响。显然，由于$\mathbf{R}_t \in (0,1)$，则当$\mathbf{R}_t$中的项接近1时，则取值全部依赖于$\mathbf{H}_{t-1}$，恢复为普通的循环神经网络，而如果其中的项接近0，候选隐状态是以$\mathbf{X}_t$作为输入的多层感知机的结果。任何预先存在的隐状态都会被重置为默认值。
 
+简而言之，引入了候选隐状态，其根据重置门来决定
+
 流程变更为：
 ![[assets/Pasted image 20230920163922.png|500]]
 
 # 隐状态
-隐状态最终需要结合更新门$\mathbf{Z}_t$，这一步确定新的隐状态$\mathbf{H}_t \in \mathbb{R}^{n \times h}$在多大程度上来自旧的状态$\mathbf{H}_{t-1}$和 新的候选状态$\tilde{\mathbf{H}}_t$。即有如下公式
-
+隐状态最终需要结合更新门$\mathbf{Z}_t$，这一步确定新的隐状态$\mathbf{H}_t \in \mathbb{R}^{n \times h}$在多大程度上来自旧的状态$\mathbf{H}_{t-1}$和 新的候选状态$\tilde{\mathbf{H}}_t$。即有如下公式：
 $$
 \mathbf{H}_t = \mathbf{Z}_t \odot \mathbf{H}_{t-1}  + (1 - \mathbf{Z}_t) \odot \tilde{\mathbf{H}}_t.
 $$

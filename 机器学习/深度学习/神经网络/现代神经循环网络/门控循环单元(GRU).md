@@ -48,4 +48,10 @@ $$
 $$
 \mathbf{H}_t = \mathbf{Z}_t \odot \mathbf{H}_{t-1}  + (1 - \mathbf{Z}_t) \odot \tilde{\mathbf{H}}_t.
 $$
-简而言之，这一个时间步的隐状态，q
+流程变更为：
+![[assets/Pasted image 20230921155743.png|500]]
+
+
+简而言之：
+- 重置门有助于捕获序列中的短期依赖关系；
+- 更新门有助于捕获序列中的长期依赖关系。

@@ -28,3 +28,4 @@ $$
 $$
 \mathbf{C}_t = \mathbf{F}_t \odot \mathbf{C}_{t-1} + \mathbf{I}_t \odot \tilde{\mathbf{C}}_t
 $$
+简而言之，如果

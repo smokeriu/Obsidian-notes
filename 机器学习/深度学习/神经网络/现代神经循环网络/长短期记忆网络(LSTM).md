@@ -7,7 +7,7 @@
 - 输入门$\mathbf{I}_t$：用来决定何时将数据读入单元。
 其结构如图：
 ![[assets/Pasted image 20230921191024.png|500]]
-其公式与[[../循环神经网络/循环神经网络#循环层|循环神经网络]]基本一致，为带有*激活函数的全连接层*，如下：
+其公式与[[../循环神经网络/循环神经网络#循环层|循环神经网络]]基本一致，为带有[[../../多层感知机/激活函数#Sigmoid函数|Sigmoid激活函数]]*的全连接层*，如下：
 $$
 \begin{split}\begin{aligned}
 \mathbf{I}_t &= \sigma(\mathbf{X}_t \mathbf{W}_{xi} + \mathbf{H}_{t-1} \mathbf{W}_{hi} + \mathbf{b}_i),\\

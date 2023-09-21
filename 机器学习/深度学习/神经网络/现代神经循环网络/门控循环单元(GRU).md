@@ -11,7 +11,7 @@ $$
 其中，时间步为$t$：
 - 输入为$\mathbf{X}_t \in \mathbb{R}^{n \times d}$。
 - 上一个时间步的隐状态为$\mathbf{H}_{t-1} \in \mathbb{R}^{n \times h}$。
-- 激活函数表示为$\sigma$。
+- [[../../多层感知机/激活函数#Sigmoid函数|Sigmoid激活函数]]表示为$\sigma$。
 - 权重为$\mathbf{W}_{xr}\in \mathbb{R}^{d \times h}$和$\mathbf{W}_{hr} \in \mathbb{R}^{h \times h}$。
 - 偏置为$\mathbf{b}_r \in \mathbb{R}^{1 \times h}$。
 	- 显然由于偏置的形状，与之求和时会触发广播机制。
@@ -37,6 +37,8 @@ $$
 $$
 其中：
 - 权重参数为$\mathbf{W}_{xh} \in \mathbb{R}^{d \times h}$和$\mathbf{W}_{hh} \in \mathbb{R}^{h \times h}$。
+- [[../../多层感知机/激活函数#tanh函数|tanh激活函数]]表示为$\phi$。
+
 这里使用[[../../../../数学/基础/向量与图形/Hadamard乘积|Hadamard乘积]]来处理重置门和上一步的隐状态，可以减少以往状态的影响。显然，由于$\mathbf{R}_t \in (0,1)$，则：
 - 当$\mathbf{R}_t$中的项*接近1时*，则取值全部依赖于$\mathbf{H}_{t-1}$，恢复为普通的循环神经网络。
 - 当$\mathbf{R}_t$中的项*接近0时*，候选隐状态是以$\mathbf{X}_t$作为输入的多层感知机的结果。任何预先存在的隐状态都会被重置为默认值。

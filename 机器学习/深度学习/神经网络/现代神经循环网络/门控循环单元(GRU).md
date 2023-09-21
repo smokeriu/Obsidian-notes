@@ -38,4 +38,8 @@ $$
 ![[assets/Pasted image 20230920163922.png|500]]
 
 # 隐状态
-隐状态最终需要结合更新门$\mathbf{Z}_t$，这一步确定新的隐状态��∈��×ℎ 在多大程度上来自旧的状态��−1和 新的候选状态�~�。
+隐状态最终需要结合更新门$\mathbf{Z}_t$，这一步确定新的隐状态$\mathbf{H}_t \in \mathbb{R}^{n \times h}$在多大程度上来自旧的状态��−1和 新的候选状态�~�。
+
+$$
+\mathbf{H}_t = \mathbf{Z}_t \odot \mathbf{H}_{t-1}  + (1 - \mathbf{Z}_t) \odot \tilde{\mathbf{H}}_t.
+$$

@@ -65,3 +65,8 @@ $$
 $$
 \mathbf{H}_t = \mathbf{Z}_t \odot \mathbf{H}_{t-1}  + (1 - \mathbf{Z}_t) \odot \mathbf{X}_t.
 $$
+即最终的隐状态，可以简化的看做：
+$$
+\mathbf{H}_t = \mathbf{R}_t \odot \mathbf{H}_{t-1}  + \mathbf{Z}_t \odot \mathbf{X}_t.
+$$
+> 当然，在GRU中，$\mathbf{Z}_t$同样会影响$\mathbf{H}_{t-1}$，

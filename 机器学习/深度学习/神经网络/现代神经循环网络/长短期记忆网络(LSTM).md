@@ -24,4 +24,4 @@ $$
 ![[assets/Pasted image 20230921192613.png|500]]
 
 # 记忆元
-uu'r
+输入门控制采用多少来自$\tilde{\mathbf{C}}_t$的新数据，而遗忘门控制保留多少过去的记忆元$\mathbf{C}_{t-1} \in \mathbb{R}^{n \times h}$。则我们可以得到时间步$t$的ji'yi'yr

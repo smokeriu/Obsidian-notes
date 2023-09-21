@@ -72,4 +72,4 @@ $$
 $$
 \mathbf{H}_t = \mathbf{R}_t \odot \mathbf{H}_{t-1}  + \mathbf{Z}_t \odot \mathbf{X}_t.
 $$
-> 当然，在GRU设计中，$\mathbf{Z}_t$同样会影响$\mathbf{H}_{t-1}$。
+> 当然，在GRU设计中，$\mathbf{Z}_t$同样会影响到$\mathbf{H}_{t-1}$的取值权重，但二者的作用就是是模型能够在一个区间内更换关注点。

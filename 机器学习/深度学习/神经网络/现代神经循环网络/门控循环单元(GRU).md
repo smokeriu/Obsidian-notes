@@ -69,4 +69,4 @@ $$
 $$
 \mathbf{H}_t = \mathbf{R}_t \odot \mathbf{H}_{t-1}  + \mathbf{Z}_t \odot \mathbf{X}_t.
 $$
-> 当然，在GRU中，$\mathbf{Z}_t$同样会影响$\mathbf{H}_{t-1}$，
+> 当然，在GRU设计中，$\mathbf{Z}_t$同样会影响$\mathbf{H}_{t-1}$，但GRU的本质，就是引入了两个矩阵来控制输入和上一个隐状态的取舍。

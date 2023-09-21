@@ -16,12 +16,15 @@ $$
 \end{aligned}\end{split}
 $$
 # 候选记忆元
-候选记忆元$\tilde{\mathbf{C}}_t$公式上与门类似，不过将激活函数更换成了[[../../多层感知机/激活函数#tanh函数|tanh]]，更接近于循环层：
+在LSTM中，引入了名叫**记忆元**的要素，其与隐状态类似，会参与下一个时间步的计算。在引入记忆元前，先了解候选记忆元$\tilde{\mathbf{C}}_t$，其公式上与门类似，不过将激活函数更换成了[[../../多层感知机/激活函数#tanh函数|tanh]]，更接近于循环层：
 $$
-\tilde{\mathbf{C}}_t = \text{tanh}(\mathbf{X}_t \mathbf{W}_{xc} + \mathbf{H}_{t-1} \mathbf{W}_{hc} + \mathbf{b}_c),
+\tilde{\mathbf{C}}_t = \text{tanh}(\mathbf{X}_t \mathbf{W}_{xc} + \mathbf{H}_{t-1} \mathbf{W}_{hc} + \mathbf{b}_c)
 $$
 其结构如图：
 ![[assets/Pasted image 20230921192613.png|500]]
 
 # 记忆元
-输入门控制采用多少来自$\tilde{\mathbf{C}}_t$的新数据，而遗忘门控制保留多少过去的记忆元$\mathbf{C}_{t-1} \in \mathbb{R}^{n \times h}$。则我们可以得到时间步$t$的ji'yi'yr
+输入门控制采用多少来自$\tilde{\mathbf{C}}_t$的新数据，而遗忘门控制保留多少过去的记忆元$\mathbf{C}_{t-1} \in \mathbb{R}^{n \times h}$。则我们可以得到时间步$t$的记忆元公式：
+$$
+\mathbf{C}_t = \mathbf{F}_t \odot \mathbf{C}_{t-1} + \mathbf{I}_t \odot \tilde{\mathbf{C}}_t
+$$

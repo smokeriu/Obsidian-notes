@@ -34,3 +34,4 @@ nn.LSTM(input_size: int,
 	- 显然，第一维决定了是第几层输出的隐状态。
 - `c_0`：即最后一步的神经元，形状为`(num_layers * num_directions, batch, hidden_size)`。
 
+整体结果如图所示：

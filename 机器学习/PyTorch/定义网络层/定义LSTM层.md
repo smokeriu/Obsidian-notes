@@ -32,3 +32,4 @@ nn.LSTM(input_size: int,
 - `output`：输出张量，形状为`(seq_len, batch, num_directions * hidden_size)`。
 - `h_n`：为最后一层的隐状态，形状为`(num_layers * num_directions, batch, hidden_size)`。
 - `c_0`：即最后一层的神经元，形状为`(num_layers * num_directions, batch, hidden_size)`。
+

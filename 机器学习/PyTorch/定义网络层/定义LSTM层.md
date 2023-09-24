@@ -35,3 +35,4 @@ nn.LSTM(input_size: int,
 - `c_0`：即最后一步的神经元，形状为`(num_layers * num_directions, batch, hidden_size)`。
 
 整体结果如图所示：
+![](Pasted%20image%2020230924120536.png|500)

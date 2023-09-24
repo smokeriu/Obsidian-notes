@@ -23,5 +23,6 @@ nn.LSTM(input_size: int,
 特别的，输入为：`input, (h0, c0)`：
 - `input`：输入张量，形状为`(seq_len, batch, input_size)`。
 - `h0`：即隐状态矩阵，形状为`(num_layers * num_directions, batch, hidden_size)`。
+	- `num_directions`即方向数量，`bidirectional`为True是
 - `c0`：即神经元形状，形状为`(num_layers * num_directions, batch, hidden_size)`。
 

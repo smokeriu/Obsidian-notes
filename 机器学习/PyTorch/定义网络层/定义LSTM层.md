@@ -1,4 +1,4 @@
-PyTorch可以通过`LSTM`函数定义LSTM层：
+PyTorch可以通过`LSTM`函数定义[长短期记忆网络(LSTM)](长短期记忆网络(LSTM).md)层：
 ```python
 nn.LSTM(input_size: int, 
 		hidden_size: int, 
@@ -22,5 +22,6 @@ nn.LSTM(input_size: int,
 
 特别的，输入为：`input, (h0, c0)`：
 - `input`：输入张量，形状为`(seq_len, batch, input_size)`。
-- `h0`：
-- `c0`：
+- `h0`：即隐状态矩阵，形状为`(num_layers * num_directions, batch, hidden_size)`。
+- `c0`：即神经元形状，形状为`(num_layers * num_directions, batch, hidden_size)`。
+

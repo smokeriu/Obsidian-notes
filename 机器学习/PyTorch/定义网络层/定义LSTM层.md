@@ -30,6 +30,7 @@ nn.LSTM(input_size: int,
 
 该层产生的输出为：`(output, h_n, c_n)`：
 - `output`：输出张量，形状为`(seq_len, batch, num_directions * hidden_size)`。
-- `h_n`：为最后一层的隐状态，形状为`(num_layers * num_directions, batch, hidden_size)`。
-- `c_0`：即最后一层的神经元，形状为`(num_layers * num_directions, batch, hidden_size)`。
+- `h_n`：为最后一步的隐状态，形状为`(num_layers * num_directions, batch, hidden_size)`。
+	- 显然，第一维决定了是第几层输出的隐状态。
+- `c_0`：即最后一步的神经元，形状为`(num_layers * num_directions, batch, hidden_size)`。
 

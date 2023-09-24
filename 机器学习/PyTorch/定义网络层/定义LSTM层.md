@@ -20,3 +20,7 @@ nn.LSTM(input_size: int,
 - `dropout`默认为0，若为非0，则表示除了最后一层，其它层都会插入[暂退层](定义暂退层.md)。
 - `bidirectional`默认为Flase，为`True`表示使用双向LSTM。
 
+特别的，输入为：`input, (h0, c0)`：
+- `input`：输入张量，形状为`(seq_len, batch, input_size)`。
+- `h0`：
+- `c0`：

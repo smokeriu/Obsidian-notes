@@ -10,7 +10,7 @@ nn.LSTM(input_size: int,
 ```
 其中：
 - `input_size`表示输入数据的大小（特征数）。
-	- 假设输入是一个单词，则`input_size`表示的是单词向量的长度。参考[独热编码](机器学习/PyTorch/基础/独热编码.md)。
+	- 假设输入是一个字母，则`input_size`表示的是字母的向量的长度。参考[独热编码](机器学习/PyTorch/基础/独热编码.md)和[[../../深度学习/神经网络/通用知识/嵌入层(Embedding)|嵌入层(Embedding)]]，这里的`input_size`一般等于[[定义嵌入层]]中的`embedding_dim`。
 - `hidden_size`表示每个隐藏层中，节点的个数。
 - `num_layers`表示隐藏层的层数，默认为1。
 - `bias`默认为`True`，为`False`时，则表示不使用偏置参数。

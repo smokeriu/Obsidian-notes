@@ -1,1 +1,1 @@
-seq2seq的原理是，将input数据通过编码器，生成一个中间state状态。再将state状态和input
+seq2seq是[[编码器和解码器架构]]的一种具体实现，用于解决现实生活中，ju

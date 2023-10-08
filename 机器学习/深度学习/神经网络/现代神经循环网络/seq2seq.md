@@ -1,0 +1,1 @@
+seq2seq的原理是，将input数据通过编码器，生成一个中间state状态。再将state状态和input

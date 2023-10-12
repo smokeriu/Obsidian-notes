@@ -76,10 +76,13 @@ output = self.dense(output).permute(1, 0, 2)
 但这里还引入了填充次元，则在计算损失前，应当屏蔽不相关的项：
 ```python
 def sequence_mask(X, valid_len, value=0):
-	maxlen = X.size(1)
+	maxlen = X.size(1) # 得到输入的step数
 	mask = torch.arange((maxlen), dtype=torch.float32,
                 device=X.device)[None, :] < valid_len[:, None]
     X[~mask] = value
     return X
 ```
 这里将不相关项替换为0，以便后面任何不相关预测的计算都是与零的乘积，结果都等于零。
+
+这里：
+- X是形状为`(batch_size, num_step)`的输入。

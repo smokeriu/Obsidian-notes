@@ -95,29 +95,21 @@ def sequence_mask(X, valid_len, value=0):
 ```python
 class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
 	"""带遮蔽的softmax交叉熵损失函数"""
-# pred的形状：(batch_size,num_steps,vocab_size) # 预测结果
-# label的形状：(batch_size,num_steps) # 标签数据
-# valid_len的形状：(batch_size,) # 合法长度
+	# pred的形状：(batch_size,num_steps,vocab_size) # 预测结果
+	# label的形状：(batch_size,num_steps) # 标签数据
+	# valid_len的形状：(batch_size,) # 合法长度
+	def forward(self, pred, label, valid_len):
+		weights = torch.ones_like(label)
+		# 得到每批次，每一时间步的权重
+		weights = sequence_mask(weights, valid_len)
+		self.reduction='none' # 计算损失时不合并
+		# pred.permute(0, 2, 1) = (batch_size, vocab_size, num_steps)
+		# label = (batch_size,num_steps)
+		unweighted_loss = super(MaskedSoftmaxCELoss, self).forward(
+			pred.permute(0, 2, 1), label)
+		weighted_loss = (unweighted_loss * weights).mean(dim=1)
 
-def forward(self, pred, label, valid_len):
-
-weights = torch.ones_like(label)
-
-# 得到每批次，每一时间步的权重
-
-weights = sequence_mask(weights, valid_len)
-
-self.reduction='none' # 计算损失时不合并
-
-# pred.permute(0, 2, 1) = (batch_size, vocab_size, num_steps)
-
-# label = (batch_size,num_steps)
-
-unweighted_loss = super(MaskedSoftmaxCELoss, self).forward(
-
-pred.permute(0, 2, 1), label)
-
-weighted_loss = (unweighted_loss * weights).mean(dim=1)
-
-return weighted_loss
+		return weighted_loss
 ```
+这里对原有的交叉熵进行了一些修改，即通过`valid_len`和label来计算屏蔽了不相关项的损失值。
+

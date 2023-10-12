@@ -77,8 +77,10 @@ output = self.dense(output).permute(1, 0, 2)
 ```python
 def sequence_mask(X, valid_len, value=0):
 	maxlen = X.size(1) # 得到输入的step数
+	# mask是一个bool组成的张量。
 	mask = torch.arange((maxlen), dtype=torch.float32,
                 device=X.device)[None, :] < valid_len[:, None]
+    # 这里对mask取反，将True对应的下标值设置的value
     X[~mask] = value
     return X
 ```

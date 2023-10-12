@@ -19,10 +19,12 @@ output, state = self.rnn(X)
 
 这里：
 - X最初的形状为：`(batch_size, num_steps)`。
-	- 嵌入层后的形状为：`(batch_size,num_steps,embed_size)`。
-- output的形状为：``。
-- state的形状为：
+	- 嵌入层后的形状为：`(batch_size, num_steps, embed_size)`。
+- output的形状为：`(num_steps, batch_size, num_hiddens)`。
+- state的形状为：`(num_layers, batch_size, num_hiddens)`。
+> num_layers是隐藏层的层数；num_hiddens是单个隐藏层中，神经元的个数。
 
+简单而言，state是GRU每一个隐藏层都会输出一个，
 # 解码器
 
 # 损失函数

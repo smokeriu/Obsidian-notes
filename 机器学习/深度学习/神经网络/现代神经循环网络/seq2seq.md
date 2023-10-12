@@ -3,9 +3,17 @@ seq2seq是[[编码器和解码器架构]]的一种具体实现，用于解决现
 
 # 编码器
 
-编码器用于将输入转换成state，这里使用的是[[../通用知识/嵌入层(Embedding)|嵌入层(Embedding)]]的机制来对数据进行编码：
+编码器用于将输入转换成state，这里使用的是[[../通用知识/嵌入层(Embedding)|嵌入层(Embedding)]]的机制来对数据进行编码，并使用[[门控循环单元(GRU)]]作为循环块：
 ```python
+self.embedding = nn.Embedding(vocab_size, embed_size)
+self.rnn = nn.GRU(embed_size, num_hiddens, num_layers,
+	dropout=dropout)
+```
 
+在接收到Input数据X后，则会产生state：
+```python
+X = self.embedding(X)
+X = X.permute(1, 0, 2)
 ```
 
 # 解码器

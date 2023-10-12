@@ -36,5 +36,17 @@ self.rnn = nn.GRU(embed_size + num_hiddens, num_hiddens, num_layers,
 	dropout=dropout)
 self.dense = nn.Linear(num_hiddens, vocab_size)
 ```
+另外，解码器还需要定义如何使用编码器产出的内容：
+```python
+def init_state(self, enc_outputs, *args):
+	return enc_outputs[1]
+```
+> 这里的enc_outputs其实是一个二元组：(output, state)。
+
+在前向传播时，解码器还需要根据state来定义上下文：
+```python
+
+```
+
 
 # 损失函数

@@ -44,7 +44,7 @@ def init_state(self, enc_outputs, *args):
 ```
 > 这里的`enc_outputs`其实是一个二元组：(output, state)。
 
-在前向传播时，解码器还需要根据state来定义上下文：
+在前向传播时，解码器还需要根据state来定义上下文，即认为输入的句子的信息都已经存放在了state中：
 ```python
 # arg: X, state
 X = self.embedding(X).permute(1, 0, 2)
@@ -55,18 +55,20 @@ output = self.dense(output).permute(1, 0, 2)
 ```
 
 这里：
-- X最初的形状为：`(batch_size, num_steps)`。
-	- 嵌入层后的形状为：`(batch_size, num_steps, embed_size)`。
+- X最初的形状为：`(batch_size, num_steps2)`。
+	- 这里用`num_steps2`主要是为了和编码器的`num_steps`区分开。
+	- 嵌入层后的形状为：`(batch_size, num_steps2, embed_size)`。
 - state的形状来源于编码器，为`(num_layers, batch_size, num_hiddens)`。
-- context的形状由state变换得到，为`(1 * num_steps, batch_size, num_hiddens)`。
+- context的形状由state变换得到，为`(1 * num_steps2, batch_size, num_hiddens)`。
 	- `state[-1]`表示只取最后一层的state。
 	- `X.shape[0]`中的X已经是转置后的。
-- X_and_context的形状为：`(num_steps, batch_size, embed_size + num_hiddens)`。
+- X_and_context的形状为：`(num_steps2, batch_size, embed_size + num_hiddens)`。
 	- 所以定义的GRU的`input_size`是`embed_size + num_hiddens`。
-- 循环层后output的形状为：`(num_steps, batch_size, num_hiddens)`。
-	- 线性后（转置前）的output的形状为：`(num_steps, batch_size, vocab_size)`。
+- 循环层后output的形状为：`(num_steps2, batch_size, num_hiddens)`。
+	- 线性后（转置前）的output的形状为：`(num_steps2, batch_size, vocab_size)`。
 
 整体的架构如下：
 ![[assets/Pasted image 20231012113912.png|500]]
 
 # 损失函数
+在每个时间步，解码器预测了输出词元的概率分布。 类似于语言模型，可以使用softmax来获得分布， 并通过计算交叉熵损失函数来进行优化。

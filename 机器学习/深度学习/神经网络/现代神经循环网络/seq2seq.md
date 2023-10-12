@@ -87,6 +87,6 @@ def sequence_mask(X, valid_len, value=0):
 这里将不相关项替换为0，以便后面任何不相关预测的计算都是与零的乘积，结果都等于零。
 
 这里：
-- X是形状为`(batch_size, num_step)`的输入。
+- X是形状为`(batch_size, num_step, ...)`的输入。
 - `[None, :]`和`[:, None]`的作用是将一维数据转换为二维。
 - 

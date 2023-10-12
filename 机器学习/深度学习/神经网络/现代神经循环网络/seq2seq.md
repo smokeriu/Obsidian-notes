@@ -24,7 +24,7 @@ output, state = self.rnn(X)
 - state的形状为：`(num_layers, batch_size, num_hiddens)`。
 > num_layers是隐藏层的层数；num_hiddens是单个隐藏层中，神经元的个数。
 
-简单而言，state是GRU每一个隐藏层都会输出一个，
+简单而言，state是GRU每一个隐藏层都会输出一个张量，其来自于
 # 解码器
 
 # 损失函数

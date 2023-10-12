@@ -90,3 +90,34 @@ def sequence_mask(X, valid_len, value=0):
 - X是形状为`(batch_size, num_step, ...)`的输入。
 - `[None, :]`和`[:, None]`的作用是将一维数据转换为二维。
 特别的，这里的`X[~mask]`用于将超过`num_step`的数据置为空。
+
+另外使用[[../../../PyTorch/损失函数/交叉熵|交叉熵]]作为损失函数：
+```python
+class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
+	"""带遮蔽的softmax交叉熵损失函数"""
+# pred的形状：(batch_size,num_steps,vocab_size) # 预测结果
+# label的形状：(batch_size,num_steps) # 标签数据
+# valid_len的形状：(batch_size,) # 合法长度
+
+def forward(self, pred, label, valid_len):
+
+weights = torch.ones_like(label)
+
+# 得到每批次，每一时间步的权重
+
+weights = sequence_mask(weights, valid_len)
+
+self.reduction='none' # 计算损失时不合并
+
+# pred.permute(0, 2, 1) = (batch_size, vocab_size, num_steps)
+
+# label = (batch_size,num_steps)
+
+unweighted_loss = super(MaskedSoftmaxCELoss, self).forward(
+
+pred.permute(0, 2, 1), label)
+
+weighted_loss = (unweighted_loss * weights).mean(dim=1)
+
+return weighted_loss
+```

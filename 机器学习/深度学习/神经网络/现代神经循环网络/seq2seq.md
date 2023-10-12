@@ -30,6 +30,7 @@ output, state = self.rnn(X)
 解码器与编码器的主要区别在于：
 - 循环层输入时需要考虑编码器产出的状态。
 - 需要一个线性层来输出。
+	- 线性层的输出向量大小为vocab_size，即可以用于分类表示输出的字符是什么。
 ```python
 self.embedding = nn.Embedding(vocab_size, embed_size)
 self.rnn = nn.GRU(embed_size + num_hiddens, num_hiddens, num_layers,
@@ -63,6 +64,6 @@ output = self.dense(output).permute(1, 0, 2)
 - X_and_context的形状为：`(num_steps, batch_size, embed_size + num_hiddens)`。
 	- 所以定义的GRU的`input_size`是`embed_size + num_hiddens`。
 - 循环层后output的形状为：`(num_steps, batch_size, num_hiddens)`。
-	- 线性后的output的形状为：`(num_steps, batch_size, )`。
+	- 线性后（转置前）的output的形状为：`(num_steps, batch_size, vocab_size)`。
 
 # 损失函数

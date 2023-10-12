@@ -89,4 +89,4 @@ def sequence_mask(X, valid_len, value=0):
 这里：
 - X是形状为`(batch_size, num_step, ...)`的输入。
 - `[None, :]`和`[:, None]`的作用是将一维数据转换为二维。
-- 
+特别的，这里的`X[~mask]`用于将超过`num_step`的数据置为空。

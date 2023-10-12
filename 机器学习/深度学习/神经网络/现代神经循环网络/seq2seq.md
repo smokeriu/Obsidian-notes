@@ -57,8 +57,12 @@ output = self.dense(output).permute(1, 0, 2)
 - X最初的形状为：`(batch_size, num_steps)`。
 	- 嵌入层后的形状为：`(batch_size, num_steps, embed_size)`。
 - state的形状来源于编码器，为`(num_layers, batch_size, num_hiddens)`。
-- context的形状由state变换得到，为`(1 * batch_size, batch_size, num_hiddens)`。
+- context的形状由state变换得到，为`(1 * num_steps, batch_size, num_hiddens)`。
 	- `state[-1]`表示只取最后一层的state。
-- X_and_context的形状为：`()`。
+	- `X.shape[0]`中的X已经是转置后的。
+- X_and_context的形状为：`(num_steps, batch_size, embed_size + num_hiddens)`。
+	- 所以定义的GRU的`input_size`是`embed_size + num_hiddens`。
+- 循环层后output的形状为：``。
+	- 线性后的output的形状为
 
 # 损失函数

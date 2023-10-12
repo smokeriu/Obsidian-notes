@@ -10,11 +10,18 @@ self.rnn = nn.GRU(embed_size, num_hiddens, num_layers,
 	dropout=dropout)
 ```
 
-在接收到Input数据X后，则会产生state：
+在接收到Input数据X后，则会产生输出和state：
 ```python
-X = self.embedding(X)
-X = X.permute(1, 0, 2) # 因为GRU要求第一个维度为时间步，这里需要置换
+X = self.embedding(X) # X是input
+X = X.permute(1, 0, 2) # 因为GRU要求第一个维度为时间步，这里需要置换。
+output, state = self.rnn(X)
 ```
+
+这里：
+- X最初的形状为：`(batch_size, num_steps)`。
+	- 嵌入层后的形状为：`(batch_size,num_steps,embed_size)`。
+- output的形状为：``。
+- state的形状为：
 
 # 解码器
 

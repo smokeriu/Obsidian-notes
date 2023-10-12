@@ -41,12 +41,21 @@ self.dense = nn.Linear(num_hiddens, vocab_size)
 def init_state(self, enc_outputs, *args):
 	return enc_outputs[1]
 ```
-> 这里的enc_outputs其实是一个二元组：(output, state)。
+> 这里的`enc_outputs`其实是一个二元组：(output, state)。
 
 在前向传播时，解码器还需要根据state来定义上下文：
 ```python
-
+# arg: X, state
+X = self.embedding(X).permute(1, 0, 2)
+context = state[-1].repeat(X.shape[0], 1, 1)
+X_and_context = torch.cat((X, context), 2)
+output, state = self.rnn(X_and_context, state)
+output = self.dense(output).permute(1, 0, 2)
 ```
 
+这里：
+- X最初的形状为：`(batch_size, num_steps)`。
+	- 嵌入层后的形状为：`(batch_size, num_steps, embed_size)`。
+- state的形状来源于编码器，
 
 # 损失函数

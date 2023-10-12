@@ -13,7 +13,7 @@ self.rnn = nn.GRU(embed_size, num_hiddens, num_layers,
 在接收到Input数据X后，则会产生state：
 ```python
 X = self.embedding(X)
-X = X.permute(1, 0, 2)
+X = X.permute(1, 0, 2) # 因为GRU要求第一个维度为时间步，这里需要置换
 ```
 
 # 解码器

@@ -63,6 +63,6 @@ output = self.dense(output).permute(1, 0, 2)
 - X_and_context的形状为：`(num_steps, batch_size, embed_size + num_hiddens)`。
 	- 所以定义的GRU的`input_size`是`embed_size + num_hiddens`。
 - 循环层后output的形状为：`(num_steps, batch_size, num_hiddens)`。
-	- 线性后的output的形状为：``。
+	- 线性后的output的形状为：`(num_steps, batch_size, )`。
 
 # 损失函数

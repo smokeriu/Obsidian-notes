@@ -56,6 +56,9 @@ output = self.dense(output).permute(1, 0, 2)
 这里：
 - X最初的形状为：`(batch_size, num_steps)`。
 	- 嵌入层后的形状为：`(batch_size, num_steps, embed_size)`。
-- state的形状来源于编码器，
+- state的形状来源于编码器，为`(num_layers, batch_size, num_hiddens)`。
+- context的形状由state变换得到，为`(1 * batch_size, batch_size, num_hiddens)`。
+	- `state[-1]`表示只取最后一层的state。
+- X_and_context的形状为：`()`。
 
 # 损失函数

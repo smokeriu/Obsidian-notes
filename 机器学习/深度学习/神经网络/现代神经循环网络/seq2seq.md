@@ -72,4 +72,14 @@ output = self.dense(output).permute(1, 0, 2)
 
 # 损失函数
 在每个时间步，解码器预测了输出词元的概率分布。 类似于语言模型，可以使用softmax来获得分布， 并通过计算交叉熵损失函数来进行优化。
-不过由于输出的序列长度与目标序列长度可能不一致，需要一个更好的
+
+但这里还引入了填充次元，则在计算损失前，应当屏蔽不相关的项：
+```python
+def sequence_mask(X, valid_len, value=0):
+	maxlen = X.size(1)
+	mask = torch.arange((maxlen), dtype=torch.float32,
+                device=X.device)[None, :] < valid_len[:, None]
+    X[~mask] = value
+    return X
+```
+这里将不相关项替换为0，以便后面任何不相关预测的计算都是与零的乘积，结果都等于零。

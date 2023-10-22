@@ -65,7 +65,7 @@ output = self.dense(output).permute(1, 0, 2)
 	- `X.shape[0]`中的X已经是转置后的。
 - X_and_context的形状为：`(num_steps2, batch_size, embed_size + num_hiddens)`。
 	- 所以定义的GRU的`input_size`是`embed_size + num_hiddens`。
-	- 可以认为，rnn的输入，实际是：解码器输入 + 
+	- 可以认为，rnn的输入，实际是：解码器输入信息 + 编码器最后一个隐藏层的信息拼接得到的。
 - 循环层后output的形状为：`(num_steps2, batch_size, num_hiddens)`。
 	- 线性后（转置前）的output的形状为：`(num_steps2, batch_size, vocab_size)`。
 

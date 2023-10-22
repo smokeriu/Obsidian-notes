@@ -62,8 +62,9 @@ output = self.dense(output).permute(1, 0, 2)
 	- `num_hiddens1`是编码器的每一个隐藏层的隐藏单元个数。
 - context的形状由state变换得到，为`(1 * num_steps2, batch_size, num_hiddens1)`。
 	- `state[-1]`表示只取编码器最后一个隐藏层的state。
+	- 我们将这个状态拓展到与`num_steps2`一样的大小，即对于
 	- `X.shape[0]`中的X已经是转置后的。
-- X_and_context的形状为：`(num_steps2, batch_size, embed_size + num_hiddens)`。
+- X_and_context的形状为：`(num_steps2, batch_size, embed_size + num_hiddens1)`。
 	- 所以定义的GRU的`input_size`是`embed_size + num_hiddens`。
 	- 可以认为，rnn的输入，实际是：解码器输入信息 + 编码器最后一个隐藏层的信息拼接得到的。
 - 循环层后output的形状为：`(num_steps2, batch_size, num_hiddens)`。

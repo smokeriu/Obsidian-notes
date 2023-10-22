@@ -71,6 +71,8 @@ output = self.dense(output).permute(1, 0, 2)
 - 循环层后output的形状为：`(num_steps2, batch_size, num_hiddens)`。
 	- 线性后（转置前）的output的形状为：`(num_steps2, batch_size, vocab_size)`。
 
+可以把解码器理解为：
+
 整体的架构如下：
 ![[assets/Pasted image 20231012113912.png|500]]
 

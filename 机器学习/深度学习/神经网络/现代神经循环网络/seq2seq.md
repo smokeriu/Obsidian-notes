@@ -124,3 +124,11 @@ class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
 这里和损失函数不一样，仅仅是我们用于判断翻译的准确性，其同样需要预测值与实际值(label)作比较。
 > 为啥不直接使用这个作为损失函数？
 
+常见的是使用BLEU用于结果预估，其公式如下：
+$$
+\exp\left(\min\left(0, 1 - \frac{\mathrm{len}_{\text{label}}}{\mathrm{len}_{\text{pred}}}\right)\right) \prod_{n=1}^k p_n^{1/2^n}
+$$
+其中：
+- `label`表示真实数据。
+- `pred`表示模型的预测数据。
+BLEU适合用于衡量结果的准确性的原因在于，

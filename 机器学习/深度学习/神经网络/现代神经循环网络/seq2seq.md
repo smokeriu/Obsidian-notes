@@ -122,7 +122,6 @@ class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
 
 # 结果预估
 这里和损失函数不一样，仅仅是我们用于判断翻译的准确性，其同样需要预测值与实际值(label)作比较。
-> 为啥不直接使用这个作为损失函数？
 
 常见的是使用BLEU用于结果预估，其值越高说明越准确，当两个句子完全一致是，其值为1。
 公式如下：
@@ -162,3 +161,5 @@ def bleu(pred_seq, label_seq, k):  #@save
         score *= math.pow(num_matches / (len_pred - n + 1), math.pow(0.5, n))
     return score
 ```
+
+不直接将BLEU作为损失函数，是因为对其求梯度是极为复杂的。所以一般仍然使用[[../../../../数学/基础/信息论/交叉熵|交叉熵]]。

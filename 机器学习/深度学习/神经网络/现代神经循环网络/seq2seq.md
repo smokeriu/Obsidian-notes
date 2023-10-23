@@ -129,6 +129,9 @@ $$
 \exp\left(\min\left(0, 1 - \frac{\mathrm{len}_{\text{label}}}{\mathrm{len}_{\text{pred}}}\right)\right) \prod_{n=1}^k p_n^{1/2^n}
 $$
 其中：
-- `label`表示真实数据。
+- `label`表示真实数据。也称为标签序列。
 - `pred`表示模型的预测数据。
+
+BLEU评估的是，对于预测序列中的任意n元语法，这个n元语法是否出现在标签序列中。
+
 BLEU适合用于衡量结果的准确性的原因在于，其将句子的长度纳入了评价标准中，正常而言，句子越长，预测难度越大。当预测的句子长度比实际句子长时，。$\frac{len_{label}}{len_{pred}}$

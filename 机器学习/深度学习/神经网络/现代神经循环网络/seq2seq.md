@@ -121,4 +121,4 @@ class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
 
 
 # 结果预估
-这里he
+这里和损失函数不一样，仅仅是我们用于判断翻译

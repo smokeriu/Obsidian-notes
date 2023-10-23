@@ -124,7 +124,8 @@ class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
 这里和损失函数不一样，仅仅是我们用于判断翻译的准确性，其同样需要预测值与实际值(label)作比较。
 > 为啥不直接使用这个作为损失函数？
 
-常见的是使用BLEU用于结果预估，其公式如下：
+常见的是使用BLEU用于结果预估，其值越高说明越准确，当两个句子完全一致是，其值为1。
+公式如下：
 $$
 \exp\left(\min\left(0, 1 - \frac{\mathrm{len}_{\text{label}}}{\mathrm{len}_{\text{pred}}}\right)\right) \prod_{n=1}^k p_n^{1/2^n}
 $$
@@ -141,4 +142,23 @@ BLEU评估的是，对于预测序列中的任意n元语法，这个n元语法�
 - $p_3 = 1/3$——1表示3元语法交集（BCD），3表示预测序列中的3元语法数量（ABB，BBC，BCD）。
 - $p_4 = 0$则同理。
 
-BLEU适合用于衡量结果的准确性的原因在于，其将句子的长度纳入了评价标准中，正常而言，句子越长，预测难度越大。当预测的句子过短时，其的`p_n`很容易拿到非常高的分数，但$\exp\left(\min\left(0, 1 - \frac{\mathrm{len}_{\text{label}}}{\mathrm{len}_{\text{pred}}}\right)\right)$zo
+BLEU适合用于衡量结果的准确性的原因在于，其将句子的长度纳入了评价标准中，正常而言，句子越长，预测难度越大。当预测的句子过短时，其的`p_n`很容易拿到非常高的分数，但$\exp\left(\min\left(0, 1 - \frac{\mathrm{len}_{\text{label}}}{\mathrm{len}_{\text{pred}}}\right)\right)$作为惩罚会降低最终的结果得分。
+
+BLEU的代码如下：
+```python
+def bleu(pred_seq, label_seq, k):  #@save
+    """计算BLEU"""
+    pred_tokens, label_tokens = pred_seq.split(' '), label_seq.split(' ')
+    len_pred, len_label = len(pred_tokens), len(label_tokens)
+    score = math.exp(min(0, 1 - len_label / len_pred))
+    for n in range(1, k + 1):
+        num_matches, label_subs = 0, collections.defaultdict(int)
+        for i in range(len_label - n + 1):
+            label_subs[' '.join(label_tokens[i: i + n])] += 1
+        for i in range(len_pred - n + 1):
+            if label_subs[' '.join(pred_tokens[i: i + n])] > 0:
+                num_matches += 1
+                label_subs[' '.join(pred_tokens[i: i + n])] -= 1
+        score *= math.pow(num_matches / (len_pred - n + 1), math.pow(0.5, n))
+    return score
+```

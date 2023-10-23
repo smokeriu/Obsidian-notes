@@ -119,3 +119,5 @@ class MaskedSoftmaxCELoss(nn.CrossEntropyLoss):
 ```
 这里对原有的交叉熵进行了一些修改，即通过`valid_len`和label来计算屏蔽了不相关项的损失值。
 
+
+# 结果预估

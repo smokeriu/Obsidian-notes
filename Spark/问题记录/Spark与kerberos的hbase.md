@@ -16,7 +16,7 @@ Spark启动时，会通过`HadoopDelegationTokenManager#isServiceEnabled`来判�
 
 # 坑
 
-通过`HBaseDelegationTokenProvider`的代码，可以发现实际使用的是`org.apache.hadoop.hbase.security.token.TokenUtil`的`obtainToken`方法通过`hadoopConf`获取token，
+通过`HBaseDelegationTokenProvider`的代码，可以发现实际使用的是`org.apache.hadoop.hbase.security.token.TokenUtil`的`obtainToken`方法通过`hadoopConf`获取token，并且写到说这个方法在hbase-2.0后就被移除了，所以还提供了另一种途径来获取token
 
 
 # 追踪

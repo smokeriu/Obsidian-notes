@@ -18,7 +18,7 @@ nn.LSTM(input_size: int,
 	- 一般而言，循环神经网络的第一维表示序列时间步，第二维才表示批量。
 	- 即如果输入句子单词数为10（假设一个单词是一个输入向量），则第一维为10。
 - `dropout`默认为0，若为非0，则表示除了最后一层，其它层都会插入[暂退层](定义暂退层.md)。
-- `bidirectional`默认为Flase，为`True`表示使用双向LSTM。
+- `bidirectional`默认为`False`，为`True`表示使用双向LSTM。
 
 使用时，输入为：`input, (h_0, c_0)`：
 - `input`：输入张量，形状为`(seq_len, batch, input_size)`。

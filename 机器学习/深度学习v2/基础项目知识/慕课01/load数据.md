@@ -26,3 +26,8 @@ class BanknoteDataset(torch.utils.data.Dataset):
 
 # 使用Dataloader
 
+通过Dataloader可以实现数据的批量读取，并且可以定义一些其他的参数：
+```python
+dataset = BanknoteDataset(HP.devset_path)  
+loader = DataLoader(dataset, batch_size=HP.batch_size, shuffle=True, drop_last=True)
+```

@@ -31,4 +31,8 @@ class BanknoteDataset(torch.utils.data.Dataset):
 dataset = BanknoteDataset(HP.devset_path)  
 loader = DataLoader(dataset, 
 					batch_size=HP.batch_size, shuffle=True, drop_last=True)
+for batch in loader:
+  pass
 ```
+
+通过DataLoader，则一个循环中可以读取`HP.batch_size`条数据，其中，batch类型是List，元素是定义Dataset的`__getitem__`方法返回的元素。

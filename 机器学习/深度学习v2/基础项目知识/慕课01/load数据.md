@@ -1,1 +1,1 @@
-在Torch中，一般
+在Torch中，一般通过Dataset

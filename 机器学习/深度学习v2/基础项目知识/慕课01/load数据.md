@@ -35,5 +35,5 @@ for batch in loader:
   pass
 ```
 
-通过DataLoader，则一个循环中可以读取`HP.batch_size`条数据，其中，batch类型是List，元素取决于定义Dataset的`__getitem__`方法返回的内容。
-对于本例，每个batch都是一个长度为2的List。每个元素都是一个Tensor，长度为`HP.batch_size`。
+通过DataLoader，则一个循环中可以读取`HP.batch_size`条数据。其中batch的类型是List，元素取决于定义Dataset的`__getitem__`方法返回的内容。
+对于本例，每个batch都是一个长度为2的List。第一个元素就是x，第二个元素就是y。不过是以批量的形式组成的Tensor，长度均为`HP.batch_size`。

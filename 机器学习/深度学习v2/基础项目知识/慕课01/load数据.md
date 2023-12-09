@@ -1,12 +1,12 @@
 在Torch中，一般通过实现`torch.utils.data.Dataset`的子类，并读取时调用`torch.utils.data.Dataloader`的实现。
 
 # 构建Dataset
-1. 继承`torch.utils.data.Dataset`。
+
+继承`torch.utils.data.Dataset`。
 
 主要需要实现两个函数：
 - `__getitemm__`：如何读取数据，参数是下标。
 - `__len__`：返回数据集的大小。
-
 ```python
 class BanknoteDataset(torch.utils.data.Dataset):  
     def __init__(self, data_path):  
@@ -22,4 +22,7 @@ class BanknoteDataset(torch.utils.data.Dataset):
         return self.dataset.shape[0]
 ```
 
+其中，这个样例是一个二分类问题，所以标签只有一个值，故在构建`y`时，通过[squeeze](维度变换.md#squeeze)来将维度压缩。
+
 # 使用Dataloader
+

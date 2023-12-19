@@ -13,7 +13,7 @@
 - `srcBuf`和`Buf`：`srcBuf`是原始的，传进来是什么就是什么。buf是去掉包装的，传进来的可能是包装后的缓冲区，要把包装脱了。
 - `srcAdjustment`和`adjustment`：起始索引的*读索引*偏移，分别对应`srcBuf`和`buf`，大多数是负的，因为这样直接获取`CompositeByteBuf`索引的值的时候，可以直接定位到`buf`里的读索引位置。
 
-## 主要方法
+### 主要方法
 ```java
 //源缓冲区索引
 int srcIdx(int index) {

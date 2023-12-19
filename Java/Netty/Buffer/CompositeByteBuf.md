@@ -7,4 +7,5 @@
 
 ## Component
 属性：
-- 
+- `offset`和`endOffset`：表示当前缓冲区相对于整个`CompositeByteBuf`可以读取的范围，比如说有三个缓冲区，每个缓冲区只写了`10`个字节，那第一个缓冲区的索引就是`0-9`，第二个是`10-19`，第三个是`20-29`
+- `srcAdjustment`和`adjustment`：

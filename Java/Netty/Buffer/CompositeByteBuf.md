@@ -11,7 +11,42 @@
 - `srcAdjustment`和`adjustment`：起始索引的*读索引*偏移，大多数是负的，因为这样直接获取`CompositeByteBuf`索引的值的时候，可以直接定位到`buf`里的读索引位置。
 
 ## 主要方法
+```java
+//源缓冲区索引
+int srcIdx(int index) {
+   return index + srcAdjustment;
+}
+        //脱了包装后的缓冲区索引
+        int idx(int index) {
+            return index + adjustment;//索引+偏移，直接获取读索引位置
+        }
+//存在的可读字节
+        int length() {
+            return endOffset - offset;
+        }
+        //调整索引，在CompositeByteBuf内的相对位置
+        void reposition(int newOffset) {
+            int move = newOffset - offset;
+            endOffset += move;
+            srcAdjustment -= move;
+            adjustment -= move;
+            offset = newOffset;
+        }
+        //把buf的内容拷贝到dst中
+        // copy then release
+        void transferTo(ByteBuf dst) {
+            dst.writeBytes(buf, idx(offset), length());
+            free();
+        }
 
+
+        //释放缓冲区
+        void free() {
+            slice = null;
+            srcBuf.release();
+        }
+
+```
 
 ![[assets/Pasted image 20231219100921.png]]
 

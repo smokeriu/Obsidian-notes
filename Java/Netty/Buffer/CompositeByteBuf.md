@@ -17,14 +17,15 @@ int srcIdx(int index) {
    return index + srcAdjustment;
 }
         //脱了包装后的缓冲区索引
-        int idx(int index) {
-            return index + adjustment;//索引+偏移，直接获取读索引位置
-        }
+int idx(int index) {
+    return index + adjustment;//索引+偏移，直接获取读索引位置
+}
 //存在的可读字节
-        int length() {
-            return endOffset - offset;
-        }
-        //调整索引，在CompositeByteBuf内的相对位置
+int length() {
+    return endOffset - offset;
+ }
+ 
+//调整索引，在CompositeByteBuf内的相对位置
         void reposition(int newOffset) {
             int move = newOffset - offset;
             endOffset += move;

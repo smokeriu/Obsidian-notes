@@ -16,5 +16,9 @@ nn.InstanceNorm2d(num_features: Int,
 
 # 样例
 ```python
+# 假定有如下输入：
+output_from_pre_layer = torch.randn(size=[8, 224, 224, 16]) # 默认是NHWC
 
+inn = nn.InstanceNorm2d(16)  
+in_out = inn(output_from_pre_layer.permute(0,3,1,2)) # [8, 16, 244, 244]
 ```

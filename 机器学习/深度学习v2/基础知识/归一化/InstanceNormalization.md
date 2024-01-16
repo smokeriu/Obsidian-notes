@@ -9,7 +9,7 @@ $$
 $$
 其与BN和LN的差异如图所示：
 ![[assets/Pasted image 20240116190656.png]]
-
+由于IN在`[H,W]`上进行归一化，显然均值结果是一个矩阵。
 
 # PyTorch
 PyTorch预置了IN，参见[[../../../PyTorch/定义网络层/定义Instance归一化|定义Instance归一化]]。

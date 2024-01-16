@@ -1,0 +1,1 @@
+GN可以看作是[[BatchNormalization]]和[[InstanceNormalization]]的结合，

@@ -12,7 +12,7 @@ $$
 
 
 # PyTorch
-
+PyTorch预置了IN，参见[[../../../PyTorch/定义网络层/定义Instance归一化|定义Instance归一化]]。
 
 # 参考
 - [模型优化之Instance Normalization](https://zhuanlan.zhihu.com/p/56542480)

@@ -6,7 +6,9 @@ GN可以看作是[[BatchNormalization]]和[[InstanceNormalization]]的结合，�
 
 > 这里到`//`表示整除。
 
-其代码如下：
+显然，我们得到的均值会是一个矩阵。
+
+其实现代码如下：
 ```python
 def GroupNorm(x, gamma, beta, G, eps=1e-5):
     # x: input features with shape [N,C,H,W]

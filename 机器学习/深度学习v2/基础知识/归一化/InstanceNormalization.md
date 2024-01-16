@@ -8,3 +8,8 @@ $$
 \end{aligned}
 $$
 其与BN和LN的差异如图所示：
+![[assets/Pasted image 20240116190656.png]]
+
+
+# 参考
+- [模型优化之Instance Normalization](https://zhuanlan.zhihu.com/p/56542480)

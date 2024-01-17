@@ -11,13 +11,7 @@ GN可以看作是[[BatchNormalization]]和[[InstanceNormalization]]的结合，�
 N, C, H, W = x.shape
 x = x.view(N, G, -1) # x.view(N, G, C//G, H, W)
 ```
-并对新的x计算均值和方差，通过归一化运算得到结果X，在进行reshape返回：
-```python
-mean = tf.nn.moments(x, [2, 3, 4], keep dims=True)
-var = 
-```
-
-
+后续的处理就与InstanceNormalization一致了。
 其实现代码如下：
 ```python
 def GroupNorm(x, gamma, beta, G, eps=1e-5):

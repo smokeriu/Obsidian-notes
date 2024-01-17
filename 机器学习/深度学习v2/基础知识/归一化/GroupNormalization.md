@@ -11,17 +11,8 @@ GN可以看作是[[BatchNormalization]]和[[InstanceNormalization]]的结合，�
 N, C, H, W = x.shape
 x = x.view(N, G, -1) # x.view(N, G, C//G, H, W)
 ```
-后续的处理就与InstanceNormalization一致了。
-其实现代码如下：
-```python
-def GroupNorm(x, gamma, beta, G, eps=1e-5):
-    # x: input features with shape [N,C,H,W]
-    # gamma, beta: scale and offset, with shape [1,C,1,1]
-    # G: number of groups for GN
-    N, C, H, W = x.shape
-    x = tf.reshape(x, [N, G, C // G, H, W])
-    mean, var = tf.nn.moments(x, [2, 3, 4], keep dims=True)
-    x = (x - mean) / tf.sqrt(var + eps)
-    x = tf.reshape(x, [N, C, H, W])
-    return x * gamma + beta
-```
+后续的处理就与InstanceNormalization一致了。我们甚至可以在reshape后，使用InstanceNormalization进行处理，只是需要将结果再reshape回去。
+
+# PyTorch
+
+# 参考

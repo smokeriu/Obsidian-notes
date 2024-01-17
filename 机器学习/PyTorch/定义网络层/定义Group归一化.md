@@ -1,3 +1,4 @@
+PyTorch提供了内置的[[../../深度学习v2/基础知识/归一化/GroupNormalization|GroupNormalization]]。
 ```python
 nn.GroupNorm(num_groups: int, 
 			 num_channels: int, 

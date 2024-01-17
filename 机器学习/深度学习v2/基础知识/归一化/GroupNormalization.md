@@ -7,7 +7,16 @@ GN可以看作是[[BatchNormalization]]和[[InstanceNormalization]]的结合，�
 > 这里到`//`表示整除。一般是需要保证C能被G整除。
 
 所以在处理前，我们先要对数据进行reshape（或者view）。使同一组的数据合并到一个纬度：
-``
+```python
+N, C, H, W = x.shape
+x = x.view(N, G, -1) # x.view(N, G, C//G, H, W)
+```
+并对新的x计算均值和方差，通过归一化运算得到结果X，在进行reshape返回：
+```python
+mean = tf.nn.moments(x, [2, 3, 4], keep dims=True)
+var = 
+```
+
 
 其实现代码如下：
 ```python

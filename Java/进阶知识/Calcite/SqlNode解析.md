@@ -21,7 +21,7 @@ sqlNode是一个顶级父类，比较常用到的有：
 
 
 # 常用类
-## SelectCall
+## SqlSelect
 表示一条Select字句。其定义主要有：
 ```java
 SqlNodeList keywordList;  
@@ -38,4 +38,5 @@ SqlNodeList windowDecls;
 ```
 都对应一个select会包含的元素。
 
-### Sql
+## SqlOrderBy
+表示带有OrderBy语句的Select。

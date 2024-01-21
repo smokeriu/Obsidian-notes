@@ -21,6 +21,7 @@ sqlNode是一个顶级父类，比较常用到的有：
 
 
 # 常用类
+大部分会使用到的均为SqlCall的子类。
 ## SqlSelect
 表示一条Select字句。其定义主要有：
 ```java

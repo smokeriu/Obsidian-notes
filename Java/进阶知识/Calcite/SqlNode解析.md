@@ -40,4 +40,4 @@ SqlNodeList windowDecls;
 都对应一个select会包含的元素。
 
 ## SqlOrderBy
-表示带有OrderBy语句的Select。
+比较需要注意的是，带有OrderBy语句的Select不属于SqlSelect，而会被解析成SqlOrderBy。

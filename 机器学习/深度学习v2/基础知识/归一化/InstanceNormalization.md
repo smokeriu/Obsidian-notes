@@ -14,5 +14,9 @@ $$
 # PyTorch
 PyTorch预置了IN，参见[[../../../PyTorch/定义网络层/定义Instance归一化|定义Instance归一化]]。
 
+
+# Why and When
+对于图像处理，BN和LN都不适合。对于BN，每个样本的每个像素点的信息都是非常重要的，
+
 # 参考
 - [模型优化之Instance Normalization](https://zhuanlan.zhihu.com/p/56542480)

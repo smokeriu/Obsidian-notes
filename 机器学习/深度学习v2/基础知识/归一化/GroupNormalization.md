@@ -11,7 +11,7 @@ GN可以看作是[[BatchNormalization]]和[[InstanceNormalization]]的结合，�
 N, C, H, W = x.shape
 x = x.view(N, G, -1) # x.view(N, G, C//G, H, W)
 ```
-后续的处理就与InstanceNormalization一致了。我们甚至可以在reshape后，使用InstanceNormalization进行处理，只是需要将结果再reshape回去。
+后续的处理就与InstanceNormalization一致了。其实我们可以在reshape后，使用InstanceNormalization进行处理，只是需要将结果再reshape回去。
 
 # PyTorch
 PyTorch预置了GN，参考[[../../../PyTorch/定义网络层/定义Group归一化|定义Group归一化]]。

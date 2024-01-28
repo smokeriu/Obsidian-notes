@@ -14,5 +14,6 @@
 神经层的参数变化会导致其输入的分布发生较大的差异。利用随机梯度下降更新参数时，每次参数更新都会导致网络中间每一层的输入的分布发生改变。越深的层，其输入分布会改变的越明显。上述过程称为**内部协变量偏移**。归一化层就是用来缓解上述问题。
 常见的归一化层有：
 1. [[归一化/BatchNormalization|BatchNormalization]]。
-2. 层归一化（LN）。
-3. 组归一化（GN）。
+2. [LayerNormalization](LayerNormalization.md)。
+3. [InstanceNormalization](InstanceNormalization.md)。
+4. [GroupNormalization](GroupNormalization.md)。

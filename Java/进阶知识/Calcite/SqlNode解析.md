@@ -1,4 +1,4 @@
-使用上，需要先获取`SqlParser.Config`。
+ 使用上，需要先获取`SqlParser.Config`。
 ```java
 private static final SqlParser.Config DEFAULT_CONFIG = SqlParser.config()  
 	.withParserFactory(SqlParseImpl.FACTORY)  

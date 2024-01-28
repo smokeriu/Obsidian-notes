@@ -16,6 +16,10 @@ x = x.view(N, G, -1) # x.view(N, G, C//G, H, W)
 # PyTorch
 PyTorch预置了GN，参考[[../../../PyTorch/定义网络层/定义Group归一化|定义Group归一化]]。
 
+# Why
+
+
+
 # 参考
 - [ECCV 2018 Open Access Repository](https://openaccess.thecvf.com/content_ECCV_2018/html/Yuxin_Wu_Group_Normalization_ECCV_2018_paper.html)
 - 

@@ -16,7 +16,10 @@ PyTorch预置了IN，参见[[../../../PyTorch/定义网络层/定义Instance归�
 
 
 # Why and When
-对于图像处理，BN和LN都不适合。对于BN，每个样本的每个像素点的信息都是非常重要的，
+对于一些图像风格迁移，BN和LN都不适合。
+
+- BN，每个样本的每个像素点的信息都是非常重要的，而BN计算归一化统计量时考虑了一个批量中所有图片的内容，从而造成了每个样本独特细节的丢失。
+- LN，LN则会忽略不同通道的差异，
 
 # 参考
 - [模型优化之Instance Normalization](https://zhuanlan.zhihu.com/p/56542480)

@@ -59,9 +59,8 @@ Replicated在上述基础上增加了Zookeeper部分，会在Zookeeper中创建�
     - 官方推荐写法：`/clickhouse/tables/{shards}/table_name`
         
         - `shards` - 即分片编号。一般采用数字`01,02,03`。一张表可以有多个分片，每个分片有自己的副本。
-            
+
 - `replica_name` - zk中的副本名称。可以设置成服务器的域名称。
-    
 
 ## 目录结构
 

@@ -76,7 +76,23 @@ remote_servers用于定义一个集群：
 ```
 
 ## zookeeper
-zookeeper用于配置keeper集群，使clickhouse-serve
+zookeeper用于配置keeper集群，使clickhouse-server能读写keeper集群：
+```xml
+<zookeeper>
+	<node index="1">
+		<host>chnode1</host>
+		<port>9181</port>
+	</node>
+	<node index="2">
+		<host>chnode2</host>
+		<port>9181</port>
+	</node>
+	<node index="3">
+		<host>chnode3</host>
+		<port>9181</port>
+	</node>
+</zookeeper>
+```
 
 ## macros
 

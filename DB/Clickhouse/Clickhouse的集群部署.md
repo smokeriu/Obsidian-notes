@@ -11,7 +11,7 @@ Clickhouse的集群机制是由自身配置决定的，并将其源数据存放�
 下述配置，除特殊说明，需要所有节点都配置。
 ## remote_servers
 
-remote_servers用于定义一个集群，并配置这个集群的分片和副本信息：
+remote_servers用于定义一个集群：
 ```xml
 <remote_servers>
 	<cluster_name_1>
@@ -20,6 +20,25 @@ remote_servers用于定义一个集群，并配置这个集群的分片和副本
 </remote_servers>
 ```
 
+并配置这个集群的分片和副本信息：
+```xml
+<shard>  
+	<internal_replication>true</internal_replication>  
+	<replica>  
+		<host>chnode1</host>  
+		<port>9000</port>  
+	</replica>  
+</shard>  
+<shard>  
+	<internal_replication>true</internal_replication>  
+	<replica>  
+		<host>chnode2</host>  
+		<port>9000</port>  
+	</replica>  
+</shard>
+```
+
+上述配置创建了一个两个分片的集群，其中分片1会使用chnode1作为副本，而分片2则使用chnode2作为副本，总的来说，
 ## 
 
 # 集群表

@@ -474,17 +474,20 @@ Distributed表引擎和Hive类似，是读时检查的机制，即建表时如�
 
 假设我们有这么一条SQL：
 
+```sql
  select u.name,i.price  
      from hadoop.info_all i join hadoop.user_all u  
  on i.id=u.id;
+```
 
 其实仅仅观察log，我们会发现右侧的分布式表的查询翻倍了，原因其实很简单，因为我们关联的右表也是一个分布式表，则其实Clickhouse内部的转换可以看成：
-
+```sql
  select u.name,i.price  
      from hadoop.info_all i join hadoop.user_all u  
  on i.id=u.id;  
+```
  ​  
- -- 将主表替换为本地表,推送给远端  
+- 将主表替换为本地表,推送给远端  
  ​  
  select u.name,i.price  
      from hadoop.info_local i join hadoop.user_all u  

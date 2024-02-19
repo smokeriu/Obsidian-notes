@@ -468,36 +468,42 @@ Distributed表引擎和Hive类似，是读时检查的机制，即建表时如�
 
 例如查询如下：
 
- SELECT name,avg(price) FROM info_all WHERE info = 'info1' GROUP BY name
+```sql
+SELECT name,avg(price) FROM info_all WHERE info = 'info1' GROUP BY name
+```
 
-对于avg来说，我们不能直接只返回一个avg结果，而应该返回`id,sum(price),count(price)`组成的结果对，再在本地完成结果的聚合。具体返回什么数据由函数决定。不过远程服务器会完成绝大多数的聚合操作，保证数据查询的快速
+对于avg来说，我们不能直接只返回一个avg结果，而应该返回`id,sum(price),count(price)`组成的结果对，再在本地完成结果的聚合。具体返回什么数据由函数决定。不过远程服务器会完成绝大多数的聚合操作，保证数据查询的快速。
 
 #### 联合查询
 
 假设我们有这么一条SQL：
 
 ```sql
- select u.name,i.price  
-     from hadoop.info_all i join hadoop.user_all u  
- on i.id=u.id;
+select u.name,i.price  
+    from hadoop.info_all i join hadoop.user_all u  
+on i.id=u.id;
 ```
 
 其实仅仅观察log，我们会发现右侧的分布式表的查询翻倍了，原因其实很简单，因为我们关联的右表也是一个分布式表，则其实Clickhouse内部的转换可以看成：
+
 ```sql
- select u.name,i.price  
-     from hadoop.info_all i join hadoop.user_all u  
- on i.id=u.id;  
+select u.name,i.price  
+    from hadoop.info_all i join hadoop.user_all u  
+on i.id=u.id;  
 ```
  ​  
 - 将主表替换为本地表,推送给远端  
  ​  
- select u.name,i.price  
-     from hadoop.info_local i join hadoop.user_all u  
- on i.id=u.id;  
+```sql
+select u.name,i.price  
+    from hadoop.info_local i join hadoop.user_all u  
+on i.id=u.id;  
+```
  ​  
- -- 远端机器将子句的分布式表，转换成local表。向其他机器发送查询请求  
+ - 远端机器将子句的分布式表，转换成local表。向其他机器发送查询请求  
  ​  
- select id,name from user_local  
+```
+``` 
  ​  
  -- 得到sub_query后，再结合本机的local查询结果，得到最终结果，最后汇总  
  ​  

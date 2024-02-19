@@ -107,7 +107,7 @@ macros是一种宏配置，其用于进行连接替代。
 ```
 经过配置后，在执行分布式命令时，分发到这个节点的命令中，`{shard}`会被替换为1，而`{replica}`会被替换为`replica_1`。
 
-如有如下SQL：
+如有如下分布式SQL：
 ```sql
 CREATE TABLE {table_name} ON CLUSTER {cluster_name}   
  (...)  
@@ -119,4 +119,5 @@ ORDER BY id;
 
 # 集群表
 
-在macors章节介绍了集群表的创建方式
+在macors章节介绍了本地表的创建方式，本地表一般以`_local`作为明明后缀，从而与集群表区分开。
+集群表是本地表的视图，

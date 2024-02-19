@@ -127,7 +127,5 @@ clickhouse keeper --config /etc/your_path_to_config/config.xml
 Clickhouse提供了工具，来将zookeeper中的数据迁移到Clickhouse-keeper中。有如下注意点：
 1. 必须停止zookeeper。
 2. zookeeper的版本需要高于3.4。
-3. 
-
 
 具体参考[migration-from-zookeeper](https://clickhouse.com/docs/en/guides/sre/keeper/clickhouse-keeper#migration-from-zookeeper)

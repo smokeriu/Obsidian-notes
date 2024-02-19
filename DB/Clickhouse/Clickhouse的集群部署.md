@@ -15,7 +15,9 @@ remote_servers用于定义一个集群：
 ```xml
 <remote_servers>
 	<cluster_name_1>
-	  <!-- config for this cluster -->
+		<shard>...</shard>
+		<shard>...</shard>
+		...
 	</cluster_name_1>
 </remote_servers>
 ```

@@ -382,8 +382,8 @@ ENGINE = Distributed(cluster , database, table, [,sharding_key[, policy_name]])
 
 > 创建Distributed时也应当使用`ON CLUSTER`关键字，否则分布式表仅仅能在单个节点使用（读/写）。
 
-前三组参数不需要解释，
-
+前两组参数不需要解释，
+- `table`表示分布式表所映射的本地表名。
 - `sharding_key`是一个选填参数，可以翻译成分片键，也可以理解为分布键。
     
     - 在往分布式表中插入数据时，会按照`sharding_key`和`config.xml`中配置的分片权重(weight)一同决定写入分布式表时的路由, 即数据最终落到哪个物理表上。权重越大，写入其中的数据越多。

@@ -95,18 +95,18 @@ raft_configuration下包含了复数个server节点，其配置了服务的具�
 		<host>zoo1</host>  
 		<port>9181</port>  
 	</node>  
-<node>  
-<host>zoo2</host>  
-<port>9181</port>  
-</node>  
-<node>  
-<host>zoo3</host>  
-<port>9181</port>  
-</node>  
+	<node>  
+		<host>zoo2</host>  
+		<port>9181</port>  
+	</node>  
+	<node>  
+		<host>zoo3</host>  
+		<port>9181</port>  
+	</node>  
 </zookeeper>
 ```
 
 # 启动
-
+如果采用内嵌的方式，则clickhouse-keeper会跟随clickhouse-server一起启动。
 
 # 迁移

@@ -313,10 +313,12 @@ Mutation在Clickhouse中指`UPDATE`和`DELETE`操作。与MERGE类似，无论Mu
 
 这么做的好处是我们可以在使用分布式语句时，可以通过宏的方式，使得不同节点指向自己的ZK节点：
 
+ ```sql
  CREATE TABLE {table_name} ON CLUSTER {cluster_name}   
  (...)  
  ENGINE = ReplicatedMergeTree('/path/to/tables/{shard}/table_name','{replica}')  
  ORDER BY id;
+```
 
 上面使用的`{shard}`和`{replica}`，就对应了这个配置属性，这使得每台机器会根据配置，监听自己负责{shard}和{replica}。
 

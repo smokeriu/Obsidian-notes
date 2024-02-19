@@ -105,8 +105,16 @@ macros是一种宏配置，其用于进行连接替代。
 	<replica>replica_1</replica>  
 </macros>
 ```
-仅过配置后，在这个节点上执行命令时，`{shard}会被替换为
+经过配置后，在执行分布式命令时，分发到这个节点的命令中，`{shard}`会被替换为1，而`{replica}`会被替换为`replica_1`。
 
+如有如下SQL：
+```sql
+CREATE TABLE {table_name} ON CLUSTER {cluster_name}   
+ (...)  
+ENGINE = ReplicatedMergeTree('/path/to/tables/{shard}/table_name','{replica}')  
+ORDER BY id;
+```
 
+因为
 # 集群表
 

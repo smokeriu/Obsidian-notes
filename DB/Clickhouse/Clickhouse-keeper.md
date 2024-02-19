@@ -66,8 +66,26 @@ raft_configuration下包含了复数个server节点，其配置了服务的具�
 	</server>
 </raft_configuration>
 ```
-上述配置中，部署了一个三节点的keeper集群，
-一个完整的
+上述配置中，部署了一个三节点的keeper集群。我们需要在三个节点同时拥有这份配置。
+
+一个完整的keeper_server配置如下：
+```xml
+<keeper_server>
+	<tcp_port>2181</tcp_port>  
+	<server_id>1</server_id>  
+	<log_storage_path>.../clickhouse/log</log_storage_path>  
+	<snapshot_storage_path>.../clickhouse/snapshots</snapshot_storage_path>
+  
+	<coordination_settings>
+		<operation_timeout_ms>10000</operation_timeout_ms>
+		<session_timeout_ms>30000</session_timeout_ms>
+	</coordination_settings>
+
+	<raft_configuration>
+	<!--...
+	</raft_configuration>
+</keeper_server>  
+```
 ## zookeeper
 
 

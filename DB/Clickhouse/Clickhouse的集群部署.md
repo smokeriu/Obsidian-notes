@@ -1,0 +1,1 @@
+部署Clickhouse集群前，需要拥有一个[[Clickhouse-keeper]]或zookeeper集群。

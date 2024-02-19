@@ -22,14 +22,16 @@ remote_servers用于定义一个集群：
 
 并配置这个集群的分片和副本信息：
 ```xml
-<shard>  
+<shard> 
+    <weight>1</weight>
 	<internal_replication>true</internal_replication>  
 	<replica>  
 		<host>chnode1</host>  
 		<port>9000</port>  
 	</replica>  
 </shard>  
-<shard>  
+<shard>
+	<weight>1</weight>
 	<internal_replication>true</internal_replication>  
 	<replica>  
 		<host>chnode2</host>  
@@ -40,6 +42,7 @@ remote_servers用于定义一个集群：
 
 其中：
 - `shard`表示一个分片的配置。
+- `weight`表示了这个分片的数据量权重。
 - `replica`表示`shard`的一个副本配置。可以有多个replica。
 - `replica.port`是`clickhouse-server`的tcp-port，默认为9000。
 - `internal_replication`表示了副本复制的行为，当为true时，写入阶段只会写入其中一个副本，副本的数据复制由后续进程自动完成。为false时，则在写入节点就会写入所有副本。
@@ -60,7 +63,10 @@ remote_servers用于定义一个集群：
 </shard>  
 ```
 
-需要注意的是，如果clickhouse-serverqi ys
+需要注意的是，如果clickhouse-server启用了加密，则配置replica时需要配置其账号密码：
+```xml
+
+```
 
 ### 其他配置
 

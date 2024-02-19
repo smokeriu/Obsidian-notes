@@ -76,7 +76,7 @@ remote_servers用于定义一个集群：
 ```
 
 ## zookeeper
-zookeeper用于配置keeper集群，使
+zookeeper用于配置keeper集群，使clickhouse-serve
 
 ## macros
 

@@ -28,7 +28,7 @@ keeper_server整体上分为三部分：
 
 | 配置                   | 说明                                  | 默认值 |
 | ---------------------- | ------------------------------------- | ------ |
-| tcp_port               | 客户端(clickhouse-server)连接的端口。 | 2181   |
+| tcp_port               | 客户端(clickhouse-server)连接的端口。 | 2181，可考虑使用9181   |
 | server_id              | keeper的server_id，必须是独立的数字。 |        |
 | log_storage_path       | 数据存放路径。                        |        |
 | snapshot_storage_path  | 快照存放路径。                        |        |
@@ -44,7 +44,7 @@ raft_configuration下包含了复数个server节点，其配置了服务的具�
 | ----------------- | ---------------------------------------- |
 | id                | 上文中配置的server_id                    |
 | hostname          | 域名或ip                                 |
-| port              | 集群内部的通信端口。需要与tcp_port不一致 |
+| port              | 集群内部的通信端口，需要与tcp_port不一致。 |
 | can_become_leader | 能够成为leader                           |
 需要注意的是，这里配置的port是raft集群内部的通信端口，仅用于此处。一个完整的raft_configuration如下：
 ```xml
@@ -71,7 +71,7 @@ raft_configuration下包含了复数个server节点，其配置了服务的具�
 一个完整的keeper_server配置如下：
 ```xml
 <keeper_server>
-	<tcp_port>2181</tcp_port>  
+	<tcp_port>9181</tcp_port>  
 	<server_id>1</server_id>  
 	<log_storage_path>.../clickhouse/log</log_storage_path>  
 	<snapshot_storage_path>.../clickhouse/snapshots</snapshot_storage_path>
@@ -87,7 +87,24 @@ raft_configuration下包含了复数个server节点，其配置了服务的具�
 </keeper_server>  
 ```
 ## zookeeper
-由于keeper_server是一个相对独立的服务，我们需要通过配置zookeeper相关的配置，才能使
+由于keeper_server是一个相对独立的服务，我们需要通过配置zookeeper相关的配置，才能使集群脸上keeper。参考：[cluster-deployment](https://clickhouse.com/docs/en/architecture/cluster-deployment)
+
+```xml
+<zookeeper>  
+<node>  
+<host>zoo</host>  
+<port>2181</port>  
+</node>  
+<node>  
+<host>zoo02.clickhouse.com</host>  
+<port>2181</port>  
+</node>  
+<node>  
+<host>zoo03.clickhouse.com</host>  
+<port>2181</port>  
+</node>  
+</zookeeper>
+```
 
 # 启动
 

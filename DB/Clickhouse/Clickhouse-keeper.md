@@ -18,7 +18,12 @@ Clickhouse-keeper可以与Clickhouse-server部署在一起，其会作为Clickho
 # 主要配置
 keeper的配置位于`config.xml`中。
 ## keeper_server
-keeper_server整体上分为三部分
+keeper_server整体上分为三部分：
+- 基础配置：配置
+- 
+### 基础配置
+### coordination_settings
+### raft_configuration
 
 
 

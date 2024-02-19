@@ -367,23 +367,19 @@ DDL的执行流程相对简单。初始化节点向`clickhouse/task_queue/ddl`�
 在Clickhouse中，按照分布式来区分的话，有两类表：
 
 - 本地表：通常以`_local`进行命名。
-    
     - 本地表是承载数据的载体，可以使用非`Distributed`的任意表引擎。
-        
     - 一张本地表对应了一个数据分片。
-        
 - 分布式表：通常以`_all`进行命名。
-    
     - 只能使用`Distributed`表引擎。本身不存储数据。
-        
     - 他与本地表是一种映射关系。通过分布式表，可以操作多张本地表。
-        
 
 ## 定义
 
 Distributed也是一类表引擎，所以和一般建表一样：
 
- ENGINE = Distributed(cluster , database, table, [,sharding_key[, policy_name]])
+```sql
+ENGINE = Distributed(cluster , database, table, [,sharding_key[, policy_name]])
+```
 
 > 创建Distributed时也应当使用`ON CLUSTER`关键字，否则分布式表仅仅能在单个节点使用（读/写）。
 
@@ -392,20 +388,14 @@ Distributed也是一类表引擎，所以和一般建表一样：
 - `sharding_key`是一个选填参数，可以翻译成分片键，也可以理解为分布键。
     
     - 在往分布式表中插入数据时，会按照`sharding_key`和`config.xml`中配置的分片权重(weight)一同决定写入分布式表时的路由, 即数据最终落到哪个物理表上。权重越大，写入其中的数据越多。
-        
     - 可以是表中一列的原始数据(如`site_id`)，也可以是函数调用的结果, 如采用了随机值`rand()`。
-        
     - 该键要尽量保证数据均匀分布，一个常用的操作是采用区分度较高的列的哈希值，如`intHash64(user_id)`。
-        
 - `plicy_name` - 用于决定中间数据存储在哪。一般需要配合[storage_configuration](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree/#table_engine-mergetree-multiple-volumes_configure)使用。
-    
 
 Distributed表引擎提供了一组设置。下面的只是分类大致介绍，具体的情况可参见官网[setting](https://clickhouse.com/docs/en/engines/table-engines/special/distributed/)。
 
 - `fsync_*` - 默认不开启，不符合本分片的数据会暂存在本地，再根据规则异步分布到其他分片中。如果开启，则会等待所有分片数据插入才算成功。
-    
 - `bytes_*` - 默认不开启，当单次插入过多数据时会导致异常或延迟。
-    
 
 Distributed表引擎和Hive类似，是读时检查的机制，即建表时如果Distributed表的结构和`_local`表结构不一样，则不会报错，仅当无法完成读取时才会报错（这意味着其实两者表结构可以不完全一致，但并不建议这么做。）
 
@@ -522,10 +512,6 @@ SELECT u.name,i.price
 ON i.id=u.id;
 ```
 
-这样，对右表user_all的查询会被精简到一次，将查询的最终结果**全部**加载到内存中，分发到各个各个节点。
+这样，对右表user_all的查询会被精简到一次，将查询的最终结果**全部**加载到内存中，分发到各个各个节点。从这里也可以看出，GLOBAL JOIN的查询会被全部加载到内存中并分发到各个节点。如果右表过大，会造成大量的资源损耗。故GLOBAL JOIN也**只适合右表是小表**的场景。
 
-从这里也可以看出，GLOBAL JOIN的查询会被全部加载到内存中并分发到各个节点。如果右表过大，会造成大量的资源损耗。故GLOBAL JOIN也**只适合右表是小表**的场景。
-
-如果联合查询时两张表都是大表怎么办，目前只能根据Clickhouse的特性，对右表进行设计。
-
-创建分布式表时，Clickhouse会根据`sharding_key`来进行数据的分配，一个设计准则就是让右表的查询不发往其他节点。例如当我们join条件是`a.id=b.id`时，如果b表的id作为sharding_key。保证一个id只存在于一个分片上，就可以避免将查询N\*N倍的放大。
+如果联合查询时两张表都是大表怎么办，目前只能根据Clickhouse的特性，对右表进行设计：创建分布式表时，Clickhouse会根据`sharding_key`来进行数据的分配，一个设计准则就是让右表的查询不发往其他节点。例如当我们join条件是`a.id=b.id`时，如果b表的id作为sharding_key。保证一个id只存在于一个分片上，就可以避免将查询N\*N倍的放大。

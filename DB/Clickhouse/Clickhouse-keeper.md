@@ -39,7 +39,13 @@ keeper_server整体上分为三部分：
 ### raft_configuration
 用于配置raft集群，基础配置仅仅是将该节点加入到keeper中，这里需要完整配置其他keeper节点。
 raft_configuration下包含了复数个server节点，其配置了服务的具体信息：
-| 配置 | 
+
+| 配置     | 说明 |
+| -------- | ---- |
+| id       | 上文中配置的server_id     |
+| hostname | 域名或ip     |
+| port     | 端口。     |
+| can_become_leader         | 能够成为leader     |
 
 
 

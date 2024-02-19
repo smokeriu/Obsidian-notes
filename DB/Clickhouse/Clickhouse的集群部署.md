@@ -8,7 +8,7 @@ Clickhouse的集群机制是由自身配置决定的，并将其源数据存放�
 
 # 配置
 
-下述配置，除特殊说明，需要所有节点都配置。
+下述配置，除特殊说明，需要所有节点都配置，并保持配置一致。
 ## remote_servers
 
 remote_servers用于定义一个集群：
@@ -76,7 +76,7 @@ remote_servers用于定义一个集群：
 ```
 
 ## zookeeper
-
+zookeeper用于配置keeper集群，使
 
 ## macros
 

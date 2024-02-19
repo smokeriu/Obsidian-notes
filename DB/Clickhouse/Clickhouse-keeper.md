@@ -40,15 +40,34 @@ keeper_server整体上分为三部分：
 用于配置raft集群，基础配置仅仅是将该节点加入到keeper中，这里需要完整配置其他keeper节点。
 raft_configuration下包含了复数个server节点，其配置了服务的具体信息：
 
-| 配置     | 说明 |
-| -------- | ---- |
-| id       | 上文中配置的server_id     |
-| hostname | 域名或ip     |
-| port     | 集群内部的通信端口。需要与tcp_port不一致     |
-| can_become_leader         | 能够成为leader     |
-需要注意的是，这里配置的port是raft集群内部的通信端口，仅用于此处。
-
-
+| 配置              | 说明                                     |
+| ----------------- | ---------------------------------------- |
+| id                | 上文中配置的server_id                    |
+| hostname          | 域名或ip                                 |
+| port              | 集群内部的通信端口。需要与tcp_port不一致 |
+| can_become_leader | 能够成为leader                           |
+需要注意的是，这里配置的port是raft集群内部的通信端口，仅用于此处。一个完整的raft_configuration如下：
+```xml
+<raft_configuration>
+	<server>  
+		<id>1</id>  
+		<hostname>zoo1</hostname>  
+		<port>9234</port>  
+	</server>
+	<server>
+		<id>2</id>
+		<hostname>zoo2</hostname>  
+		<port>9234</port>
+	</server>
+	<server>
+		<id>3</id>
+		<hostname>zoo3</hostname>  
+		<port>9234</port>
+	</server>
+</raft_configuration>
+```
+上述配置中，部署了一个三节点的keeper集群，
+一个完整的
 ## zookeeper
 
 

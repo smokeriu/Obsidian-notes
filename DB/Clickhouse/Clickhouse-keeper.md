@@ -24,7 +24,13 @@ keeper_server整体上分为三部分：
 - raft_configuration：集群配置。
 ### 基础配置
 
-| 配置| 说明| m
+| 配置                  | 说明                                  | 默认值 |
+| --------------------- | ------------------------------------- | ------ |
+| tcp_port              | 客户端(clickhouse-server)连接的端口。 | 2181   |
+| server_id             | keeper的server_id，必须是独立的数字。 |        |
+| log_storage_path      | 数据存放路径。                        |        |
+| snapshot_storage_path | 快照存放路径。                        |        |
+|                       |                                       |        |
 
 ### coordination_settings
 ### raft_configuration

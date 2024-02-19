@@ -22,6 +22,8 @@ keeper_server整体上分为三部分：
 - 基础配置：配置端口、文件路径等基础信息。
 - coordination_settings：高级配置。
 - raft_configuration：集群配置。
+
+> 如果当前节点不作为keeper，则无需配置keeper_server。
 ### 基础配置
 
 | 配置                   | 说明                                  | 默认值 |
@@ -35,7 +37,9 @@ keeper_server整体上分为三部分：
 ### coordination_settings
 一些高级配置，可参考官方文档。
 ### raft_configuration
-用于配置raft集群，基础配置仅仅是将该节点jx a
+用于配置raft集群，基础配置仅仅是将该节点加入到keeper中，这里需要完整配置其他keeper节点。
+raft_configuration下包含了复数个server节点，其配置了服务的具体信息：
+| 配置 | 
 
 
 

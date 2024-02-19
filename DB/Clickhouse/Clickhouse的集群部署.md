@@ -95,6 +95,17 @@ zookeeper用于配置keeper集群，使clickhouse-server能读写keeper集群：
 ```
 
 ## macros
+macros是一种宏配置，其用于进行连接替代。
+
+需要保证不同clickhouse-server配置不同，取决于其属于的shard和replica配置。
+
+```xml
+<macros>  
+	<shard>1</shard>  
+	<replica>replica_1</replica>  
+</macros>
+```
+仅过配置后，在这个节点上执行命令时，`{shard}会被替换为
 
 
 # 集群表

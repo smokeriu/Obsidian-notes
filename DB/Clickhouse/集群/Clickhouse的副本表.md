@@ -15,6 +15,4 @@ ENGINE = ReplicatedMergeTree('/path/to/tables/{shard}/table_name','{replica}')
 
 上述命令，会在集群中的所有机器上执行对应的命令，并替换相应的`shard`和`replica`。
 
-# 查询
-
-# 写入
+需要注意的是，尽管在创建replicated表时我们指定了`shard`，但

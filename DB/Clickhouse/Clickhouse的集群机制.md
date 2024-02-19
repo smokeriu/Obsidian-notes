@@ -417,7 +417,8 @@ Distributed表引擎和Hive类似，是读时检查的机制，即建表时如�
 
 最终配置如下：
 
- <shard>  
+```xml
+<shard>  
    <internal_replication>true</internal_replication>  
    <replica>  
      <!--replica1-->  
@@ -426,6 +427,7 @@ Distributed表引擎和Hive类似，是读时检查的机制，即建表时如�
      <!--replica2-->  
    </replica>  
  </shard>
+```
 
 ## 查询
 
@@ -438,13 +440,9 @@ Distributed表引擎和Hive类似，是读时检查的机制，即建表时如�
 > 背景知识：节点内部有一个`errors_count`计数，服务器发生宕机此数会`+1`
 
 - `random` - clickhouse会在`errors_count`最小的副本中随机选择一个。
-    
 - `nearest_hostname` - 在选择`errors_count`最小的副本的基础上，对host名称逐位比较，选择相差最小的。
-    
 - `in_order` - 在选择`errors_count`最小的副本的基础上，根据配置的`replica`定义顺序选择。
-    
 - `first_or_random` - 在选择`errors_count`最小的副本的基础上，选择配置的`replica`定义中最靠前的。如果最靠前的不可用，则在剩余里随机选择。
-    
 
 ### 多分片查询
 

@@ -115,6 +115,8 @@ ENGINE = ReplicatedMergeTree('/path/to/tables/{shard}/table_name','{replica}')
 ORDER BY id;
 ```
 
-因为
+则不同分片，不同副本的元数据，会在经过macors替换后，存放在不同的zookeeper路径下。实现元数据的隔离。
+
 # 集群表
 
+在macors章节介绍了集群表的创建方式

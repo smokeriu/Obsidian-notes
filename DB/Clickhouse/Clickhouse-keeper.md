@@ -10,8 +10,11 @@ Clickhouse-keeper被作为clickhouse-server发行包的一部分，所以可以�
 Clickhouse-keeper可以作为独立的服务部署，如此部署，其与独立的zookeeper集群是类似的。
 
 ## 混合部署
-Clickhouse-keeper可以与Clickhouse-server部署在一起，其会作为
+Clickhouse-keeper可以与Clickhouse-server部署在一起，其会作为Clickhouse-server的内嵌服务运作，我们可以选择在复数个Clickhouse-server中添加对应的配置来激活这个服务
 
 
 
 # 主要配置
+
+
+# 迁移

@@ -45,8 +45,8 @@ Replicated在上述基础上增加了Zookeeper部分，会在Zookeeper中创建�
 
 分布式协同能力依赖于Zookeeper，故需要为Server配置连接的Zookeeper。这部分请参考[官方配置](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/replication/)。
 
-> 在新版本中，clickhouse提供了clickhouse-keeper，来替代zookeeper，参考[clickhouse-keeper](https://clickhouse.com/clickhouse/keeper)和[clickhouse-keeper和zookeeper](https://clickhouse.com/docs/en/operations/tips#zookeeper).
-> 
+> 在新版本中，clickhouse提供了clickhouse-keeper，来替代zookeeper，参考[clickhouse-keeper](https://clickhouse.com/clickhouse/keeper)和[clickhouse-keeper和zookeeper](https://clickhouse.com/docs/en/operations/tips#zookeeper)。
+> 本文仍然基于zookeeper，更多内容参考[[Clickhouse-keeper]]。
 
 ## 定义副本
 

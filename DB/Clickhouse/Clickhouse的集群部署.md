@@ -65,12 +65,19 @@ remote_servers用于定义一个集群：
 
 需要注意的是，如果clickhouse-server启用了加密，则配置replica时需要配置其账号密码：
 ```xml
-
+<replica>  
+	<host>chnode2</host>  
+	<port>9000</port>
+	<user>xxx</user>
+	<password>xxx</password>
+</replica>
 ```
 
-### 其他配置
+## zookeeper
 
-## 
+
+## macros
+
 
 # 集群表
 

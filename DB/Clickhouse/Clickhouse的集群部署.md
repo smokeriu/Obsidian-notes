@@ -38,9 +38,26 @@ remote_servers用于定义一个集群：
 </shard>
 ```
 
-上述配置创建了一个两个分片的集群，其中分片1会使用chnode1作为副本，而分片2则使用chnode2作为副本，总的来说，这个集群中，所有分片都是单副本的，如果需要为某个分片启用多副本，则在`shard`中配置多个`replica`项即可。
-```xml
+其中：
+- `shard`表示一个分片的配置。
+- `replica`表示`shard`的一个副本配置。可以有多个replica。
+- `replica.port`是`clickhouse-server`的tcp-port，默认为9000。
+- `internal_replication`表示
 
+上述配置创建了一个两个分片的集群，其中分片1会使用chnode1作为副本，而分片2则使用chnode2作为副本，总的来说，这个集群中，所有分片都是单副本的，如果需要为某个分片启用多副本，则在`shard`中配置多个`replica`项即可：
+
+```xml
+<shard>  
+	<internal_replication>true</internal_replication>  
+	<replica>  
+		<host>chnode1</host>  
+		<port>9000</port>  
+	</replica>
+	<replica>  
+		<host>chnode2</host>  
+		<port>9000</port>  
+	</replica>
+</shard>  
 ```
 ## 
 

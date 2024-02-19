@@ -87,7 +87,7 @@ raft_configuration下包含了复数个server节点，其配置了服务的具�
 </keeper_server>  
 ```
 ## zookeeper
-由于keeper_server是一个相对独立的服务，我们需要通过配置zookeeper相关的配置，才能使集群脸上keeper。参考：[[Clickhouse集群部署]]和[cluster-deployment](https://clickhouse.com/docs/en/architecture/cluster-deployment)
+由于keeper_server是一个相对独立的服务，我们需要通过配置zookeeper相关的配置，才能使集群脸上keeper。参考：[[Clickhouse的集群部署]]和[cluster-deployment](https://clickhouse.com/docs/en/architecture/cluster-deployment)
 
 ```xml
 <zookeeper>  
@@ -107,6 +107,15 @@ raft_configuration下包含了复数个server节点，其配置了服务的具�
 ```
 
 # 启动
-如果采用内嵌的方式，则clickhouse-keeper会跟随clickhouse-server一起启动。
+如果采用内嵌的方式，则clickhouse-keeper会跟随clickhouse-server一起启动。如果需要单独启动，则：
+```shell
+clickhouse-keeper --config /etc/your_path_to_config/config.xml
+```
+某些时候，如果没有`clickhouse-keeper`命令，则使用：
+```shell
+clickhouse keeper --config /etc/your_path_to_config/config.xml
+```
+
+
 
 # 迁移

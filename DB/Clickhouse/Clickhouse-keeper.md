@@ -87,21 +87,21 @@ raft_configuration下包含了复数个server节点，其配置了服务的具�
 </keeper_server>  
 ```
 ## zookeeper
-由于keeper_server是一个相对独立的服务，我们需要通过配置zookeeper相关的配置，才能使集群脸上keeper。参考：[cluster-deployment](https://clickhouse.com/docs/en/architecture/cluster-deployment)
+由于keeper_server是一个相对独立的服务，我们需要通过配置zookeeper相关的配置，才能使集群脸上keeper。参考：[[Clickhouse集群部署]]和[cluster-deployment](https://clickhouse.com/docs/en/architecture/cluster-deployment)
 
 ```xml
 <zookeeper>  
+	<node>  
+		<host>zoo1</host>  
+		<port>9181</port>  
+	</node>  
 <node>  
-<host>zoo</host>  
-<port>2181</port>  
+<host>zoo2</host>  
+<port>9181</port>  
 </node>  
 <node>  
-<host>zoo02.clickhouse.com</host>  
-<port>2181</port>  
-</node>  
-<node>  
-<host>zoo03.clickhouse.com</host>  
-<port>2181</port>  
+<host>zoo3</host>  
+<port>9181</port>  
 </node>  
 </zookeeper>
 ```

@@ -82,12 +82,12 @@ raft_configuration下包含了复数个server节点，其配置了服务的具�
 	</coordination_settings>
 
 	<raft_configuration>
-	<!--...
+		<!-- server -->
 	</raft_configuration>
 </keeper_server>  
 ```
 ## zookeeper
-
+由于keeper_server是一个相对独立的服务，我们需要通过配置zookeeper相关的配置，才能使
 
 # 启动
 

@@ -15,5 +15,4 @@ ENGINE = ReplicatedMergeTree('/path/to/tables/{shard}/table_name','{replica}')
 
 上述命令，会在集群中的所有机器上执行对应的命令，并替换相应的`shard`和`replica`。
 
-需要注意的是，尽管在上述命令中创建replicated表时我们指定了`shard`，但单独的Replicated表并不能利用到，这是因为：
-- clickhouse中，一个server只能作为一个shard的一个replica，所以对于Replicated表，在不同的
+需要注意的是，尽管在上述命令中创建replicated表时我们指定了`shard`，但单独的Replicated表并不能利用到，这主要是因为利用macro创建replicated的方式主要是服务于[[Clickhouse的集群表]]，而Replicated本身并不需要

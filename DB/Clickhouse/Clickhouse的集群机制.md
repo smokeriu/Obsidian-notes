@@ -479,48 +479,53 @@ SELECT name,avg(price) FROM info_all WHERE info = 'info1' GROUP BY name
 假设我们有这么一条SQL：
 
 ```sql
-select u.name,i.price  
-    from hadoop.info_all i join hadoop.user_all u  
-on i.id=u.id;
+SELECT u.name,i.price  
+    FROM hadoop.info_all i JOIN hadoop.user_all u  
+ON i.id=u.id;
 ```
 
 其实仅仅观察log，我们会发现右侧的分布式表的查询翻倍了，原因其实很简单，因为我们关联的右表也是一个分布式表，则其实Clickhouse内部的转换可以看成：
 
 ```sql
-select u.name,i.price  
-    from hadoop.info_all i join hadoop.user_all u  
-on i.id=u.id;  
+SELECT u.name,i.price  
+    FROM hadoop.info_all i JOIN hadoop.user_all u  
+ON i.id=u.id;  
 ```
  ​  
 - 将主表替换为本地表,推送给远端  
  ​  
 ```sql
-select u.name,i.price  
-    from hadoop.info_local i join hadoop.user_all u  
-on i.id=u.id;  
+SELECT u.name,i.price  
+    FROM hadoop.info_local i JOIN hadoop.user_all u  
+ON i.id=u.id;  
 ```
  ​  
  - 远端机器将子句的分布式表，转换成local表。向其他机器发送查询请求  
  ​  
-```
+```sql
+SELECT id,name FROM user_local
 ``` 
  ​  
- -- 得到sub_query后，再结合本机的local查询结果，得到最终结果，最后汇总  
+ - 得到sub_query后，再结合本机的local查询结果，得到最终结果，最后汇总  
  ​  
- select u.name,i.price  
-     from hadoop.info_local i join sub_query u  
- on i.id=u.id;
+```sql
+SELECT u.name,i.price  
+    FROM hadoop.info_local i JOIN sub_query u  
+ON i.id=u.id;
+```
 
-所以，查询请求被放大了N*N倍。而类似于大数据中常见的`hash-join`，这部分在某些情况其实不需要让每台机器重复执行相同的运算，我们可以使用`GLOBAL`关键字，将子查询转换为一次查询。
+所以，查询请求被放大了N\*N倍。而类似于大数据中常见的`hash-join`，这部分在某些情况其实不需要让每台机器重复执行相同的运算，我们可以使用`GLOBAL`关键字，将子查询转换为一次查询。
 
- select u.name,i.price  
-     from hadoop.info_all i GLOBAL JOIN hadoop.user_all u  
- on i.id=u.id;
+```sql
+SELECT u.name,i.price  
+    FROM hadoop.info_all i GLOBAL JOIN hadoop.user_all u  
+ON i.id=u.id;
+```
 
 这样，对右表user_all的查询会被精简到一次，将查询的最终结果**全部**加载到内存中，分发到各个各个节点。
 
-从这里也可以看出，GLOBAL JOIN的查询会被全部加载到内存中并分发到各个节点。如果右表过大，会造成大量的资源损耗。故GLOBAL JOIN也只适合右表是小表的场景。
+从这里也可以看出，GLOBAL JOIN的查询会被全部加载到内存中并分发到各个节点。如果右表过大，会造成大量的资源损耗。故GLOBAL JOIN也**只适合右表是小表**的场景。
 
 如果联合查询时两张表都是大表怎么办，目前只能根据Clickhouse的特性，对右表进行设计。
 
-创建分布式表时，Clickhouse会根据`sharding_key`来进行数据的分配，一个设计准则就是让右表的查询不发往其他节点。例如当我们join条件是`a.id=b.id`时，如果b表的id作为sharding_key。保证一个id只存在于一个分片上，就可以避免将查询N*N倍的放大。
+创建分布式表时，Clickhouse会根据`sharding_key`来进行数据的分配，一个设计准则就是让右表的查询不发往其他节点。例如当我们join条件是`a.id=b.id`时，如果b表的id作为sharding_key。保证一个id只存在于一个分片上，就可以避免将查询N\*N倍的放大。

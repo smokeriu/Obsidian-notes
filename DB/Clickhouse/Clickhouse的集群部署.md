@@ -12,7 +12,12 @@ Clickhouse的集群机制是由自身配置决定的，并将其源数据存放�
 ## remote_servers
 
 remote_servers用于定义一个集群，并配置这个集群的分片和副本信息：
-```
+```xml
+<remote_servers>
+	<cluster_name_1>
+	  <!-- config for this cluster -->
+	</cluster_name_1>
+</remote_servers>
 ```
 
 ## 

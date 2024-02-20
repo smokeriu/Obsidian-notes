@@ -23,6 +23,11 @@ ENGINE = Distributed(cluster , database, table, [,sharding_key[, policy_name]])
 
 # 查询
 
+对于非聚合、非关联等场景，其查询会
+
+## 聚合
+
+## 关联
 
 
 

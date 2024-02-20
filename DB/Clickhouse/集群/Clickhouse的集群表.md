@@ -19,9 +19,10 @@ ENGINE = Distributed(cluster , database, table, [,sharding_key[, policy_name]])
     - 该键要尽量保证数据均匀分布，一个常用的操作是采用区分度较高的列的哈希值，如`intHash64(user_id)`。
 - `plicy_name` - 用于决定中间数据存储在哪。一般需要配合[storage_configuration](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree/#table_engine-mergetree-multiple-volumes_configure)使用。
 
-请注意，`sharding_key`是一个很重要的参数。其决定了向集群表中插入数据时如何进行分布，但由于`local`表和集群表本质上是相对独立的，
+请注意，`sharding_key`是一个很重要的参数，其决定了向集群表中插入数据时如何进行分布。但由于`local`表和集群表本质上是相对独立的，所以`sharding_key`只是对数据分布的弱约束（例如其无法管理直接插入`local`表的数据分布）。这主要会影响到一些Join场景的使用。
 
 # 查询
+
 
 
 

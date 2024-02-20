@@ -7,8 +7,11 @@
 
 创建语句如下：
 ```sql
-
+CREATE TABLE <table_name> [ON CLUSTER <cluster_name>] 
+(...)
+ENGINE = Distributed(cluster , database, table, [,sharding_key[, policy_name]])
 ```
+其中：
 
 # 查询
 

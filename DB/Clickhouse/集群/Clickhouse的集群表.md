@@ -23,7 +23,7 @@ ENGINE = Distributed(cluster , database, table, [,sharding_key[, policy_name]])
 
 # 查询
 
-对于非聚合、非关联等场景，其查询会
+对于非聚合、非关联等场景，其查询会分发到各个节点，并在最后进行汇总。
 
 ## 聚合
 

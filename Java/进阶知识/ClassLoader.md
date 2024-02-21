@@ -16,5 +16,5 @@ ClassLoader是用于加载我们编译好的class文件到JVM中。
 
 
 # ContextClassLoader
-ContextClassLoader是用于解决双亲委派机制的问题的产物，双亲委派中，类加载总是自下向上的，但某些情况则是自上向下的，例如SPI机制。
-在`rt.jar`中，定义了
+ContextClassLoader是用于解决双亲委派机制的问题的产物，双亲委派中，类加载总是自下向上的，但某些情况则是自上向下的，例如SPI机制。例如：
+JDBC的规范类是在`rt.jar`包里面的，默认是由BootstrapClassLoadr加载的，所以JDBC所依赖的类，比如我们自己实现的MYSQL，也应该是由BootstrapClassLoadr来加载，但是我们的MYSQL包路径并不在BootstrapClassLoadr加载的路径当中，这样就会出现找不到类的情况。所以在这种情况下面，我们就需要打破双亲委派模型，ContextClassLoader就应运而生。在BootstrapClassLoadr加载不到的情形下面，由BootstrapClassLoadr转接到当前线程的ContextClassLoader来加载。

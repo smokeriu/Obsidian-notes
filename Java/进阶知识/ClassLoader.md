@@ -16,4 +16,5 @@ ClassLoader是用于加载我们编译好的class文件到JVM中。
 
 
 # ContextClassLoader
-ContextClassLoader是用于解决双亲委派机制的问题的产物，
+ContextClassLoader是用于解决双亲委派机制的问题的产物，双亲委派中，类加载总是自下向上的，但某些情况则是自上向下的，例如SPI机制。
+在`rt.jar`中，定义了

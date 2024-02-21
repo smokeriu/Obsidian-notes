@@ -12,4 +12,8 @@ ClassLoader是用于加载我们编译好的class文件到JVM中。
 
 另外：
 - 整个加载过程，都是锁住的，确保指定对当前类的全限定名加载一个线程在执行。
-- 如果自定义classLoader设置`parent = null`, 那么就会跳goext路径下类加载，可能会导致冲突。 **所以自定义ClassLoader一般指定 parent = appClassLoader。**
+- 如果自定义classLoader设置`parent = null`, 那么就会跳过extClassLoader路径下类加载，可能会导致冲突。 **所以自定义ClassLoader一般指定 parent = appClassLoader。**
+
+
+# ContextClassLoader
+ContextClassLoader是用于解决双亲委派机制的问题的产物，

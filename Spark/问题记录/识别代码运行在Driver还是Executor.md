@@ -2,5 +2,6 @@
 
 `SparkSession.getActiveSession`返回值是一个Option，其注视中提到：
 > Returns the active SparkSession for the current thread, returned by the builder.  
-*  
-* @note Return None, when calling this function on executors
+   **Return None, when calling this function on executors**。
+
+所以在初始化后，通过`SparkSession.getActiveSession.isDefined`就可以判断当前代码片段是在Driver还是Executor了。

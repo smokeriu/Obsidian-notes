@@ -5,6 +5,8 @@ Spark可以通过`--files`参数或`spark.files`配置，向应用传递本地�
 
 # 坑
 ## Driver的地址
-一般会通过`SparkFiles.get(fileName)`来获取通过`--files`传输的文件，这里有两个情况：
+一般会通过`SparkFiles.get(fileName)`来获取通过`--files`传输的文件，这里有两个注意点：
 1. Driver执行这段代码，和Executor执行这段代码，得到的结果是不一样的。
-2. Driver得到的
+2. Driver得到的地址，实际上是**没有文件的！**。
+
+简而言之，当executor要使用文件时，需要在executor执行`SparkFiles.get(fileName)`来获取qi

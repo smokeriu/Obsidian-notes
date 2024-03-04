@@ -7,8 +7,11 @@ Spark可以通过`--files`参数或`spark.files`配置，向应用传递本地�
 ## Driver的地址
 一般会通过`SparkFiles.get(fileName)`来获取通过`--files`传输的文件，这里有两个注意点：
 1. Driver执行这段代码，和Executor执行这段代码，得到的结果是不一样的。
-2. Driver得到的地址，实际上是**没有文件的！**。
+2. Driver得到的地址，实际上是**没有文件的！**。这是因为Driver实际拿到的是`SparkEnv.get.driverTmpDir+fileName`，而driver的临时目录会被清空，我们需要使用工作目录。
 
 简而言之：
 - 当Executor要使用文件时，需要在具体的Executor执行`SparkFiles.get(fileName)`来获取其在Executor上的地址。
-- 当Driver要使用文件时，不能使用`SparkFiles.get(fileName)`来获取地址，可以使用`new File()`来获取地址
+- 当Driver要使用文件时，不能使用`SparkFiles.get(fileName)`来获取地址，可以使用`new File(fileName).getAbsolutePath()`来获取地址。
+
+参考：
+- [spark 带文件上集群，获取外部文件，--files 使用说明\_spark任务提交时自动上传本地文件夹-CSDN博客](https://blog.csdn.net/Code_LT/article/details/132225997)

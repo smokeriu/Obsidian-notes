@@ -5,4 +5,6 @@
 4. 更好的事务处理。
 
 # 架构
-
+![[assets/Pasted image 20240401160249.png]]
+- BaseStore：由批计算、优化程序产生的数据文件。
+- ChangeStore：由流计算、Update处理等产生的

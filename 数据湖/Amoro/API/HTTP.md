@@ -30,4 +30,19 @@ httpClient.execute(post);
 
 # 获取catalog
 
-> 获取catalog填，
+> 获取catalog前，需要先登陆获取cookie
+
+地址：`ams/v1/catalogs`
+方式：`GET`
+
+## Java代码
+
+```java
+final HttpGet get = new HttpGet("http://127.0.0.1:1630/ams/v1/catalogs");  
+final CloseableHttpResponse execute = httpClient.execute(get);
+```
+
+响应：
+```json
+
+```

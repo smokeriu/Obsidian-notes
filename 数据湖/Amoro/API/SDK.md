@@ -27,11 +27,19 @@ final ArcticCatalog catalog = CatalogLoader.load(url);
 # 数据库
 
 ## 创建数据库
-
+ArcticCatalog提供了方法来创建数据库：
 ```java
-
+void createDatabase(String databaseName);
 ```
 
+> 如果数据库已经存在，则会抛出：`AlreadyExistsException`。
 ## 获取数据库
-
+ArcticCatalog提供了方法来列出所有数据库。
+```java
+List<String> listDatabases();
+```
 # 表
+
+## 创建表
+
+## ho

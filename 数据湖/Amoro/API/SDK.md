@@ -41,8 +41,28 @@ List<String> listDatabases();
 # 表
 
 ## 创建表
+创建表需要构建Schema和TableIdentifier：
+Schema
+```java
+final Schema schema = new Schema(  
+        Types.NestedField.required(1, "id", Types.IntegerType.get()),  
+        Types.NestedField.optional(2, "name", Types.StringType.get()),  
+        Types.NestedField.required(3, "ts", Types.TimestampType.withoutZone())  
+);
+```
 
+TableIdentifier：
+```java
+final TableIdentifier ti = TableIdentifier.of("test1", "testdb", "tb1"),  
+```
 
+紧接着构建TableBuilder：
+```java
+final TableBuilder builder = catalog.newTableBuilder(  
+        ti,
+        schema  
+);
+```
 
 ## 获取表列表
 

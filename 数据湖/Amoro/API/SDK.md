@@ -84,5 +84,9 @@ ArcticCatalog提供了方法来列出数据库下的所有表。
 List<TableIdentifier> listTables(String database);
 ```
 
-> 返回的
+> 返回的TableIdentifier中包含了catalog，database等信息。
 ## 获取表详情
+ArcticCatalog提供了方法来获取表的详细信息。
+```java
+ArcticTable loadTable(TableIdentifier tableIdentifier);
+```

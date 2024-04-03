@@ -15,9 +15,23 @@
 </dependency>
 ```
 
-# 获取Catalog
+# 获取ArcticCatalog
 所有操作需要先获取Catalog实例：
+
+```java
+final ArcticCatalog catalog = CatalogLoader.load(url);
+```
+
+其中url可以使用`thrift`接口，形如：`thrift://127.0.0.1:1260/catalog_name`。
+
+# 数据库
+
+## 创建数据库
 
 ```java
 
 ```
+
+## 获取数据库
+
+# 表

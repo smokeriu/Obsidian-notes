@@ -44,5 +44,41 @@ final CloseableHttpResponse execute = httpClient.execute(get);
 
 响应：
 ```json
-
+{
+	"message": "success",
+	"code": 200,
+	"result": [
+		{
+			"catalogName": "test1",
+			"catalogType": "ams",
+			"storageConfigs": {
+				"hive.site": "xxx",
+				"hadoop.hdfs.site": "xxx",
+				"hadoop.core.site": "xxx",
+				"storage.type": "Hadoop"
+			},
+			"authConfigs": {
+				"auth.kerberos.krb5": "xxx",
+				"auth.type": "kerberos",
+				"auth.kerberos.keytab": "xxx",
+				"auth.kerberos.principal": "kyuubi/admin@CDH.COM"
+			},
+			"catalogProperties": {
+				"table.self-optimizing.group": "OP1",
+				"warehouse": "hdfs:///amoro/local",
+				"uri": "http://127.0.0.1:1630/api/iceberg/rest",
+				"catalog-impl": "org.apache.iceberg.rest.RESTCatalog",
+				"table-formats": "MIXED_ICEBERG"
+			},
+			"setCatalogName": true,
+			"setCatalogType": true,
+			"storageConfigsSize": 4,
+			"setStorageConfigs": true,
+			"authConfigsSize": 4,
+			"setAuthConfigs": true,
+			"catalogPropertiesSize": 5,
+			"setCatalogProperties": true
+		}
+	]
+}
 ```

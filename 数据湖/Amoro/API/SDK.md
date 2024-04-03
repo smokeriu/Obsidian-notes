@@ -64,6 +64,25 @@ final TableBuilder builder = catalog.newTableBuilder(
 );
 ```
 
-## 获取表列表
+在TableBuilder中，可以配置主键、分区等信息：
+```java
+builder.withPrimaryKeySpec(  
+        PrimaryKeySpec.builderFor(schema)  
+                .addColumn("id")  
+                .build()  
+).withPartitionSpec(  
+        PartitionSpec.builderFor(schema)  
+                .day("ts", "ts_day")  
+                .build()  
+)
+```
 
+最后通过builder的create方法，即可完成创建。
+## 获取表列表
+ArcticCatalog提供了方法来列出数据库下的所有表。
+```java
+List<TableIdentifier> listTables(String database);
+```
+
+> 返回的
 ## 获取表详情

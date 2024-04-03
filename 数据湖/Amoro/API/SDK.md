@@ -33,7 +33,7 @@ void createDatabase(String databaseName);
 ```
 
 > 如果数据库已经存在，则会抛出：`AlreadyExistsException`。
-## 获取数据库
+## 获取数据库列表
 ArcticCatalog提供了方法来列出所有数据库。
 ```java
 List<String> listDatabases();
@@ -42,4 +42,6 @@ List<String> listDatabases();
 
 ## 创建表
 
-## ho
+## 获取表列表
+
+## 获取表详情

@@ -10,7 +10,11 @@
 - ChangeStore：存储表中变化的数据，记录由流计算、Update处理等产生的改动。
 - LogStore：作为 ChangeStore 的缓存层，可加快流处理速度。
 
-在实际的API定义中，分为了五类数据：
+在实际的API定义中，一般分为了两种表类型：
+- BaseTable：基础数据。
+- ChangeTable：存储修改数据的Table。
+
+因此包含了共五类数据：
 ```java
 public enum DataFileType {  
   BASE_FILE(0, "B"),  
@@ -21,3 +25,4 @@ public enum DataFileType {
 }
 ```
 
+- BASE_FILE：

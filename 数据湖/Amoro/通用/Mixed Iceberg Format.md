@@ -10,3 +10,14 @@
 - ChangeStore：存储表中变化的数据，记录由流计算、Update处理等产生的改动。
 - LogStore：作为 ChangeStore 的缓存层，可加快流处理速度。
 
+在实际的API定义中，分为了五类数据：
+```java
+public enum DataFileType {  
+  BASE_FILE(0, "B"),  
+  INSERT_FILE(1, "I"),  
+  EQ_DELETE_FILE(2, "ED"),  
+  POS_DELETE_FILE(3, "PD"),  
+  ICEBERG_EQ_DELETE_FILE(4, "IED");
+}
+```
+

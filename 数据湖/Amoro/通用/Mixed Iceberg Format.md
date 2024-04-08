@@ -29,4 +29,4 @@ public enum DataFileType {
 - INSERT_FILE：存储在ChangeTable中的记录的文件。
 - EQ_DELETE_FILE：存储在ChangeTable中删除记录的文件。
 - POS_DELETE_FILE：存储在BaseTable中删除记录的文件。
-- ICEBERG_EQ_DELETE_FILE：原生ICEBERG中Equi
+- ICEBERG_EQ_DELETE_FILE：原生ICEBERG中Equality-delete的文件。

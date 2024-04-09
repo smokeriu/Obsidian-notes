@@ -79,4 +79,5 @@ for (AbstractPartitionPlan partitionPlan : actualPartitionPlans) {
 ## TaskSplitter
 用于生成`SplitTask`，以`TreeNodeTaskSplitter`为例：
 1. 将`undersizedSegmentFiles`中的文件加入到rootTree的`RewriteDataFile`中。
-2. 将
+2. 将`rewritePosDataFiles`中的文件，加入到`RewritePosDataFile`中。
+3. 将``

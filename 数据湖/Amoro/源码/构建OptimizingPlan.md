@@ -28,7 +28,8 @@ if (!added) {
 
 > 需要注意的是，`OptimizingPlanner`中的Evaluator使用的是`AbstractPartitionPlan`的子类。
 
-数据会被记录在三个`Map<DataFile, List<ContentFile<?>>>`类型的Map中。
+数据会被记录在三个`Map<DataFile, List<ContentFile<?>>>`类型的Map中。其依赖的分类如下：
+- 
 
 
 另一方面，代码中的`evaluator()`返回`CommonPartitionEvaluator`类型，其添加文件代码如下：

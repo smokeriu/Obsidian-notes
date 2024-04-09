@@ -29,6 +29,7 @@ if (!added) {
 > 需要注意的是，`OptimizingPlanner`中的Evaluator使用的是`AbstractPartitionPlan`的子类。
 
 数据会被记录在三个`Map<DataFile, List<ContentFile<?>>>`类型的Map中。其依赖的分类如下：
+- rewriteDataFiles
 - 
 
 

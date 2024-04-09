@@ -19,4 +19,5 @@ if (isFragmentFile(dataFile)) {
 - addFragmentFile：
 	- 只会添加delete
 - addUndersizedSegmentFile：
-	- 
+	- 只会添加delete。
+	- 如果时full optimize阶段，则记录file的大小。

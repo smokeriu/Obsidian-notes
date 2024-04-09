@@ -16,5 +16,7 @@ if (isFragmentFile(dataFile)) {
 }
 ```
 其中：
-- addFragmentFile
-- 
+- addFragmentFile：
+	- 只会添加delete
+- addUndersizedSegmentFile：
+	- 

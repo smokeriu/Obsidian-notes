@@ -84,7 +84,9 @@ for (AbstractPartitionPlan partitionPlan : actualPartitionPlans) {
 
 上述数据会按照一定逻辑处理，称为三部分：
 - rewriteDataFiles：
-	- 
+	- 来自上一步中，加入到`RewriteDataFile`中的文件。
 - rewritePosDataFiles：
+	- 来自上一步中，加入到`RewritePosDataFile`中的文件。
 - deleteFiles：
-	- 来自
+	- 来自`rewriteDataFiles`和`rewritePosDataFiles`中的所有deletes。
+

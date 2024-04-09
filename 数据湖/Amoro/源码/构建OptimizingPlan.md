@@ -52,8 +52,17 @@ if (isFragmentFile(dataFile)) {
 - addTargetSizeReachedFile
 	- 如果是`full optimize`阶段，则记录dataFile的大小。并添加delete。
 
-总而言之，`CommonPartitionEvaluator`只会记录delete文件。此时的`Evaluator`实际包含了两层。
+总而言之，`CommonPartitionEvaluator`只会记录delete文件。此时的`Plan`实际包含了两层。
+- 第一层是`AbstractPartitionPlan`。
+- 第二层则是`CommonPartitionEvaluator`。
 
 # 构建Task
 
-
+上述构建的Plan，通过Split方法，构建`TaskDescriptor`：
+```Java
+List<TaskDescriptor> tasks = Lists.newArrayList();  
+for (AbstractPartitionPlan partitionPlan : actualPartitionPlans) {  
+  tasks.addAll(partitionPlan.splitTasks((int) (actualInputSize /
+				   avgThreadCost)));  
+}
+```

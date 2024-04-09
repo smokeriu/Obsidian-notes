@@ -74,3 +74,6 @@ for (AbstractPartitionPlan partitionPlan : actualPartitionPlans) {
 				   avgThreadCost)));  
 }
 ```
+
+## TaskSplitter
+用于生成`SplitTask`，

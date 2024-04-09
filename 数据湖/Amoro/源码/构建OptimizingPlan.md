@@ -33,7 +33,8 @@ if (!added) {
 	- 开启了`Full optimize`。
 	- 是Fragment类型的文件。
 	- `pos-delete`类型的数量达到了阈值。
-- undersizedSegmentFiles：Segment类型的文件。
+- undersizedSegmentFiles：
+	- Segment类型的文件。
 - rewritePosDataFiles：
 	- delete中有两个以上的文件属于`pos-delete`。
 	- delete中有任意一个`eq-delete`的文件。
@@ -76,4 +77,6 @@ for (AbstractPartitionPlan partitionPlan : actualPartitionPlans) {
 ```
 
 ## TaskSplitter
-用于生成`SplitTask`，
+用于生成`SplitTask`，以`TreeNodeTaskSplitter`为例：
+1. 将`undersizedSegmentFiles`中的文件加入到rootTree的`RewriteDataFile`中。
+2. 将

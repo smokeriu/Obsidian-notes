@@ -26,3 +26,5 @@ if (isFragmentFile(dataFile)) {
 - addTargetSizeReachedFile
 	- 如果是`full optimize`阶段，则记录dataFile的大小。并添加delete。
 
+# 构建Task
+

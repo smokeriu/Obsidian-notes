@@ -30,6 +30,9 @@ if (!added) {
 
 数据会被记录在三个`Map<DataFile, List<ContentFile<?>>>`类型的Map中。其依赖的分类如下：
 - rewriteDataFiles
+	- 开启了`Full optimize`。
+	- 是Fragment类型的文件。
+	- `pos-delete`类型的数量达到了阈值。
 - undersizedSegmentFiles：Segment类型的文件。
 - rewritePosDataFiles：
 	- delete中有两个以上的文件属于`pos-delete`。

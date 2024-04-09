@@ -1,3 +1,4 @@
+# 构建Evaluator
 在完成[[扫描文件]]后，系统会将扫描的文件加入到Evaluator中：
 ```Java
 for (TableFileScanHelper.FileScanResult fileScanResult : results) {
@@ -24,3 +25,4 @@ if (isFragmentFile(dataFile)) {
 	- 如果是`full optimize`阶段，则记录dataFile的大小。
 - addTargetSizeReachedFile
 	- 如果是`full optimize`阶段，则记录dataFile的大小。并添加delete。
+

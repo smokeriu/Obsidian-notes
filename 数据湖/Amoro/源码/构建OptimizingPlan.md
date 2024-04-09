@@ -26,7 +26,21 @@ if (!added) {
 }
 ```
 
-> 需要注意的是，
+> 需要注意的是，`OptimizingPlanner`中的Evaluator使用的是`AbstractPartitionPlan`的子类。
+
+
+
+
+另一方面，代码中的`evaluator()`返回`CommonPartitionEvaluator`类型，其添加文件代码如下：
+```java
+if (isFragmentFile(dataFile)) {  
+  return addFragmentFile(dataFile, deletes);  
+} else if (isUndersizedSegmentFile(dataFile)) {  
+  return addUndersizedSegmentFile(dataFile, deletes);  
+} else {  
+  return addTargetSizeReachedFile(dataFile, deletes);  
+}
+```
 
 其中：
 - addFragmentFile：
@@ -37,6 +51,10 @@ if (!added) {
 	- 如果是`full optimize`阶段，则记录dataFile的大小。
 - addTargetSizeReachedFile
 	- 如果是`full optimize`阶段，则记录dataFile的大小。并添加delete。
+
+总而言之，`CommonPartitionEvaluator`只会记录delete文件。
+
+
 
 # 构建Task
 

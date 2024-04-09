@@ -28,7 +28,7 @@ if (!added) {
 
 > 需要注意的是，`OptimizingPlanner`中的Evaluator使用的是`AbstractPartitionPlan`的子类。
 
-
+数据会被记录在三个`Map<DataFile, List<ContentFile<?>>>`类型的Map中。
 
 
 另一方面，代码中的`evaluator()`返回`CommonPartitionEvaluator`类型，其添加文件代码如下：
@@ -52,9 +52,8 @@ if (isFragmentFile(dataFile)) {
 - addTargetSizeReachedFile
 	- 如果是`full optimize`阶段，则记录dataFile的大小。并添加delete。
 
-总而言之，`CommonPartitionEvaluator`只会记录delete文件。
-
-
+总而言之，`CommonPartitionEvaluator`只会记录delete文件。此时的`Evaluator`实际包含了两层。
 
 # 构建Task
+
 

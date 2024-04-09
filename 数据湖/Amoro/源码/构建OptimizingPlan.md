@@ -30,7 +30,10 @@ if (!added) {
 
 数据会被记录在三个`Map<DataFile, List<ContentFile<?>>>`类型的Map中。其依赖的分类如下：
 - rewriteDataFiles
-- 
+- undersizedSegmentFiles：Segment类型的文件。
+- rewritePosDataFiles：
+	- delete中有两个以上的文件属于`pos-delete`。
+	- delete中有任意一个`eq-delete`的文件。
 
 
 另一方面，代码中的`evaluator()`返回`CommonPartitionEvaluator`类型，其添加文件代码如下：

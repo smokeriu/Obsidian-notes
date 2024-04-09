@@ -32,7 +32,9 @@ public enum DataFileType {
 - ICEBERG_EQ_DELETE_FILE：原生ICEBERG中Equality-delete的文件。
 
 其中：
-- `EQ_DELETE`：
-- `POS_DELETE`：
+- `EQ_DELETE_FILE`：
+	- 是一条完整的记录，但表示的是这条记录是被删除的。
+	- `EQ_DELETE_FILE`会存储一系列被删除记录的信息。
+	- `EQ_DELETE_FILE`利于删除/更新操作时，将操作写入文件。但不利于读时合并。
+- `POS_DELETE_FILE`：
 	- 记录了被删除的行，位于哪个原始数据文件中的什么位置。
-	- 

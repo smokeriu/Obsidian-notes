@@ -122,7 +122,11 @@ new RewriteFilesInput(
 ```
 
 由此可见RewriteFilesInput的构成：
-1. rewrittenDataFiles：需要被优化的小文件，或满足其他要求的。
+1. rewrittenDataFiles：
+	1. Segment类型的文件。
+	2. Fragment的文件。
+	3. 或满足其他要求的，例如开启`Full Optimize`。
 2. rePosDeletedDataFiles：
+	1. 
 3. readOnlyDeleteFiles：不应该被处理的delete文件。
 4. rewrittenDeleteFiles：应该被处理的delete文件

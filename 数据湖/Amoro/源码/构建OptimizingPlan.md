@@ -28,7 +28,7 @@ if (!added) {
 
 > 需要注意的是，`OptimizingPlanner`中的Evaluator使用的是`AbstractPartitionPlan`的子类。
 
-数据会被记录在三个`Map<DataFile, List<ContentFile<?>>>`类型的Map中。其依赖的分类如下：
+数据会被记录在四个`Map<DataFile, List<ContentFile<?>>>`类型的Map中。其依赖的分类如下：
 - rewriteDataFiles
 	- 开启了`Full optimize`。
 	- 是Fragment类型的文件。
@@ -38,6 +38,9 @@ if (!added) {
 - rewritePosDataFiles：
 	- delete中有两个以上的文件属于`pos-delete`。
 	- delete中有任意一个`eq-delete`的文件。
+- reservedDeleteFiles：
+	- 如果DataFile没被添加到上述3个Map中的任意一个。
+	- 则xu yc
 
 
 另一方面，代码中的`evaluator()`返回`CommonPartitionEvaluator`类型，其添加文件代码如下：

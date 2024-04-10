@@ -102,3 +102,12 @@ Set<ContentFile<?>> readOnlyDeleteFiles = Sets.newHashSet();
 Set<ContentFile<?>> rewriteDeleteFiles = Sets.newHashSet();
 ```
 
+`deleteFiles`会根据其在`reservedDeleteFiles`的情况分别加入到`readOnlyDeleteFiles`和`rewriteDeleteFiles`中：
+
+```java
+if (reservedDeleteFiles.contains(deleteFile.path().toString())) {  
+  readOnlyDeleteFiles.add(deleteFile);  
+} else {  
+  rewriteDeleteFiles.add(deleteFile);  
+}
+```

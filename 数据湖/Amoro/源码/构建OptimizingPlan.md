@@ -93,4 +93,5 @@ for (AbstractPartitionPlan partitionPlan : actualPartitionPlans) {
 - deleteFiles：
 	- 来自`rewriteDataFiles`和`rewritePosDataFiles`中的所有deletes。
 
+TaskSplitter将生成SplitTask，其是`AbstractPartitionPlan`的内部类。
 ## buildTask

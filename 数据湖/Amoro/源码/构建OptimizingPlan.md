@@ -127,6 +127,7 @@ new RewriteFilesInput(
 	2. Fragment的文件。
 	3. 或满足其他要求的，例如开启`Full Optimize`。
 2. rePosDeletedDataFiles：
-	1. 
+	1. 存在`pos-delete`或`eq-delete`的原始文件。
 3. readOnlyDeleteFiles：不应该被处理的delete文件。
-4. rewrittenDeleteFiles：应该被处理的delete文件
+4. rewrittenDeleteFiles：应该被处理的delete文件。
+

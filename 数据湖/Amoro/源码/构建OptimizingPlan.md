@@ -32,7 +32,7 @@ if (!added) {
 - rewriteDataFiles
 	- 开启了`Full optimize`。
 	- 是Fragment类型的文件。
-	- `pos-delete`类型的数量达到了阈值。
+	- delete中，`pos-delete`类型的数量达到了阈值。
 - undersizedSegmentFiles：
 	- Segment类型的文件。
 - rewritePosDataFiles：

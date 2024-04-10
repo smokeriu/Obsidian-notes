@@ -95,3 +95,10 @@ for (AbstractPartitionPlan partitionPlan : actualPartitionPlans) {
 
 TaskSplitter将生成SplitTask，其是`AbstractPartitionPlan`的内部类。
 ## buildTask
+buildTask是SplitTask的方法，用于构建TaskDescriptor。
+方法内定义了两个集合：
+```java
+Set<ContentFile<?>> readOnlyDeleteFiles = Sets.newHashSet();  
+Set<ContentFile<?>> rewriteDeleteFiles = Sets.newHashSet();
+```
+

@@ -42,7 +42,7 @@ if (!added) {
 	- 如果DataFile没被添加到上述3个Map中的任意一个。
 	- 则需要将delete添加到reservedDeleteFiles中，避免被移除。
 
-
+## CommonPartitionEvaluator
 另一方面，代码中的`evaluator()`返回`CommonPartitionEvaluator`类型，其添加文件代码如下：
 ```java
 if (isFragmentFile(dataFile)) {  
@@ -122,7 +122,7 @@ new RewriteFilesInput(
 ```
 
 由此可见RewriteFilesInput的构成：
-1. rewrittenDataFiles：
+1. rewrittenDataFiles：需要被优化的小文件，或满足其他要求的。
 2. rePosDeletedDataFiles：
 3. readOnlyDeleteFiles：不应该被处理的delete文件。
 4. rewrittenDeleteFiles：应该被处理的delete文件

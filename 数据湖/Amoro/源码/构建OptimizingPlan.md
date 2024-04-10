@@ -40,7 +40,7 @@ if (!added) {
 	- delete中有任意一个`eq-delete`的文件。
 - reservedDeleteFiles：
 	- 如果DataFile没被添加到上述3个Map中的任意一个。
-	- 则xu yc
+	- 则需要将delete添加到reservedDeleteFiles中，避免被移除。
 
 
 另一方面，代码中的`evaluator()`返回`CommonPartitionEvaluator`类型，其添加文件代码如下：

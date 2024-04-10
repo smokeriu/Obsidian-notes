@@ -85,7 +85,7 @@ for (AbstractPartitionPlan partitionPlan : actualPartitionPlans) {
 2. 将`rewritePosDataFiles`中的文件，加入到`RewritePosDataFile`中。
 3. 将`rewriteDataFiles`中的文件，加入到`RewriteDataFile`中。
 
-上述数据会按照一定逻辑处理，称为三部分：
+上述数据会按照一定逻辑处理，分为三部分：
 - rewriteDataFiles：
 	- 来自上一步中，加入到`rewriteDataFile`中的文件。
 - rewritePosDataFiles：
@@ -111,3 +111,18 @@ if (reservedDeleteFiles.contains(deleteFile.path().toString())) {
   rewriteDeleteFiles.add(deleteFile);  
 }
 ```
+紧接着构建`RewriteFilesInput`：
+```java
+new RewriteFilesInput(  
+    rewriteDataFiles.toArray(new DataFile[0]),  
+    rewritePosDataFiles.toArray(new DataFile[0]),  
+    readOnlyDeleteFiles.toArray(new ContentFile[0]),  
+    rewriteDeleteFiles.toArray(new ContentFile[0]),  
+    tableObject);
+```
+
+由此可见RewriteFilesInput的构成：
+1. rewrittenDataFiles：
+2. rePosDeletedDataFiles：
+3. readOnlyDeleteFiles：不应该被处理的delete文件。
+4. rewrittenDeleteFiles：应该被处理的delete文件

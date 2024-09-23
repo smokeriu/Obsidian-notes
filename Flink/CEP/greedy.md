@@ -22,7 +22,12 @@ A.oneOrMore().greedy().next("B").where()
 ```
 
 此时，greedy的用途为：
-如果
+**如果一条数据同时匹配了A和B，则其只会被A捕获，并不会进入到B匹配中。**
+
+例如有如下数据：`A，AB，B，AB`。
+对于模式A，规则为：`contain(A)`，对于模式B，规则为：`contain(B)`。
+则应用如下匹配：`A.oneOrMore().greedy().nextB`。
+结果为：
 
 
 # 生效机制

@@ -81,4 +81,4 @@ for (StateTransition<T> stateTransition : state.getStateTransitions()) {
 }
 ```
 
-其中，`RichAndCondition`表示两者同时满足时。则可以看到，其增加了一条额外的条件：`new RichNotCondition<>(takeCondition)`。即：当
+其中，`RichAndCondition`表示两者同时满足时。则可以看到，其增加了一条额外的条件：`new RichNotCondition<>(takeCondition)`。即：当出现满足`takeCondition`的条件时，

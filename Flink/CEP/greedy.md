@@ -27,16 +27,24 @@ A.oneOrMore().greedy().next("B").where()
 例如有如下数据：`A，AB，B，AB`。
 对于模式A，规则为：`contain(A)`，对于模式B，规则为：`contain(B)`。
 则应用如下匹配：`A.oneOrMore().greedy().next(B)`。
-结果为：
+结果为4组序列：
 ```
-A: [EventLog[id=1, name=A, mills=1704067200], EventLog[id=2, name=AB, mills=1704067201]]
-B:[EventLog[id=3, name=B, mills=1704067202]]
-A: [EventLog[id=2, name=AB, mills=1704067201]]
-B:[EventLog[id=3, name=B, mills=1704067202]]
-A: [EventLog[id=1, name=A, mills=1704067200], EventLog[id=2, name=AB, mills=1704067201]]
-B:[EventLog[id=3, name=B, mills=1704067202], EventLog[id=4, name=AB, mills=1704067203]]
-A: [EventLog[id=2, name=AB, mills=1704067201]]
-B:[EventLog[id=3, name=B, mills=1704067202], EventLog[id=4, name=AB, mills=1704067203]]
+A: [A, AB]
+B: [B]
+
+A: [AB]
+B: [B]
+
+A: [A, AB]
+B: [B, AB]
+
+A: [AB]
+B: [B, AB]
+```
+
+如果不使用greedy，则结果为：
+```
+
 ```
 
 # 生效机制

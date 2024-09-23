@@ -24,28 +24,50 @@ A.oneOrMore().greedy().next("B").where()
 此时，greedy的用途为：
 **如果一条数据同时匹配了A和B，则其只会被A捕获，并不会进入到B匹配中。**
 
-例如有如下数据：`A，AB，B，AB`。
+## 例子
+例如有如下数据：`A，AB1，B，AB2`。
 对于模式A，规则为：`contain(A)`，对于模式B，规则为：`contain(B)`。
 则应用如下匹配：`A.oneOrMore().greedy().next(B)`。
 结果为4组序列：
 ```
-A: [A, AB]
+A: [A, AB1]
 B: [B]
 
-A: [AB]
+A: [AB1]
 B: [B]
 
-A: [A, AB]
-B: [B, AB]
+A: [A, AB1]
+B: [B, AB2]
 
-A: [AB]
-B: [B, AB]
+A: [AB1]
+B: [B, AB2]
 ```
 
 如果不使用greedy，则结果为：
 ```
+A: [A]
+B: [AB1]
 
+A: [A, AB1]
+B: [B]
+
+A: [A]
+B: [AB1, B]
+
+A: [AB1]
+B: [B]
+
+A: [A, AB1]
+B: [B, AB2]
+
+A: [A]
+B: [AB1, B, AB2]
+
+A: [AB1]
+B: [B, AB2]
 ```
+
+可以发现，在不使用`greedy`时，第二个元素`AB`同时会被A模式和B模式捕获。
 
 # 生效机制
 

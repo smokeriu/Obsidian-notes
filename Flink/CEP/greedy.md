@@ -26,7 +26,7 @@ A.oneOrMore().greedy().next("B").where()
 
 例如有如下数据：`A，AB，B，AB`。
 对于模式A，规则为：`contain(A)`，对于模式B，规则为：`contain(B)`。
-则应用如下匹配：`A.oneOrMore().greedy().nextB`。
+则应用如下匹配：`A.oneOrMore().greedy().next(B)`。
 结果为：
 
 

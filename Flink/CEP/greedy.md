@@ -11,12 +11,18 @@
 
 # 合法用法
 
-greedy会搭配`oneOrMore`；`times`；`timesOrMore`一起使用。
+greedy会搭配`oneOrMore`；`times(int, int)`；`timesOrMore`一起使用，例如：
 ```java
 A.oneOrMore().greedy();
 ```
 
+但单独这么使用并没有效果，原因是这些量词，本身就带有匹配多次的含义，正确有效的使用方式是用在多Pattern中，如下：
+```java
+A.oneOrMore().greedy().next("B").where()
+```
 
+此时，greedy的用途为：
+如果
 
 
 # 生效机制

@@ -67,8 +67,16 @@ A: [AB1]
 B: [B, AB2]
 ```
 
-可以发现，在不使用`greedy`时，第二个元素`AB`同时会被A模式和B模式捕获。
+可以发现，在不使用`greedy`时，第二个元素`AB1`**同时会**被A模式和B模式捕获，产生更多的匹配。而使用`greedy`后，第二个元素`AB1`**只会**被模式A捕获。
 
 # 生效机制
 
-greedy描述为贪婪，但CEP中的循环量词，如`oneOrMore`, `times`, `timesOrMore`，对于单Pattern而言，
+greedy描述为贪婪，在`NFAFactoryCompiler#updateWithGreedyCondition()`中，有如下代码：
+```java
+for (StateTransition<T> stateTransition : state.getStateTransitions()) {  
+    stateTransition.setCondition(  
+            new RichAndCondition<>(  
+                    stateTransition.getCondition(),  
+                    new RichNotCondition<>(takeCondition)));  
+}
+```

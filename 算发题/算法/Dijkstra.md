@@ -32,8 +32,8 @@ Dijkstra从以上最短距离数组中每次**选择一个最近的点**，将�
 
 # 参考
 
-- [一篇文章讲透Dijkstra最短路径算法 - 金色旭光 - 博客园](https://www.cnblogs.com/goldsunshine/p/12978305.html)
+- [一篇文章讲透Dijkstra最短路径算法](https://www.cnblogs.com/goldsunshine/p/12978305.html)
 
 # 相关题目
 
-- [Fetching Title#xjxn](https://leetcode.cn/problems/network-delay-time/description/?envType=daily-question&envId=2024-11-25)
+- [743. 网络延迟时间 - 力扣（LeetCode）](https://leetcode.cn/problems/network-delay-time/description/?envType=daily-question&envId=2024-11-25)

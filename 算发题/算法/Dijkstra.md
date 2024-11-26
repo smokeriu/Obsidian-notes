@@ -21,3 +21,19 @@ Dijkstra从以上最短距离数组中每次**选择一个最近的点**，将�
 |---|---|---|---|---|---|
 |0|6|19|4|10|无穷大|
 
+第三步，选择B，因为C已经被使用过，此时A到B到路径可以认为是最短路径，则更新为：
+
+| A   | B   | C   | D   | E   | F   |
+| --- | --- | --- | --- | --- | --- |
+| 0   | 6   | 14  | 4   | 10  | 无穷大 |
+
+如此循环，直到完成所有点的遍历。
+
+
+# 参考
+
+- [一篇文章讲透Dijkstra最短路径算法 - 金色旭光 - 博客园](https://www.cnblogs.com/goldsunshine/p/12978305.html)
+
+# 相关题目
+
+- [Fetching Title#xjxn](https://leetcode.cn/problems/network-delay-time/description/?envType=daily-question&envId=2024-11-25)

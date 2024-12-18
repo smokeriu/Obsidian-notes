@@ -6,7 +6,7 @@
 # 题目
 
 - [349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays/)
-	- 由于元素ge这题也可以采用[[通过数组当作哈希表]]。
+	- 由于元素个数有限，这题也可以采用[[通过数组当作哈希表]]。
 - [350. 两个数组的交集 II](https://leetcode.cn/problems/intersection-of-two-arrays-ii/)
 
 # 参考

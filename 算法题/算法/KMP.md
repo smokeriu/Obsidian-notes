@@ -98,6 +98,10 @@ for(int i = 1; i < s.size(); i++) { // 注意i从1开始
 其动画如图所示：
 ![[KMP精讲3.gif]]
 
+# 使用前缀表来匹配
+
+
+
 # 参考
 
 - [代码随想录](https://programmercarl.com/0028.%E5%AE%9E%E7%8E%B0strStr.html)

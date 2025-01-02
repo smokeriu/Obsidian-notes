@@ -5,5 +5,5 @@
 
 - `ceiling(int target)`：返回大于等于target的最小元素。即返回距离target最近的右侧元素。
 - `floor(int target)`：返回小于等于target的最大元素。即返回距离target最近的左侧元素。
-- `lower(int target)`：返回大于target的
-- `upper(int target)`：返回小于
+- `lower(int target)`：返回小于target的最小元素。
+- `upper(int target)`：返回大于target的最大元素。

@@ -9,10 +9,18 @@
 ssh-keygen -t rsa
 ```
 
-2.  
+2.  向目标服务器复制key，这里是本地
+
+```shell
+ssh-copy-id user@host
+```
 
 ## Kerberos
-1. 安装
+1. 安装kerberos：
+
+```shell
+sudo apt install krb5-admin-server, krb5-user -y
+```
 
 
 # HDFS

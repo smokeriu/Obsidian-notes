@@ -136,6 +136,8 @@ ktadd -k /path/to/yarn.keytab yarn/hadoop
 
 > 请确保：`${dfs.name.dir}`和`${dfs.data.dir}`指向的文件夹存在。
 > 请确保`principal`和`keytab`配置正确。
+
+3. 配置`workers`：将本机的hostname添加到`workers`文件中。
 ## DataNode
 DataNode要启用kerberos，需要额外的方式，这里采用SASL的方式：
 
@@ -318,4 +320,8 @@ sbin/start-dfs.sh
 ```
 
 
-2. 启动yarn
+2. 启动yarn：
+
+```shell
+sbin/start-yarn.sh
+```

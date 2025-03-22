@@ -3,7 +3,13 @@
 
 ## 设置免密
 
-1. 
+1. 生成key：
+
+```shell
+ssh-keygen -t rsa
+```
+
+2.  
 
 ## Kerberos
 1. 安装

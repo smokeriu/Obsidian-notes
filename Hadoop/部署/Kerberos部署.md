@@ -132,8 +132,11 @@ keytool -keystore keystore -alias localhost -import -file cert_signed
 1. 需要首先格式化hdfs：
 
 ```shell
-hadoop 
+hdfs namenode -format
 ```
 
+2. 启动节点
 
+```
+```
 # Yarn

@@ -1,4 +1,6 @@
-以Ubuntu为例。
+
+> 以Ubuntu为例。
+
 # 前置条件
 
 ## 设置免密
@@ -35,6 +37,20 @@ kdb5_util -s create HADOOP.COM
 ```shell
 sudo service kadmin start
 sudo service krb5kdc start
+```
+
+4. 进入kadmin：
+
+```shell
+sudo kadmin.local
+```
+
+5. 添加用户，并导出keytab：
+
+```shell
+addprinc admin/admin
+addprinc hdfs/hadoop
+addprinc yarn/hadoop
 ```
 
 # HDFS

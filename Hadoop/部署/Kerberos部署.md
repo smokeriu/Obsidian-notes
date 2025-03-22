@@ -45,8 +45,65 @@ keytool -keystore keystore -alias localhost -import -file cert_signed
 
 3. 配置SSL信息
 
-进入hadoop
+进入hadoop配置目录，通过模版文件得到：`ssl-server.xml`和`ssl-client.xml`。需要修改的配置如下：
+
+- `ssl-server.xml`：
+
+```xml
+<property>
+  <name>ssl.server.truststore.location</name>
+  <value>/home/ssiu/ssl/truststore</value>
+  <description>Truststore to be used by NN and DN. Must be specified.
+  </description>
+</property>
+
+<property>
+  <name>ssl.server.truststore.password</name>
+  <value>123456</value>
+  <description>Optional. Default value is "".
+  </description>
+</property>
+
+<property>
+  <name>ssl.server.keystore.location</name>
+  <value>/home/ssiu/ssl/keystore</value>
+  <description>Keystore to be used by NN and DN. Must be specified.
+  </description>
+</property>
+
+<property>
+  <name>ssl.server.keystore.password</name>
+  <value>123456</value>
+  <description>Must be specified.
+  </description>
+</property>
+
+<property>
+  <name>ssl.server.keystore.keypassword</name>
+  <value>123456</value>
+  <description>Must be specified.
+  </description>
+</property>
+```
+
+- `ssl-client.xml`：
+
+```xml
+<property>
+  <name>ssl.client.truststore.location</name>
+  <value>/home/ssiu/ssl/truststore</value>
+  <description>Truststore to be used by clients like distcp. Must be
+  specified.
+  </description>
+</property>
+
+<property>
+  <name>ssl.client.truststore.password</name>
+  <value>123456</value>
+  <description>Optional. Default value is "".
+  </description>
+</property>
 
 
-
+```
 # Yarn

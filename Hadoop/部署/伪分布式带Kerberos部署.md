@@ -51,7 +51,13 @@ sudo kadmin.local
 addprinc admin/admin
 addprinc hdfs/hadoop
 addprinc yarn/hadoop
+
+ktadd -k /path/to/hdfs.keytab hdfs/hadoop
+ktadd -k /path/to/yarn.keytab yarn/hadoop
 ```
+
+需要注意的是，由于进入kadmin.local使用的sudo，所以导出完keytab后，还需要修改所有人，使当前用户可以读取keytab文件。
+另外，这里部署的是单机版，
 
 # HDFS
 ## DataNode

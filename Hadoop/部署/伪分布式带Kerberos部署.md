@@ -22,6 +22,20 @@ ssh-copy-id user@host
 sudo apt install krb5-admin-server, krb5-user -y
 ```
 
+这个过程如果是交互式，会设置realm等信息，这里假设设置realm为：`HADOOP.COM`。
+
+2. 配置kerberos数据库（注意域的一致性）：
+
+```shell
+kdb5_util -s create HADOOP.COM
+```
+
+3. 启动kerberos
+
+```shell
+sudo service kadmin start
+sudo service krb5kdc start
+```
 
 # HDFS
 ## DataNode

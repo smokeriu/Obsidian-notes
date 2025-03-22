@@ -135,7 +135,7 @@ ktadd -k /path/to/yarn.keytab yarn/hadoop
 ```
 
 > 请确保：`${dfs.name.dir}`和`${dfs.data.dir}`指向的文件夹存在。
-> 请确保principal和keytab配置
+> 请确保`principal`和`keytab`配置正确。
 ## DataNode
 DataNode要启用kerberos，需要额外的方式，这里采用SASL的方式：
 
@@ -273,4 +273,49 @@ hdfs namenode -format
 ```shell
 sbin/start-dfs.sh
 ```
+
 # Yarn
+
+1. 配置`yarn-site.xml`：
+
+```xml
+<property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+</property>
+<property>
+        <name>yarn.resourcemanager.scheduler.address</name>
+        <value>hadoop:8030</value>
+</property>
+<property>
+        <name>yarn.nodemanager.pmem-check-enabled</name>
+        <value>true</value>
+</property>
+<property>
+        <name>yarn.nodemanager.vmem-check-enabled</name>
+        <value>false</value>
+</property>
+<property>
+        <name>yarn.resourcemanager.principal</name>
+        <value>yarn/hadoop@HADOOP.COM</value>
+</property>
+<property>
+        <name>yarn.resourcemanager.keytab</name>
+        <value>/home/ssiu/app/hadoop/etc/hadoop/yarn.keytab</value>
+</property>
+<property>
+        <name>yarn.nodemanager.principal</name>
+        <value>yarn/hadoop@HADOOP.COM</value>
+</property>
+<property>
+        <name>yarn.nodemanager.keytab</name>
+        <value>/home/ssiu/app/hadoop/etc/hadoop/yarn.keytab</value>
+</property>
+<property>
+        <name>yarn.nodemanager.resource.memory-mb</name>
+        <value>4096</value>
+</property>
+```
+
+
+2. 启动yarn

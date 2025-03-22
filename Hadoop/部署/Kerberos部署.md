@@ -104,6 +104,36 @@ keytool -keystore keystore -alias localhost -import -file cert_signed
   </description>
 </property>
 
+<property>
+  <name>ssl.client.keystore.location</name>
+  <value>/home/ssiu/ssl/keystore</value>
+  <description>Keystore to be used by clients like distcp. Must be
+  specified.
+  </description>
+</property>
 
+<property>
+  <name>ssl.client.keystore.password</name>
+  <value>123456</value>
+  <description>Optional. Default value is "".
+  </description>
+</property>
+
+<property>
+  <name>ssl.client.keystore.keypassword</name>
+  <value>123456</value>
+  <description>Optional. Default value is "".
+  </description>
+</property>
 ```
+
+## 启动
+
+1. 需要首先格式化hdfs：
+
+```shell
+hadoop 
+```
+
+
 # Yarn

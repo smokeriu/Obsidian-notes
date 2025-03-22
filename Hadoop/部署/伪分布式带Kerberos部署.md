@@ -57,9 +57,37 @@ ktadd -k /path/to/yarn.keytab yarn/hadoop
 ```
 
 需要注意的是，由于进入kadmin.local使用的sudo，所以导出完keytab后，还需要修改所有人，使当前用户可以读取keytab文件。
-另外，这里部署的是单机版，
+
+另外，这里部署的是单机版，所以instance直接设置的机器域名：`hadoop`，对于集群，可以使用：`hdfs/_HOST`。
 
 # HDFS
+
+1. 配置`core-site.xml`：
+
+```xml
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://hadoop:9000</value>
+    </property>
+
+    <!-- 开启安全验证 -->
+    <property>
+        <name>hadoop.security.authentication</name>
+        <value>kerberos</value>
+    </property>
+    <property>
+        <name>hadoop.security.authorization</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/home/ssiu/data/tmp</value>
+    </property>
+```
+
+2. 配置`hdfs-site.xml`：
+
+
 ## DataNode
 DataNode要启用kerberos，需要额外的方式，这里采用SASL的方式：
 

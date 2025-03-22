@@ -1,4 +1,11 @@
-# Kerberos
+
+# 前置条件
+
+## 设置免密
+
+1. 
+
+## Kerberos
 1. 安装
 
 
@@ -135,8 +142,9 @@ keytool -keystore keystore -alias localhost -import -file cert_signed
 hdfs namenode -format
 ```
 
-2. 启动节点
+2. 启动服务
 
-```
+```shell
+sbin/start-dfs.sh
 ```
 # Yarn

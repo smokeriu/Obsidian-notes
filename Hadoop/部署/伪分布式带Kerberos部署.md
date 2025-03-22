@@ -112,46 +112,30 @@ ktadd -k /path/to/yarn.keytab yarn/hadoop
         <value>/home/ssiu/app/hadoop/etc/hadoop/hdfs.keytab</value>
 </property>
 <property>
-                <name>dfs.secondary.namenode.kerberos.principal</name>
-                <value>hdfs/hadoop@HADOOP.COM</value>
-        </property>
-        <property>
-                <name>dfs.secondary.namenode.keytab.file</name>
-                <value>/home/ssiu/app/hadoop/etc/hadoop/hdfs.keytab</value>
-        </property>
-        <property>
-                <name>dfs.block.access.token.enable</name>
-                <value>true</value>
-        </property>
-        <property>
-                <name>dfs.http.policy</name>
-                <value>HTTPS_ONLY</value>
-        </property>
-        <property>
-                <name>dfs.datanode.address</name>
-                <value>0.0.0.0:61004</value>
-        </property>
-        <property>
-                <name>dfs.datanode.http.address</name>
-                <value>0.0.0.0:61006</value>
-        </property>
-
-        <property>
-                <name>dfs.data.transfer.protection</name>
-                <value>integrity</value>
-        </property>
+        <name>dfs.secondary.namenode.kerberos.principal</name>
+        <value>hdfs/hadoop@HADOOP.COM</value>
+</property>
+<property>
+        <name>dfs.secondary.namenode.keytab.file</name>
+        <value>/home/ssiu/app/hadoop/etc/hadoop/hdfs.keytab</value>
+</property>
+<property>
+        <name>dfs.block.access.token.enable</name>
+        <value>true</value>
+</property>
         
-        <property>
-                <name>dfs.name.dir</name>
-                <value>/home/ssiu/data/name</value>
-                <description>namenode上存储hdfs名字空间元数据</description>
-        </property>
-        <property>
-                <name>dfs.data.dir</name>
-                <value>/home/ssiu/data/data</value>
-        </property>
+<property>
+        <name>dfs.name.dir</name>
+        <value>/home/ssiu/data/name</value>
+</property>
+<property>
+        <name>dfs.data.dir</name>
+        <value>/home/ssiu/data/data</value>
+</property>
 ```
 
+> 请确保：`${dfs.name.dir}`和`${dfs.data.dir}`指向的文件夹存在。
+> 请确保principal和keytab配置
 ## DataNode
 DataNode要启用kerberos，需要额外的方式，这里采用SASL的方式：
 

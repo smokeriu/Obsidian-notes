@@ -1,4 +1,4 @@
-
+以Ubuntu为例。
 # 前置条件
 
 ## 设置免密
@@ -30,7 +30,7 @@ sudo apt install krb5-admin-server, krb5-user -y
 kdb5_util -s create HADOOP.COM
 ```
 
-3. 启动kerberos
+3. 启动kerberos（不同系统可能有差异）：
 
 ```shell
 sudo service kadmin start

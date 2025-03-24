@@ -29,14 +29,14 @@ sudo apt install krb5-admin-server, krb5-user -y
 2. 配置kerberos数据库（注意域的一致性）：
 
 ```shell
-kdb5_util -s create HADOOP.COM
+sudo kdb5_util  -r HADOOP.COM create -s
 ```
 
 3. 启动kerberos（不同系统可能有差异）：
 
 ```shell
-sudo service kadmin start
-sudo service krb5kdc start
+sudo service krb5-admin-server start
+sudo service krb5-kdc start
 ```
 
 4. 进入kadmin：

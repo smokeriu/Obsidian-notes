@@ -1,0 +1,1 @@
+checkpoint: 提供启动和恢复两个按钮。对于spark。启动会清空checkpoint+appName目录下的内容。恢复则不清空。对于flink。恢复则是选择一个checkpoint目录进行恢复。

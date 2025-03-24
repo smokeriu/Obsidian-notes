@@ -141,7 +141,7 @@ ktadd -k /path/to/yarn.keytab yarn/hadoop
 ## DataNode
 DataNode要启用kerberos，需要额外的方式，这里采用SASL的方式：
 
-1. 额外添加配置
+1. 额外添加配置到`hdfs-site.xml`。
 
 ```xml
 <property>

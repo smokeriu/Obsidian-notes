@@ -169,9 +169,9 @@ DataNode要启用kerberos，需要额外的方式，这里采用SASL的方式：
 ```shell
 openssl req -new -x509 -keyout test_ca_key -out test_ca_cert -days 9999 -subj '/C=CN/ST=China/L=Beijin/O=hduser/OU=security/CN=hadoop.com'
 
-keytool -keystore keystore -alias localhost -validity 9999 -genkey -keyalg RSA -keysize 2048 -dname "CN=hadoop.com, OU=test, O=test, L=Beijing, ST=China, C=cn"
+keytool -keystore keystore -alias localhost -validity 9999 -genkey -keyalg RSA -keysize 2048 -dname "CN=hadoop.com, OU=test, O=test, L=Beijing, ST=China, C=cn"
 
-openssl x509 -req -CA test_ca_cert -CAkey test_ca_key -in cert -out cert_signed -days 9999 -CAcreateserial -passin pass:123456
+openssl x509 -req -CA test_ca_cert -CAkey test_ca_key -in cert -out cert_signed -days 9999 -CAcreateserial -passin pass:123456
 
 keytool -keystore keystore -alias CARoot -import -file test_ca_cert
 

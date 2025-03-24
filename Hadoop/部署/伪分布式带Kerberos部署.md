@@ -167,15 +167,19 @@ DataNode要启用kerberos，需要额外的方式，这里采用SASL的方式：
 通过下述语句生成SSL相关配置和文件，可以在一个目录统一管理，例如：`/home/ssiu/ssl`。下述过程需要设置密码，可以设置为统一密码，方便后续配置。
 
 ```shell
-openssl req -new -x509 -keyout test_ca_key -out test_ca_cert -days 9999 -subj '/C=CN/ST=China/L=Beijin/O=hduser/OU=security/CN=hadoop.com'
+openssl req -new -x509 -keyout bd_ca_key -out bd_ca_cert -days 9999 -subj '/C=CN/ST=beijing/L=beijing/O=test/OU=test/CN=test'
 
-keytool -keystore keystore -alias localhost -validity 9999 -genkey -keyalg RSA -keysize 2048 -dname "CN=hadoop.com, OU=test, O=test, L=Beijing, ST=China, C=cn"
+keytool -keystore keystore -alias localhost -validity 9999 -genkey -keyalg RSA -keysize 2048 -dname "CN=test, OU=test, O=test, L=beijing, ST=beijing, C=CN"
 
-openssl x509 -req -CA test_ca_cert -CAkey test_ca_key -in cert -out cert_signed -days 9999 -CAcreateserial -passin pass:123456
+keytool -keystore truststore -alias CARoot -import -file bd_ca_cert
 
-keytool -keystore keystore -alias CARoot -import -file test_ca_cert
+keytool -certreq -alias localhost -keystore keystore -file cert
 
-keytool -keystore keystore -alias localhost -import -file cert_signed
+openssl x509 -req -CA bd_ca_cert -CAkey bd_ca_key -in cert -out cert_signed -days 9999 -CAcreateserial -passin pass:123456
+
+keytool -keystore keystore -alias CARoot -import -file bd_ca_cert
+
+keytool -keystore keystore -alias localhost -import -file cert_signed
 ```
 
 3. 配置SSL信息

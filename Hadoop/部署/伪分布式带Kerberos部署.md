@@ -4,7 +4,9 @@
 # 特殊说明
 
 这个集群主要用于测试，尽可能减少部署复杂度。有如下特殊说明：
-1. kerberos用户采用与linux用户名称一致，如ssiu/hadoop。
+1. kerberos用户采用与linux用户名称一致，如`ssiu`。这样可以简化权限配置。
+2. kerberos的instance采用与linux的hostname一致，如`hadoop`，这样可以简化权限配置。
+3. 使用SSL作为DataNode的权限认证服务。这样可以简化权限配置。
 
 # 前置条件
 
@@ -54,16 +56,14 @@ sudo kadmin.local
 
 ```shell
 addprinc admin/admin
-addprinc hdfs/hadoop
-addprinc yarn/hadoop
+addprinc ssiu/hadoop
 
-ktadd -k /path/to/hdfs.keytab hdfs/hadoop
-ktadd -k /path/to/yarn.keytab yarn/hadoop
+ktadd -k /path/to/ssiu.keytab ssiu/hadoop
 ```
 
 需要注意的是，由于进入kadmin.local使用的sudo，所以导出完keytab后，还需要修改所有人，使当前用户可以读取keytab文件。
 
-另外，这里部署的是单机版，所以instance直接设置的机器域名：`hadoop`，对于集群，可以使用：`hdfs/_HOST`。
+另外，这里部署的是单机版，所以instance直接设置的机器域名：`hadoop`，对于集群，可以使用：`ssiu/_HOST`。
 
 # HDFS
 
@@ -102,27 +102,27 @@ ktadd -k /path/to/yarn.keytab yarn/hadoop
 </property>
 <property>
         <name>dfs.namenode.kerberos.principal</name>
-        <value>hdfs/hadoop@HADOOP.COM</value>
+        <value>ssiu/hadoop@HADOOP.COM</value>
 </property>
 <property>
         <name>dfs.namenode.keytab.file</name>
-        <value>/home/ssiu/app/hadoop/etc/hadoop/hdfs.keytab</value>
+        <value>/home/ssiu/app/hadoop/etc/hadoop/ssiu.keytab</value>
 </property>
 <property>
         <name>dfs.datanode.kerberos.principal</name>
-        <value>hdfs/hadoop@HADOOP.COM</value>
+        <value>ssiu/hadoop@HADOOP.COM</value>
 </property>
 <property>
         <name>dfs.datanode.keytab.file</name>
-        <value>/home/ssiu/app/hadoop/etc/hadoop/hdfs.keytab</value>
+        <value>/home/ssiu/app/hadoop/etc/hadoop/ssiu.keytab</value>
 </property>
 <property>
         <name>dfs.secondary.namenode.kerberos.principal</name>
-        <value>hdfs/hadoop@HADOOP.COM</value>
+        <value>ssiu/hadoop@HADOOP.COM</value>
 </property>
 <property>
         <name>dfs.secondary.namenode.keytab.file</name>
-        <value>/home/ssiu/app/hadoop/etc/hadoop/hdfs.keytab</value>
+        <value>/home/ssiu/app/hadoop/etc/hadoop/ssiu.keytab</value>
 </property>
 <property>
         <name>dfs.block.access.token.enable</name>
@@ -271,6 +271,7 @@ keytool -keystore keystore -alias localhost -import -file cert_signed
 </property>
 ```
 
+
 ## 启动
 
 1. 需要首先格式化hdfs：
@@ -328,9 +329,19 @@ sbin/start-dfs.sh
 </property>
 ```
 
+2. 配置`history-server`：
 
-2. 启动yarn：
+```
+```
+
+3. 启动yarn：
 
 ```shell
 sbin/start-yarn.sh
+```
+
+4. 启动history-server：
+
+```shell
+
 ```

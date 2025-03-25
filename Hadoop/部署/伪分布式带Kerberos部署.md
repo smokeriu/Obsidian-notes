@@ -309,29 +309,71 @@ sbin/start-dfs.sh
 </property>
 <property>
         <name>yarn.resourcemanager.principal</name>
-        <value>yarn/hadoop@HADOOP.COM</value>
+        <value>ssiu/hadoop@HADOOP.COM</value>
 </property>
 <property>
         <name>yarn.resourcemanager.keytab</name>
-        <value>/home/ssiu/app/hadoop/etc/hadoop/yarn.keytab</value>
+        <value>/home/ssiu/app/hadoop/etc/hadoop/ssiu.keytab</value>
 </property>
 <property>
         <name>yarn.nodemanager.principal</name>
-        <value>yarn/hadoop@HADOOP.COM</value>
+        <value>ssiu/hadoop@HADOOP.COM</value>
 </property>
 <property>
         <name>yarn.nodemanager.keytab</name>
-        <value>/home/ssiu/app/hadoop/etc/hadoop/yarn.keytab</value>
+        <value>/home/ssiu/app/hadoop/etc/hadoop/ssiu.keytab</value>
 </property>
 <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
         <value>4096</value>
 </property>
+<!-- log -->
+<property>
+    <name>yarn.log.server.url</name>
+    <value>http://hadoop:19888/jobhistory/logs</value>
+</property>
+<property>
+     <name>yarn.log-aggregation-enable</name>
+     <value>true</value>
+ </property>
+
+ <property>
+     <name>yarn.log-aggregation.retain-seconds</name>
+     <value>86400</value>
+ </property>
+
+ <property>
+     <name>yarn.nodemanager.delete.debug-delay-sec</name>
+     <value>600</value>
+ </property>
 ```
 
-2. 配置`history-server`：
+2. 配置`mapred-site.xml`：
 
-```
+```xml
+<property>
+    <name>mapreduce.jobhistory.address</name>
+    <value>hadoop:10020</value>
+</property>
+ 
+<property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>hadoop:19888</value>
+</property>
+
+<property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>hadoop:19888</value>
+</property>
+
+<property>
+    <name>mapreduce.jobhistory.keytab</name>
+    <value>/home/ssiu/krb5/ssiu.keytab</value>
+</property>
+<property>
+    <name>mapreduce.jobhistory.principal</name>
+    <value>ssiu/hadoop@HADOOP.COM</value>
+</property>
 ```
 
 3. 启动yarn：
@@ -343,5 +385,5 @@ sbin/start-yarn.sh
 4. 启动history-server：
 
 ```shell
-
+sbin/mr-jobhistory-daemon.sh start historyserver
 ```
